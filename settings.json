@@ -1,7 +1,7 @@
 {
     "createBotArgs": {
         "host": "localhost",
-        "port": "53153",
+        "port": "56424",
         "username": "Player",
         "password": ""
     }

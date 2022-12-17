@@ -20,11 +20,10 @@ async function init() {
 
     // Create bot
     bot = require("mineflayer").createBot(settings["createBotArgs"]);
-
+    
     // Load all bot plugins
     bot.loadPlugin(require("mineflayer-dashboard"))
     bot.loadPlugin(pathfinder);
-    bot.loadPlugin(require("mineflayer-collectblock").plugin);
 
     bot.once("spawn", async () => {
         // Init in game data
