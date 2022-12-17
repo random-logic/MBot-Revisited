@@ -105,3 +105,6 @@ dist
 
 # vscode settings
 .vscode
+
+# don't post login information online
+login.json
