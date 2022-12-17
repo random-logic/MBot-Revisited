@@ -1,0 +1,11 @@
+{
+    "createBotArgs": {
+        "host": "localhost",
+        "port": "INSERT YOUR PORT NUMBER",
+        "username": "MBot",
+        "password": ""
+    },
+    "discordClient": {
+        "token": "INSERT YOUR TOKEN"
+    }
+}
