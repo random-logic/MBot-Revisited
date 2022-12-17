@@ -1,0 +1,11 @@
+{
+    "mine": {
+        "module" : "miner",
+        "instruction" : "mineBlocks",
+        "args" : {
+            "findBlocksOptions" : {
+                "matching" : "ancient_debris"
+            }
+        }
+    }
+}
