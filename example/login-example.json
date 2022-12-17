@@ -1,3 +1,4 @@
+
 {
     "createBotArgs": {
         "host": "localhost",
@@ -6,6 +7,8 @@
         "password": ""
     },
     "discordClient": {
-        "token": "INSERT YOUR TOKEN"
+        "token": "INSERT YOUR TOKEN",
+        "commandChannelId": 123456789,
+        "chatChannelId": 123456789
     }
 }
