@@ -68,7 +68,7 @@ async function init() {
             if (message.channel.id == commandChannel.id) {
                 getCommand(message.content)
                 .then(() => message.channel.send("Finished command " + message.content))
-                .catch(e => message.channel.send(e));
+                .catch(e => message.channel.send(e.toString()));
             }
             else if (message.channel.id == chatChannel.id) {
                 bot.chat(message.content);

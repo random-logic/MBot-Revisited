@@ -26,7 +26,7 @@ class Miner {
         if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
         // Find blocks, blocks is an array
-        const blockPositions = this.utility.findBlocks(findBlocksOptions);
+        const blockPositions = this.utility.findBlocks(findBlocksOptions, true);
 
         // Check to see if any blocks are found
         if (blockPositions.length == 0) throw "Could not find any blocks of that type";
