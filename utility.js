@@ -6,6 +6,7 @@ const fsPromise = require("fs").promises;
 class Utility {
     /**
      * Constructor
+     * Assuming the bot has already spawned
      * @param {object} bot The current instance of bot
      * @param {object} mcData The current instance of minecraft-data
      * @param {object} movements Refer to https://github.com/PrismarineJS/mineflayer-pathfinder#movement-class
@@ -13,8 +14,9 @@ class Utility {
     constructor(bot, mcData, movements) {
         this.bot = bot;
         this.mcData = mcData;
-        this.movements = movements; // work on removing this
+        this.movements = movements;
 
+        // For calculating physics ticks
         this.bot.physicsEnabled = true;
         this.bot.on("physicsTick", () => {
             if (this.doPhysicsTickCountDown) {
@@ -27,6 +29,7 @@ class Utility {
         });
         this.doPhysicsTickCountDown = false;
 
+        // For determining when an entity disappears
         this.bot.on("entityGone", entity => {
             if (this.checkForEntityGone) {
                 if (entity == this.entityGoneToMatch) {
@@ -114,6 +117,14 @@ class Utility {
 
     static async writeJsonFile(path, content) {
         return fsPromise.writeFile(path, JSON.stringify(content, "\t"));
+    }
+
+    static async waitForMilliseconds(count) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+            }, count);
+        });
     }
 }
 

@@ -4,6 +4,7 @@ const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll } = require("minefla
 
 /**
  * This class is focused on mining instructions
+ * Requires mineflayer-pathfinder
  */
 class Miner {
     /**

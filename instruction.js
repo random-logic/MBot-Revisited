@@ -4,13 +4,11 @@
 class Instruction {
     /**
      * Constructor
-     * @param {object} bot The current bot instance
      * @param {object} commands Refer to command-example.json
      * @param {object} modules The object that stores all of the custom modules like miner.js and health.js
      * @param {Interrupt} interrupt Refer to Interrupt.js
      */
-    constructor(bot, commands, modules, interrupt) {
-        this.bot = bot;
+    constructor(commands, modules, interrupt) {
         this.commands = commands;
         this.modules = modules;
         this.interrupt = interrupt;
