@@ -8,7 +8,8 @@
     },
     "discordClient": {
         "token": "INSERT YOUR TOKEN",
-        "commandChannelId": 123456789,
-        "chatChannelId": 123456789
+        "commandChannelId": "123456789",
+        "chatChannelId": "123456789",
+        "botId": 123456789
     }
 }

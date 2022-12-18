@@ -1,13 +1,13 @@
-const { pathfinder, Movements } = require("mineflayer-pathfinder");
-
 const FileManager = require("./file-utility.js");
-const Miner = require("./miner");
-const Utility = require("./utility.js");
 const Interrupt = require("./interrupt.js");
+const Utility = require("./utility.js");
+const Miner = require("./miner");
 
 var settings, commands; // JSON files
 
 var bot, mcData, movements; // Mineflayer
+
+var token, discordBotId, client, commandChannel, chatChannel; // Discord client
 
 var utility, interrupt; var modules = {}; // Custom scripts
 
@@ -15,17 +15,44 @@ var doingInstruction = false; // In the process of doing an instruction?
 
 async function init() {
     // Load JSON files
-    settings = await FileManager.readJsonFile("./settings.json");
+    settings = await FileManager.readJsonFile("./login.json");
     commands = await FileManager.readJsonFile("./commands.json");
 
     // Create bot
     bot = require("mineflayer").createBot(settings["createBotArgs"]);
     
     // Load all bot plugins
-    bot.loadPlugin(require("mineflayer-dashboard"))
+    const { pathfinder, Movements } = require("mineflayer-pathfinder");
+    //bot.loadPlugin(require("mineflayer-dashboard"))
     bot.loadPlugin(pathfinder);
 
-    bot.once("spawn", async () => {
+    // Init Discord Client
+    token = settings["discordClient"]["token"];
+    discordBotId = settings["discordClient"]["botId"];
+    client = new (require("discord.js").Client)({ intents: ["Guilds", "GuildMessages", "MessageContent"] });
+    client.login(token);
+
+    client.on("ready", () => {
+        // Set up channels for Discord Client
+        commandChannel = client.channels.cache.get(settings["discordClient"]["commandChannelId"]);
+        chatChannel = client.channels.cache.get(settings["discordClient"]["chatChannelId"]);
+
+        // Set up listeners
+        bot.on("whisper", (username, message) => {
+            if (username == bot.username) return;
+            chatChannel.send(`*${username} whispers to you: ${message}*`);
+        });
+
+        bot.on("chat", (username, message) => {
+            if (username == bot.username) return;
+            chatChannel.send(`${username}: ${message}`);
+        });
+
+        // Let the user know the discord bot is ready
+        commandChannel.send("Bot is ready");
+    });
+
+    bot.once("spawn", () => {
         // Init in game data
         mcData = require("minecraft-data")(bot.version);
         movements = new Movements(bot);
@@ -34,9 +61,25 @@ async function init() {
         interrupt = new Interrupt();
         utility = new Utility(bot, mcData, movements);
         modules["miner"] = new Miner(bot, utility);
+
+        // Set up listeners
+        client.on("messageCreate", message => {
+            if (message.author.id == discordBotId) return;
+            if (message.channel.id == commandChannel.id) {
+                getCommand(message.content)
+                .then(message.channel.send("Finished command" + message.content))
+                .catch(e => {
+                    message.channel.send("An error occured when doing command " + message.content);
+                    console.log(e);
+                });
+            }
+            else if (message.channel.id == chatChannel.id) {
+                bot.chat(message.content);
+            }
+        });
     });
 
-    bot.once("inject_allowed", () => {
+    /*bot.once("inject_allowed", () => {
         bot.dashboard.addMode(
             new bot.dashboard.Mode("commander", {
                 "bg": "blue",
@@ -51,7 +94,7 @@ async function init() {
                 }
             })
         );
-    });
+    });*/
 }
 
 async function doInstruction(module, instructionName, args, options) {
