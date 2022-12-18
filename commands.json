@@ -5,7 +5,8 @@
         "args" : {
             "findBlocksOptions" : {
                 "matching" : "ancient_debris",
-                "maxDistance": 64
+                "maxDistance": 64,
+                "count": 10
             }
         }
     },

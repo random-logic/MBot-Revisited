@@ -1,4 +1,10 @@
+/**
+ * This class allows other instructions to interrupt the current instruction
+ */
 class Interrupt {
+    /**
+     * Constructor
+     */
     constructor() {
         this.hasInterrupt = false; // This field should only be read from and not modified
         this.onInterrupt = null; // Callback when an interrupt occurs

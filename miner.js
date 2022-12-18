@@ -1,103 +1,119 @@
+const UserInterface = require("./user-interface");
+
 const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll } = require("mineflayer-pathfinder").goals;
 
+/**
+ * This class is focused on mining instructions
+ */
 class Miner {
     /**
      * Constructor
      * @param {object} bot The current instance of bot
-     * @param {object} utility For add on function calls
+     * @param {Utility} utility Refer to Utility.js
+     * @param {UserInterface} userInterface Refer to UserInterface.js
      */
-    constructor (bot, utility) {
+    constructor (bot, utility, userInterface) {
         this.bot = bot;
         this.utility = utility;
+        this.userInterface = userInterface;
     }
 
+    /**
+     * @typedef MineBlockArgs
+     * @param {object} findBlocksOptions Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
+     */
+    /**
+     * Mine blocks until an instruction interrupts
+     * @param {MineBlockArgs} args The args for this instruction
+     * @param {object} options Has no effect for this instruction
+     * @param {Interrupt} interrupt From interrupt.js, the object to refer to when checking for interrupts
+     */
     async mineBlocks(args, options, interrupt) {
         // Parse args
         if (!args || typeof args !== "object") throw "Invalid Args";
         var findBlocksOptions = args["findBlocksOptions"];
         if (!findBlocksOptions || typeof findBlocksOptions !== "object") throw "Invalid Arg findBlockOptions";
-        //var count = args["count"];
-        //if (!count || Number.isSafeInteger(count)) throw "Invalid Arg count";
+        while (true) {
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
-        // Find count number of blocks
-        // ??
+            // Find blocks, blocks is an array
+            const blockPositions = this.utility.findBlocks(findBlocksOptions, true);
 
-        // Check for interrupts
-        if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+            // Check to see if any blocks are found
+            if (blockPositions.length == 0) throw "Could not find any blocks of that type";
 
-        // Find blocks, blocks is an array
-        const blockPositions = this.utility.findBlocks(findBlocksOptions, true);
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
-        // Check to see if any blocks are found
-        if (blockPositions.length == 0) throw "Could not find any blocks of that type";
+            // Allow interrupts to stop the bot from moving
+            interrupt.onInterrupt = this.bot.pathfinder.stop;
 
-        // Check for interrupts
-        if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+            // Find path to any block that works
+            var i = 0, reachedGoal = false;
+            while (i != blockPositions.length) {
+                // Travel to block
+                try {
+                    console.log("Moving to mine block at position " + blockPositions[i]);
 
-        // Allow interrupts to stop the bot from moving
-        interrupt.onInterrupt = this.bot.pathfinder.stop;
+                    await this.bot.pathfinder.goto(
+                        new GoalCompositeAll([
+                            new GoalGetToBlock(blockPositions[i].x, blockPositions[i].y, blockPositions[i].z),
+                            new GoalY(blockPositions[i].y)
+                        ])
+                    );
 
-        // Find path to any block that works
-        var i = 0, reachedGoal = false;
-        while (i != blockPositions.length) {
-            // Travel to block
-            try {
-                await this.bot.pathfinder.goto(
-                    new GoalCompositeAll([
-                        new GoalGetToBlock(blockPositions[i].x, blockPositions[i].y, blockPositions[i].z),
-                        new GoalY(blockPositions[i].y)
-                    ])
-                );
-
-                reachedGoal = true; // Reached the target block
-                break;
+                    reachedGoal = true; // Reached the target block
+                    break;
+                }
+                catch(e) {
+                    this.userInterface.log(e);
+                    ++i; // Travel to next block if we couldn't get to the block
+                }
+                finally {
+                    // Check for interrupts
+                    if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+                }
             }
-            catch(e) {
-                ++i; // Travel to next block if we couldn't get to the block
-            }
-            finally {
-                // Check for interrupts
-                if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
-            }
+
+            if (!reachedGoal) throw "Couldn't reach any blocks of the specified type";
+
+            // Pathfinder no longer used, can now unlink pathfinder from interrupt
+            interrupt.onInterrupt = null;
+
+            // Get the block that we just walked to
+            const block = this.bot.blockAt(blockPositions[i]);
+
+            // Get the best harvest tool
+            const harvestTool = this.bot.pathfinder.bestHarvestTool(block);
+            if (harvestTool === null) throw "No tool to harvest block";
+
+            // Equip bot with correct tool to mine block
+            await this.bot.equip(harvestTool, "hand");
+
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+
+            // Dig block
+            await this.bot.dig(block);
+
+            // Wait for entity to spawn
+            await this.utility.waitForPhysicsTicks(10);
+
+            // Start checking if entity mined is picked up or not
+            var waitForEntityGone = this.utility.waitForEntityGone(block.entity);
+
+            // Collect block as entity
+            await this.bot.pathfinder.goto(
+                new GoalFollow(block, 0)
+            )
+
+            // Do not continue until entity picked up
+            await waitForEntityGone;
+
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
         }
-
-        if (!reachedGoal) throw "Couldn't reach any blocks of the specified type";
-
-        // Pathfinder no longer used, can now unlink pathfinder from interrupt
-        interrupt.onInterrupt = null;
-
-        // Get the block that we just walked to
-        const block = this.bot.blockAt(blockPositions[i]);
-
-        // Get the best harvest tool
-        const harvestTool = this.bot.pathfinder.bestHarvestTool(block);
-        if (harvestTool === null) throw "No tool to harvest block";
-
-        // Equip bot with correct tool to mine block
-        await this.bot.equip(harvestTool, "hand");
-
-        // Check for interrupts
-        if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
-
-        // Dig block
-        await this.bot.dig(block);
-
-        // Wait for entity to spawn
-        await this.utility.waitForPhysicsTicks(10);
-
-        // Start checking if entity mined is picked up or not
-        var waitForEntityGone = this.utility.waitForEntityGone(block.entity);
-
-        // Collect block as entity
-        await this.bot.pathfinder.goto(
-            new GoalFollow(block, 0)
-        )
-
-        // Do not continue until entity picked up
-        await waitForEntityGone;
-
-        // Check for interrupts
-        if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
     }
 }
 

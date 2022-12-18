@@ -1,3 +1,8 @@
+const fsPromise = require("fs").promises;
+
+/**
+ * These are helper methods for various modules
+ */
 class Utility {
     /**
      * Constructor
@@ -101,6 +106,14 @@ class Utility {
             this.entityGoneToMatch = entity;
             this.checkForEntityGone = true;
         })
+    }
+
+    static async readJsonFile(path) {
+        return JSON.parse(await fsPromise.readFile(path));
+    }
+
+    static async writeJsonFile(path, content) {
+        return fsPromise.writeFile(path, JSON.stringify(content, "\t"));
     }
 }
 
