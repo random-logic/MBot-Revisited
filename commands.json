@@ -4,7 +4,8 @@
         "instruction" : "mineBlocks",
         "args" : {
             "findBlocksOptions" : {
-                "matching" : "ancient_debris"
+                "matching" : "ancient_debris",
+                "maxDistance": 256
             }
         }
     }
