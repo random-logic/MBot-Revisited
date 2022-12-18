@@ -67,11 +67,8 @@ async function init() {
             if (message.author.id == discordBotId) return;
             if (message.channel.id == commandChannel.id) {
                 getCommand(message.content)
-                .then(message.channel.send("Finished command" + message.content))
-                .catch(e => {
-                    message.channel.send("An error occured when doing command " + message.content);
-                    console.log(e);
-                });
+                .then(() => message.channel.send("Finished command " + message.content))
+                .catch(e => message.channel.send(e));
             }
             else if (message.channel.id == chatChannel.id) {
                 bot.chat(message.content);
