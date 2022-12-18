@@ -23,7 +23,7 @@ class Miner {
      * @param {object} findBlocksOptions Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
      */
     /**
-     * Mine blocks until an instruction interrupts
+     * Instruction to mine blocks until an instruction interrupts
      * @param {MineBlockArgs} args The args for this instruction
      * @param {object} options Has no effect for this instruction
      * @param {Interrupt} interrupt From interrupt.js, the object to refer to when checking for interrupts
@@ -33,6 +33,7 @@ class Miner {
         if (!args || typeof args !== "object") throw "Invalid Args";
         var findBlocksOptions = args["findBlocksOptions"];
         if (!findBlocksOptions || typeof findBlocksOptions !== "object") throw "Invalid Arg findBlockOptions";
+        
         while (true) {
             // Check for interrupts
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";

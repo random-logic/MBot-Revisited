@@ -7,7 +7,7 @@ class UserInterface {
      * Viewer streams to localhost:5000
      * Inventory streams to localhost:3000
      * Assumes that the bot is already spawned
-     * @param {Settings} settings Refer to index.js
+     * @param {Settings} settings Refer to login-example.json
      */
     constructor(bot, settings, instruction) {
         this.instruction = instruction;

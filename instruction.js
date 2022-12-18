@@ -1,4 +1,14 @@
+/**
+ * Keeps track of which instruction is currently being executed from modules
+ */
 class Instruction {
+    /**
+     * Constructor
+     * @param {object} bot The current bot instance
+     * @param {object} commands Refer to command-example.json
+     * @param {object} modules The object that stores all of the custom modules like miner.js and health.js
+     * @param {Interrupt} interrupt Refer to Interrupt.js
+     */
     constructor(bot, commands, modules, interrupt) {
         this.bot = bot;
         this.commands = commands;
@@ -7,6 +17,10 @@ class Instruction {
         this.doingInstruction = false;
     }
     
+    /**
+     * Gets the requested command and executes the associated instruction
+     * @param {string} commandName The name of the command to querry from commands
+     */
     async getCommand(commandName) {
         const command = this.commands[commandName];
         if (!command || typeof command !== "object")
@@ -15,6 +29,10 @@ class Instruction {
         await this.parseInstruction(command);
     }
     
+    /**
+     * Parses the command into an instruction and executes it
+     * @param {object} contents The contents of the command, refer to command-example.json
+     */
     async parseInstruction(contents) {
         // Verify valid contents
         if (typeof contents !== "object" || contents === null) throw "Invalid contents";
@@ -46,6 +64,14 @@ class Instruction {
         }
     }
 
+    /**
+     * Executes the instruction
+     * Interrupts the current instruction
+     * @param {object} module The object to call the instruction on, like miner.js or health.js
+     * @param {string} instructionName The name of the instruction
+     * @param {object} args The args associated with the instruction
+     * @param {object} options The options associated with the instruction
+     */
     async doInstruction(module, instructionName, args, options) {
         this.doingInstruction = true;
     
