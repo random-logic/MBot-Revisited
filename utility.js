@@ -79,7 +79,7 @@ class Utility {
     /**
      * Wait for a specified number of physics ticks
      * @param {number} count The number of physics ticks to wait for
-     * @returns {Promis} Resolves after waiting for count physics ticks
+     * @returns {Promise} Resolves after waiting for count physics ticks
      */
     async waitForPhysicsTicks(count) {
         return new Promise(resolve => {
