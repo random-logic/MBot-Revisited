@@ -1,4 +1,4 @@
-const { GoalGetToBlock, GoalFollow } = require("mineflayer-pathfinder").goals;
+const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll } = require("mineflayer-pathfinder").goals;
 
 class Miner {
     /**
@@ -43,7 +43,10 @@ class Miner {
             // Travel to block
             try {
                 await this.bot.pathfinder.goto(
-                    new GoalGetToBlock(blockPositions[i].x, blockPositions[i].y, blockPositions[i].z)
+                    new GoalCompositeAll([
+                        new GoalGetToBlock(blockPositions[i].x, blockPositions[i].y, blockPositions[i].z),
+                        new GoalY(blockPositions[i].y)
+                    ])
                 );
 
                 reachedGoal = true; // Reached the target block
