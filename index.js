@@ -3,6 +3,8 @@ const Interrupt = require("./interrupt.js");
 const Utility = require("./utility.js");
 const Miner = require("./miner");
 
+const mineflayerViewer = require('prismarine-viewer').mineflayer
+
 var settings, commands; // JSON files
 
 var bot, mcData, movements; // Mineflayer
@@ -74,6 +76,22 @@ async function init() {
                 bot.chat(message.content);
             }
         });
+
+        // Render on the web viewer
+        mineflayerViewer(bot, {/* firstPerson: false, */port: 5000 }); // Start the viewing server on port 3000
+
+        // Draw the path followed by the bot
+        const path = [bot.entity.position.clone()];
+        bot.on('move', () => {
+            if (path[path.length - 1].distanceTo(bot.entity.position) > 1) {
+            path.push(bot.entity.position.clone());
+            bot.viewer.drawLine('path', path);
+            }
+        });
+
+        // Render bot's inventory
+        const inventoryViewer = require('mineflayer-web-inventory');
+        inventoryViewer(bot);
     });
 
     /*bot.once("inject_allowed", () => {

@@ -5,12 +5,10 @@ class Utility {
      * @param {object} mcData The current instance of minecraft-data
      * @param {object} movements Refer to https://github.com/PrismarineJS/mineflayer-pathfinder#movement-class
      */
-    constructor(bot, mcData, movements, /*liquids = ["water", "lava"], gravityBlocks = []*/) {
+    constructor(bot, mcData, movements) {
         this.bot = bot;
         this.mcData = mcData;
         this.movements = movements; // work on removing this
-        //this.liquids = liquids;
-        //this.gravityBlocks = gravityBlocks;
 
         this.bot.physicsEnabled = true;
         this.bot.on("physicsTick", () => {
