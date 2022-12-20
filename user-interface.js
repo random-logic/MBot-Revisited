@@ -30,7 +30,7 @@ class UserInterface {
                 if (message.channel.id == this.commandChannel.id) {
                     this.mbot?.instruction.getCommand(message.content)
                     .then(() => message.channel.send("Finished command " + message.content))
-                    .catch(e => message.channel.send(e.toString()));
+                    .catch(e => console.log(e));
                 }
                 else if (message.channel.id == this.chatChannel.id) {
                     this.mbot?.bot?.chat(message.content);

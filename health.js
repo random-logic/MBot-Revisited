@@ -14,9 +14,11 @@ class Health {
         this.instruction = instruction;
 
         this.autoEat = true;
-        this.exitBeforeDeath = true;
+        this.exitBeforeDeath = true; // ??
 
         bot.on("health", () => {
+            console.log("Health: " + bot.health);
+
             if (this.autoEat) {
                 bot.autoEat.enable();
 

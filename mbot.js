@@ -48,7 +48,9 @@ class Mbot {
         this.userInterface = new UserInterface(this.settings, this); // Can be modified to handle many mbot references
 
         if (createBot) {
-            this.createBot();
+            this.createBot({
+                "createInventoryView" : true
+            });
         }
     }
 
@@ -91,12 +93,12 @@ class Mbot {
 
             // Display viewer on web
             if (args && args["createBotView"]) {
-                botView(bot, args["botViewOptions"]);
+                botView(this.bot, args["botViewOptions"]);
             }
 
             // Display inventory on web
             if (args && args["createInventoryView"]) {
-                inventoryView(bot, args["inventoryViewOptions"]);
+                inventoryView(this.bot, args["inventoryViewOptions"]);
             }
 
             // Link newly created bot to display any messages in chat on userInterface
@@ -114,6 +116,8 @@ class Mbot {
         });
 
         await waitForSpawn;
+
+        console.log("Spawned");
     }
 
     /**

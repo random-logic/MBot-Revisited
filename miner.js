@@ -2,6 +2,8 @@ const UserInterface = require("./user-interface");
 
 const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll } = require("mineflayer-pathfinder").goals;
 
+const { Movements } = require('mineflayer-pathfinder') // Import the Movements class from pathfinder ??
+
 /**
  * This class is focused on mining instructions
  * Requires mineflayer-pathfinder
@@ -51,6 +53,11 @@ class Miner {
             // Allow interrupts to stop the bot from moving
             interrupt.onInterrupt = this.bot.pathfinder.stop;
 
+            // ?? Make sure netherrack is part of scafolding blocks 
+            const defaultMove = new Movements(this.bot);
+            defaultMove.scafoldingBlocks.push(this.utility.getBlockId('netherrack')); // Add nether rack to allowed scaffolding items
+            this.bot.pathfinder.setMovements(defaultMove); // Update the movement instance pathfinder uses
+
             // Find path to any block that works
             var i = 0, reachedGoal = false;
             while (i != blockPositions.length) {
@@ -87,6 +94,7 @@ class Miner {
             const block = this.bot.blockAt(blockPositions[i]);
 
             // Get the best harvest tool
+            console.log("Harvesting block");
             const harvestTool = this.bot.pathfinder.bestHarvestTool(block);
             if (harvestTool === null) throw "No tool to harvest block";
 
@@ -108,10 +116,11 @@ class Miner {
             // Collect block as entity
             await this.bot.pathfinder.goto(
                 new GoalFollow(block, 0)
-            )
+            );
 
             // Do not continue until entity picked up
             await waitForEntityGone;
+            console.log("Finished harvesting");
 
             // Check for interrupts
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
