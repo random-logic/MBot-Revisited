@@ -8,7 +8,7 @@ async function init() {
     settings = await Utility.readJsonFile("./login.json");
     commands = await Utility.readJsonFile("./commands.json");
     mbot = new Mbot(settings, commands);
-    mbot.createBot({"createInventoryView": true});
+    mbot.createBot({"createInventoryView": true, "inventoryViewOptions": {"port": 3000, "startOnLoad": true}});
 }
 
 init().catch(e => console.log(e));
