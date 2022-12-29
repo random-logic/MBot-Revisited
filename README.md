@@ -10,3 +10,6 @@
 2. Create mover.js
 - Have this store the default Movement class that will apply to pathfinder
 3. Create health.js
+4. Implement skip function for miner
+- Also have an array of block positions that already returned timed out so bot doesn't try to go to these again
+- We really need this feature because the bot can randomly get stuck

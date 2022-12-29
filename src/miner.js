@@ -62,7 +62,7 @@ class Miner {
 
             // ?? Make sure netherrack is part of scafolding blocks 
             const defaultMove = new Movements(this.bot);
-            defaultMove.allowParkour = false; // ?? Don't allow parkour
+            defaultMove.allowParkour = false; // ?? Don't allow parkour, because he almost got stuck doing parkour
             defaultMove.scafoldingBlocks.push(this.utility.getBlockId('netherrack')); // Add nether rack to allowed scaffolding items
             this.bot.pathfinder.setMovements(defaultMove); // Update the movement instance pathfinder uses
 
