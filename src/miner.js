@@ -44,7 +44,7 @@ class Miner {
         
         // Mine a specified number of blocks
         var count = args["numberOfBlocksToMine"];
-        for (var i = 0; i < count; ++i) {
+        for (var n = 0; n < count; ++n) {
             // Check for interrupts
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
@@ -67,13 +67,14 @@ class Miner {
 
             // Find path to any block that works
             var reachedGoal = false;
-            for (var j = 0; j < blockPositions.length; ++j) {
+            var blockIndex = 0;
+            for (;blockIndex < blockPositions.length; ++blockIndex) {
                 // Travel to block
                 try {
-                    this.userInterface.log("Moving to mine block at position " + blockPositions[j]);
+                    this.userInterface.log("Moving to mine block at position " + blockPositions[blockIndex]);
 
                     await this.bot.pathfinder.goto(
-                        new GoalLookAtBlock(blockPositions[j], this.bot.world, { "range" : 4 })
+                        new GoalLookAtBlock(blockPositions[blockIndex], this.bot.world, { "range" : 4 })
                     );
 
                     reachedGoal = true; // Reached the target block
@@ -98,12 +99,12 @@ class Miner {
             interrupt.onInterrupt = null;
 
             // Get the block that we just walked to
-            const block = this.bot.blockAt(blockPositions[i]);
+            const block = this.bot.blockAt(blockPositions[blockIndex]);
 
             // Get the best harvest tool
             this.userInterface.log("Equipping harvesting tool");
             const harvestTool = this.bot.pathfinder.bestHarvestTool(block);
-            if (harvestTool === null) throw "No tool to harvest block";
+            if (!harvestTool) throw "No tool to harvest block";
 
             // Equip bot with correct tool to mine block
             await this.bot.equip(harvestTool, "hand");

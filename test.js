@@ -1,3 +1,4 @@
+// Doesn't work for some reason lol
 // Create your bot
 const mineflayer = require("mineflayer")
 const bot = mineflayer.createBot({
