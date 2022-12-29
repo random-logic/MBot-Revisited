@@ -73,7 +73,7 @@ class Miner {
                     this.userInterface.log("Moving to mine block at position " + blockPositions[j]);
 
                     await this.bot.pathfinder.goto(
-                        new GoalLookAtBlock(blockPositions[i], this.bot.world)
+                        new GoalLookAtBlock(blockPositions[j], this.bot.world, { "range" : 4 })
                     );
 
                     reachedGoal = true; // Reached the target block
