@@ -47,7 +47,7 @@ class Utility {
      * Changes any block names to its corresponding block ids using utility["getBlockId"]
      * @param {object} options Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
      * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility["movements"].safeToBreak(), overrides useExtraInfo
-     * @returns {Array} Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
+     * @return {Array} Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
      */
     findBlocks(options, safeToBreakFilter = false) {
         // Parse matching
@@ -76,7 +76,7 @@ class Utility {
      * Converts the block name to the corresponding id
      * Throws error if corresponding id not found
      * @param {string} blockName The name of the block
-     * @returns {number} The block id
+     * @return {number} The block id
      */
     getBlockId(blockName) {
         const blockId = this.mcData.blocksByName[blockName].id;
@@ -87,7 +87,7 @@ class Utility {
     /**
      * Wait for a specified number of physics ticks
      * @param {number} count The number of physics ticks to wait for
-     * @returns {Promise} Resolves after waiting for count physics ticks
+     * @return {Promise} Resolves after waiting for count physics ticks
      */
     async waitForPhysicsTicks(count) {
         return new Promise(resolve => {
@@ -100,7 +100,7 @@ class Utility {
     /**
      * Wait for the specified entity to disappear
      * @param {Entity} entity The entity that should disappear
-     * @returns {Promise} A promise that resolves when the entity disappears
+     * @return {Promise} A promise that resolves when the entity disappears
      */
     async waitForEntityGone(entity) {
         return new Promise(resolve => {

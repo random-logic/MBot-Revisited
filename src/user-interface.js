@@ -26,11 +26,14 @@ class UserInterface {
     
             // Set up listeners
             this.discordClient.on("messageCreate", message => {
+                // Do not do anything if the bot sends the message
                 if (message.author.id == this.discordBotId) return;
+
+                // Check where the message is sent
                 if (message.channel.id == this.commandChannel.id) {
                     this.mbot?.instruction.getCommand(message.content)
                     .then(() => message.channel.send("Finished command " + message.content))
-                    .catch(e => console.log(e));
+                    .catch(e => logError(e));
                 }
                 else if (message.channel.id == this.chatChannel.id) {
                     this.mbot?.bot?.chat(message.content);
@@ -59,10 +62,26 @@ class UserInterface {
     }
 
     /**
-     * Log message to commands channel
+     * Push notification to user interface
      */
-    log(message) {
+    notify(message) {
         this.commandChannel.send(message);
+    }
+
+    /**
+     * Log for debugging
+     * @param {string} what String to log
+     */
+    log(what) {
+        console.log(what);
+    }
+
+    /**
+     * Log error for debugging
+     * @param {string | Error} what Error to log
+     */
+    logError(what) {
+        console.error(what);
     }
 
     /**

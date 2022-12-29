@@ -1,6 +1,7 @@
 // Custom modules
 const Instruction = require("./instruction");
 const Interrupt = require("./interrupt");
+const UserInterface = require("./user-interface");
 
 // Custom modules with dependence on mineflayer
 const Utility = require("./utility");
@@ -12,7 +13,6 @@ const { pathfinder, Movements } = require("mineflayer-pathfinder");
 const autoEat = require("mineflayer-auto-eat").default;
 const botView = require('prismarine-viewer').mineflayer;
 const inventoryView = require('mineflayer-web-inventory');
-const UserInterface = require("./user-interface");
 
 /**
  * Handles the bare minimum for the bot
@@ -48,9 +48,7 @@ class Mbot {
         this.userInterface = new UserInterface(this.settings, this); // Can be modified to handle many mbot references
 
         if (createBot) {
-            this.createBot({
-                "createInventoryView" : true
-            });
+            this.createBot();
         }
     }
 
@@ -66,6 +64,7 @@ class Mbot {
      * @param {CreateBotArgs} args Associated args for this instruction
      * @param {object} options Has no effect for this instruction
      * @param {Interrupt} interrupt Has no effect for this instruction
+     * @return {Promise} Resolved after bot spawns and everything is set up
      */
     async createBot(args = null, options = null, interrupt = null) {
         // Instantiate bot
@@ -117,7 +116,7 @@ class Mbot {
 
         await waitForSpawn;
 
-        console.log("Spawned");
+        this.userInterface.log("Spawned");
     }
 
     /**

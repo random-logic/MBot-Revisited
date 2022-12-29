@@ -1,4 +1,10 @@
 # MBot-Revisited
+## Install
+1. Get Nodejs version 18.12.1 and npm version 8.19.2
+2. Clone this repository
+3. Go to the repository
+4. npm install
+
 ## To do
 1. Fix discord message empty error that makes program quit completely
 2. Bot decided to try to mine ancient debris block with lava nearby, fix it

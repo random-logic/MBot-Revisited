@@ -63,7 +63,7 @@ class Miner {
             while (i != blockPositions.length) {
                 // Travel to block
                 try {
-                    console.log("Moving to mine block at position " + blockPositions[i]);
+                    this.userInterface.log("Moving to mine block at position " + blockPositions[i]);
 
                     await this.bot.pathfinder.goto(
                         new GoalCompositeAll([
@@ -76,7 +76,7 @@ class Miner {
                     break;
                 }
                 catch(e) {
-                    this.userInterface.log(e);
+                    this.userInterface.logError(e);
                     ++i; // Travel to next block if we couldn't get to the block
                 }
                 finally {
@@ -94,7 +94,7 @@ class Miner {
             const block = this.bot.blockAt(blockPositions[i]);
 
             // Get the best harvest tool
-            console.log("Harvesting block");
+            this.userInterface.log("Harvesting block");
             const harvestTool = this.bot.pathfinder.bestHarvestTool(block);
             if (harvestTool === null) throw "No tool to harvest block";
 
@@ -120,7 +120,7 @@ class Miner {
 
             // Do not continue until entity picked up
             await waitForEntityGone;
-            console.log("Finished harvesting");
+            this.userInterface.log("Finished harvesting");
 
             // Check for interrupts
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
