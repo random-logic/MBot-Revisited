@@ -50,7 +50,7 @@ class Miner {
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             // Find blocks, blocks is an array
-            const blockPositions = this.utility.findBlocks(findBlocksOptions, true);
+            const blockPositions = this.utility.findBlocks(args["findBlocksOptions"], true);
 
             // Check to see if any blocks are found
             if (blockPositions.length == 0) throw "Could not find any blocks of that type";
@@ -67,7 +67,7 @@ class Miner {
             this.bot.pathfinder.setMovements(defaultMove); // Update the movement instance pathfinder uses
 
             // Find path to any block that works
-            reachedGoal = false;
+            var reachedGoal = false;
             for (var j = 0; j < blockPositions.length; ++j) {
                 // Travel to block
                 try {
