@@ -62,11 +62,10 @@ class Mbot {
     /**
      * Instruction that creates the bot
      * @param {CreateBotArgs} args Associated args for this instruction
-     * @param {object} options Has no effect for this instruction
      * @param {Interrupt} interrupt Has no effect for this instruction
      * @return {Promise} Resolved after bot spawns and everything is set up
      */
-    async createBot(args = null, options = null, interrupt = null) {
+    async createBot(args = null, interrupt = null) {
         // Instantiate bot
         this.bot = require("mineflayer").createBot(this.settings["createBotArgs"]);
 
@@ -123,10 +122,9 @@ class Mbot {
      * Instruction that makes the bot quit the game
      * After this, the bot has to be recreated via createBot
      * @param {object} args Has no effect for this instruction
-     * @param {object} options Has no effect for this instruction
      * @param {Interrupt} interrupt Has no effect for this instruction
      */
-    quit(args = null, options = null, interrupt = null) {
+    quit(args = null, interrupt = null) {
         this.bot.quit();
         this.bot = null;
         this.mcData = null;
@@ -137,7 +135,6 @@ class Mbot {
     /**
      * Quits the game for count milliseconds
      * @param {QuitGameForArgs} args The args for this instruction
-     * @param {object} options Has no effect for this instruction
      * @param {Interrupt} interrupt Refer to interrupt.js
      */
     /*quitGameFor(count) {

@@ -1,6 +1,6 @@
 const UserInterface = require("./user-interface");
 
-const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll } = require("mineflayer-pathfinder").goals;
+const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalBlock } = require("mineflayer-pathfinder").goals;
 
 const { Movements } = require('mineflayer-pathfinder') // Import the Movements class from pathfinder ??
 
@@ -31,7 +31,6 @@ class Miner {
     /**
      * Instruction to mine blocks until an instruction interrupts
      * @param {MineBlockArgs} args The args for this instruction
-     * @param {object} options Has no effect for this instruction
      * @param {Interrupt} interrupt From interrupt.js, the object to refer to when checking for interrupts
      */
     async mineBlocks(args, interrupt) {
@@ -74,10 +73,7 @@ class Miner {
                     this.userInterface.log("Moving to mine block at position " + blockPositions[j]);
 
                     await this.bot.pathfinder.goto(
-                        new GoalCompositeAll([
-                            new GoalGetToBlock(blockPositions[j].x, blockPositions[j].y, blockPositions[j].z),
-                            new GoalY(blockPositions[j].y)
-                        ])
+                        new GoalLookAtBlock(blockPositions[i], this.bot.world)
                     );
 
                     reachedGoal = true; // Reached the target block
@@ -105,7 +101,7 @@ class Miner {
             const block = this.bot.blockAt(blockPositions[i]);
 
             // Get the best harvest tool
-            this.userInterface.log("Harvesting block");
+            this.userInterface.log("Equipping harvesting tool");
             const harvestTool = this.bot.pathfinder.bestHarvestTool(block);
             if (harvestTool === null) throw "No tool to harvest block";
 
@@ -116,7 +112,9 @@ class Miner {
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             // Dig block
-            await this.bot.dig(block);
+            this.userInterface.log("Digging block");
+            await this.bot.dig(block, false);
+            this.userInterface.log("Finished digging block");
 
             // Wait for entity to spawn
             await this.utility.waitForPhysicsTicks(10);
