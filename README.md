@@ -6,12 +6,11 @@
 4. npm install
 
 ## To do
-1. Bot still tries to mine after finished command mine, why?
-2. Bot decided to try to mine ancient debris block with lava nearby, fix it
-3. Bot sometimes has trouble harvesting as it just freezes, I think this is if the block is at head level and not at foot level?
- - Possible solution: limit the positions bot can be next to the block, perhaps just mine when on top of the block since bot.dig is set up to do that
-4. Bot once got stuck on a block when moving
-5. Bot doesn't seem to use alternate blocks / paths, do some more testing on this
- - Possible Solution: let user choose to skip some blocks
-6. It was a pain in the butt to return to HQ later, so we should also program the mover module asap
-7. Pass Mbot by reference to all modules (needed since reference to bot changes when creating and deleting bot)
+1. Pass Mbot by reference to all modules (needed since reference to bot changes when creating and deleting bot)
+2. Bot.dig seems to have problems, sometimes it thinks it's digging the right block when it doesn't
+ - Result: Tries to pick up item entity and throws took too long to decide path to goal (which is the item entity), but what's weird is that it also logs "finished command mine"
+Log:
+ - Moving to mine block at position (-99, 23, -204)
+ - Equipping harvesting tool
+ - Digging block
+ - Finished digging block
