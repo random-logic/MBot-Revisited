@@ -46,7 +46,7 @@ class Utility {
      * Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids
      * Changes any block names to its corresponding block ids using utility["getBlockId"]
      * @param {object} options Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
-     * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility["movements"].safeToBreak(), overrides useExtraInfo
+     * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"]
      * @return {Array} Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
      */
     findBlocks(options, safeToBreakFilter = false) {
