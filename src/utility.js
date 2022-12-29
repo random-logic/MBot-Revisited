@@ -49,7 +49,7 @@ class Utility {
      * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"]
      * @return {Array} Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
      */
-    findBlocks(options, safeToBreakFilter = false) {
+    findBlocks(options, safeToBreakFilter = true) {
         // Parse matching
         var matching = options["matching"];
         if (typeof matching === "string") {

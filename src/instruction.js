@@ -53,12 +53,12 @@ class Instruction {
     
         // Do instruction
         if (!this.doingInstruction) {
-            await this.doInstruction(module, instructionName, contents["args"], contents["options"]);
+            await this.doInstruction(module, instructionName, contents["args"]);
         }
         else {
             // Interrupt instruction before doing instruction
             await this.interrupt.interruptInstruction();
-            await this.doInstruction(module, instructionName, contents["args"], contents["options"]);
+            await this.doInstruction(module, instructionName, contents["args"]);
         }
     }
 
@@ -68,15 +68,14 @@ class Instruction {
      * @param {object} module The object to call the instruction on, like miner.js or health.js
      * @param {string} instructionName The name of the instruction
      * @param {object} args The args associated with the instruction
-     * @param {object} options The options associated with the instruction
      */
-    async doInstruction(module, instructionName, args, options) {
+    async doInstruction(module, instructionName, args) {
         this.doingInstruction = true;
     
         var instructionError = null, instructionThrewError = false;
     
         try {
-            await module[instructionName](args, options, this.interrupt);
+            await module[instructionName](args, this.interrupt);
         }
         catch (e) {
             instructionError = e;

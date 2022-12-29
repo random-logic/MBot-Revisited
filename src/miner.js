@@ -24,20 +24,28 @@ class Miner {
     /**
      * @typedef MineBlockArgs
      * @param {object} findBlocksOptions Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
+     * @param {bool} safeBlockFilter Filters out the blocks not safe to mine, default true, if set to true, findBlockOptions["useExtraInfo"] is overrided
+     * @param {number} numberOfBlocksToMine Mines a certain number of blocks, default Infinity
      */
+
     /**
      * Instruction to mine blocks until an instruction interrupts
      * @param {MineBlockArgs} args The args for this instruction
      * @param {object} options Has no effect for this instruction
      * @param {Interrupt} interrupt From interrupt.js, the object to refer to when checking for interrupts
      */
-    async mineBlocks(args, options, interrupt) {
+    async mineBlocks(args, interrupt) {
         // Parse args
         if (!args || typeof args !== "object") throw "Invalid Args";
-        var findBlocksOptions = args["findBlocksOptions"];
-        if (!findBlocksOptions || typeof findBlocksOptions !== "object") throw "Invalid Arg findBlockOptions";
+
+        // Check if the args are valid
+        if (!args["findBlocksOptions"] || typeof args["findBlocksOptions"] !== "object") throw "Invalid Arg findBlockOptions";
+        if (typeof args["safeBlockFilter"] !== "bool") args["safeBlockFilter"] = true;
+        if (typeof args["numberOfBlocksToMine"] !== "number") args["numberOfBlocksToMine"] = Infinity;
         
-        while (true) {
+        // Mine a specified number of blocks
+        var count = args["numberOfBlocksToMine"];
+        for (var i = 0; i < count; ++i) {
             // Check for interrupts
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
@@ -59,8 +67,8 @@ class Miner {
             this.bot.pathfinder.setMovements(defaultMove); // Update the movement instance pathfinder uses
 
             // Find path to any block that works
-            var i = 0, reachedGoal = false;
-            while (i != blockPositions.length) {
+            reachedGoal = false;
+            for (var j = 0; j < blockPositions.length; ++j) {
                 // Travel to block
                 try {
                     this.userInterface.log("Moving to mine block at position " + blockPositions[i]);
@@ -73,13 +81,16 @@ class Miner {
                     );
 
                     reachedGoal = true; // Reached the target block
+                    
+                    // Check for interrupts
+                    if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+                    
                     break;
                 }
                 catch(e) {
+                    // Log the error and continue loop
                     this.userInterface.logError(e);
-                    ++i; // Travel to next block if we couldn't get to the block
-                }
-                finally {
+
                     // Check for interrupts
                     if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
                 }

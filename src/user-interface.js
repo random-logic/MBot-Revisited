@@ -83,20 +83,6 @@ class UserInterface {
     logError(what) {
         console.error(what);
     }
-
-    /**
-     * @typedef LogArgs
-     * @param {string} message The message to log
-     */
-    /**
-     * Instruction to log message to output
-     * @param {LogArgs} args The args associated with this instruction
-     * @param {object} options This has no effect for this instruction
-     * @param {Interrupt} interrupt This has no effect for this instruction
-     */
-    /*logInstruction(args, options = null, interrupt = null) {
-        // ??
-    }*/
 }
 
 module.exports = UserInterface;
