@@ -1,8 +1,8 @@
 const UserInterface = require("./user-interface");
 
-const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalBlock } = require("mineflayer-pathfinder").goals;
+const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalBlock, GoalCompositeAny } = require("mineflayer-pathfinder").goals;
 
-const { Movements } = require('mineflayer-pathfinder') // Import the Movements class from pathfinder ??
+const { Movements } = require('mineflayer-pathfinder'); // Import the Movements class from pathfinder ??
 
 /**
  * This class is focused on mining instructions
@@ -62,19 +62,27 @@ class Miner {
 
             // ?? Make sure netherrack is part of scafolding blocks 
             const defaultMove = new Movements(this.bot);
+            defaultMove.allowParkour = false; // ?? Don't allow parkour
             defaultMove.scafoldingBlocks.push(this.utility.getBlockId('netherrack')); // Add nether rack to allowed scaffolding items
             this.bot.pathfinder.setMovements(defaultMove); // Update the movement instance pathfinder uses
 
             // Find path to any block that works
             var reachedGoal = false;
             var blockIndex = 0;
-            for (;blockIndex < blockPositions.length; ++blockIndex) {
+            for (; blockIndex < blockPositions.length; ++blockIndex) {
                 // Travel to block
                 try {
                     this.userInterface.log("Moving to mine block at position " + blockPositions[blockIndex]);
 
                     await this.bot.pathfinder.goto(
-                        new GoalLookAtBlock(blockPositions[blockIndex], this.bot.world, { "range" : 4 })
+                        new GoalCompositeAll([
+                            new GoalLookAtBlock(blockPositions[blockIndex], this.bot.world, { "range" : 4 }),
+                            new GoalCompositeAny([ // Make sure the bot doesn't jump to break the block
+                                new GoalY(blockPositions[blockIndex].y),
+                                new GoalY(blockPositions[blockIndex].y + 1),
+                                new GoalY(blockPositions[blockIndex].y - 1)
+                            ])
+                        ])
                     );
 
                     reachedGoal = true; // Reached the target block

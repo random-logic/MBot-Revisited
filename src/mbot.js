@@ -25,9 +25,8 @@ class Mbot {
     /**
      * @param {object} settings Refer to login-example.json
      * @param {object} commands Refer to command-example.json
-     * @param {bool} createBot Calls createBot if true
      */
-    constructor(settings, commands, createBot = true) {
+    constructor(settings, commands) {
         // Custom settings
         // These variables shall not change reference
         this.settings = settings;
@@ -46,10 +45,6 @@ class Mbot {
         this.interrupt = new Interrupt();
         this.userInterface = new UserInterface(this.settings, this); // Can be modified to handle many mbot references
         this.instruction = new Instruction(this.commands, this.modules, this.interrupt, this.userInterface);
-
-        if (createBot) {
-            this.createBot();
-        }
     }
 
     /**
