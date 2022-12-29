@@ -8,10 +8,11 @@ class Instruction {
      * @param {object} modules The object that stores all of the custom modules like miner.js and health.js
      * @param {Interrupt} interrupt Refer to Interrupt.js
      */
-    constructor(commands, modules, interrupt) {
+    constructor(commands, modules, interrupt, userInterface) {
         this.commands = commands;
         this.modules = modules;
         this.interrupt = interrupt;
+        this.userInterface = userInterface;
         this.doingInstruction = false;
     }
     
@@ -70,16 +71,15 @@ class Instruction {
      * @param {object} args The args associated with the instruction
      */
     async doInstruction(module, instructionName, args) {
-        this.doingInstruction = true;
-    
-        var instructionError = null, instructionThrewError = false;
+        this.doingInstruction = true; // Start doing instruction
     
         try {
+            // Try to do the instruction
             await module[instructionName](args, this.interrupt);
         }
         catch (e) {
-            instructionError = e;
-            instructionThrewError = true;
+            // Log the error to user interface if an error is thrown
+            this.userInterface.logError(e);
         }
         finally {
             // Check for interrupt
@@ -89,9 +89,6 @@ class Instruction {
             else {
                 this.doingInstruction = false; // Otherwise we are not doing an instruction
             }
-    
-            if (instructionThrewError)
-                throw instructionError;
         }
     }
 }

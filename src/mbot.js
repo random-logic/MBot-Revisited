@@ -44,8 +44,8 @@ class Mbot {
         // Interrupts and instructions are independent from mineflayer
         // These variables shall not change its reference
         this.interrupt = new Interrupt();
-        this.instruction = new Instruction(this.commands, this.modules, this.interrupt);
         this.userInterface = new UserInterface(this.settings, this); // Can be modified to handle many mbot references
+        this.instruction = new Instruction(this.commands, this.modules, this.interrupt, this.userInterface);
 
         if (createBot) {
             this.createBot();
