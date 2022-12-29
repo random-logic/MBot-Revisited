@@ -6,9 +6,9 @@
 4. npm install
 
 ## To do
-1. Fix discord message empty error that makes program quit completely
 2. Bot decided to try to mine ancient debris block with lava nearby, fix it
-3. Bot sometimes has trouble harvesting
+3. Bot sometimes has trouble harvesting as it just freezes, I think this is if the block is at head level and not at foot level?
+ - Possible solution: limit the positions bot can be next to the block
 4. Bot once got stuck on a block when moving
 5. Bot doesn't seem to use alternate blocks / paths, do some more testing on this
  - Possible Solution: let user choose to skip some blocks

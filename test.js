@@ -2,8 +2,8 @@
 const mineflayer = require("mineflayer")
 const bot = mineflayer.createBot({
     "host": "localhost",
-    "port": "53153",
-    "username": "Player",
+    "port": "54505",
+    "username": "MBot",
     "password": ""
 })
 let mcData
@@ -11,26 +11,26 @@ let mcData
 // Load collect block
 bot.loadPlugin(require('mineflayer-collectblock').plugin)
 
-async function collectGrass() {
-  // Find a nearby grass block
-  const grass = bot.findBlock({
-    matching: mcData.blocksByName.grass_block.id,
+async function collect() {
+  // Find a nearby block
+  const block = bot.findBlock({
+    matching: 749, // id for ancient_debris
     maxDistance: 64
   })
 
-  if (grass) {
+  if (block) {
     // If we found one, collect it.
     try {
-      await bot.collectBlock.collect(grass)
-      collectGrass() // Collect another grass block
+      await bot.collectBlock.collect(block)
+      collect() // Collect another block
     } catch (err) {
       console.log(err) // Handle errors, if any
     }
   }
 }
 
-// On spawn, start collecting all nearby grass
+// On spawn, start collecting all nearby block
 bot.once('spawn', () => {
   mcData = require('minecraft-data')(bot.version)
-  collectGrass()
+  collect()
 })

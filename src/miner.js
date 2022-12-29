@@ -71,12 +71,12 @@ class Miner {
             for (var j = 0; j < blockPositions.length; ++j) {
                 // Travel to block
                 try {
-                    this.userInterface.log("Moving to mine block at position " + blockPositions[i]);
+                    this.userInterface.log("Moving to mine block at position " + blockPositions[j]);
 
                     await this.bot.pathfinder.goto(
                         new GoalCompositeAll([
-                            new GoalGetToBlock(blockPositions[i].x, blockPositions[i].y, blockPositions[i].z),
-                            new GoalY(blockPositions[i].y)
+                            new GoalGetToBlock(blockPositions[j].x, blockPositions[j].y, blockPositions[j].z),
+                            new GoalY(blockPositions[j].y)
                         ])
                     );
 
