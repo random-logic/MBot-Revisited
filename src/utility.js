@@ -2,8 +2,8 @@ const fsPromise = require("fs").promises;
 
 /**
  * @class
- * @extends Module
  * These are helper methods.
+ * @extends Module
  */
 class Utility {
     /**

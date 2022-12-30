@@ -2,13 +2,13 @@ const UserInterface = require("./user-interface");
 
 const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalBlock, GoalCompositeAny } = require("mineflayer-pathfinder").goals;
 
-const { Movements } = require('mineflayer-pathfinder'); // Import the Movements class from pathfinder ??
+const { Movements } = require('mineflayer-pathfinder');
 
 /**
  * @class
- * @extends Module
  * Allows the bot to mine blocks.
  * Requires {@link Mover}.
+ * @extends Module
  */
 class Miner {
     /**

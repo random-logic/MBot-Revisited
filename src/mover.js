@@ -5,7 +5,8 @@
 const { Movements } = require("mineflayer-pathfinder");
 
 /**
- * @class Controls moving the bot using [mineflayer-pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
+ * @class
+ * Controls moving the bot using [mineflayer-pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
  * @extends Module
  */
 class Mover {
