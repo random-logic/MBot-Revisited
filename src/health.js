@@ -23,7 +23,9 @@ class Health {
          * @property {bool} exitBeforeDeath The bot will attempt to log off to avoid death if set to true. ?? To do
          */
         this.exitBeforeDeath = true;
+    }
 
+    onCreateBot() {
         this.mbot.bot.on("health", () => {
             this.mbot.userInterface.log("Health: " + this.mbot.bot.health);
 

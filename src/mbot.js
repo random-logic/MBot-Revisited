@@ -30,6 +30,8 @@ const inventoryView = require('mineflayer-web-inventory');
  * Has user interface to interact with bot (handled by user-interface.js).
  * Other functionality is handled by other modules.
  */
+
+// ?? To do: provide better documentation for this
 class Mbot {
     /**
      * @typedef Settings
@@ -52,7 +54,6 @@ class Mbot {
         this.settings = settings;
         this.commands = commands;
         
-        // These variables are dependent on mineflayer
         /**
          * @property {object} bot The actual [mineflayer]{@link https://github.com/PrismarineJS/mineflayer#mineflayer} bot.
          */
@@ -69,9 +70,13 @@ class Mbot {
         this.movements = null;
 
         /**
-         * @property {object} modules The object stores all of the custom [modules]{@link Module}.
+         * @property {object} modules The object that stores all of the [modules]{@link Module}.
          */
-        this.modules = {};
+        this.modules = {
+            "utility" : new Utility(this),
+            "miner" : new Miner(this),
+            "health" : new Health(this)
+        };
 
         /**
          * @property {UserInterface} userInterface The user interface linked to this bot.
@@ -116,11 +121,6 @@ class Mbot {
             // Initialize game data
             this.mcData = mcData(this.bot.version);
             this.movements = new Movements(this.bot);
-    
-            // Load custom scripts
-            this.modules["utility"] = new Utility(this);
-            this.modules["miner"] = new Miner(this);
-            this.modules["health"] = new Health(this);
 
             // Display viewer on web
             if (args && args["createBotView"]) {
@@ -142,6 +142,11 @@ class Mbot {
                 if (username == this.bot.username) return;
                 this.userInterface.logMinecraftChat(username, message);
             });
+
+            // Invoke the callbacks for all modules
+            for (const property in this.modules) {
+                if (this.modules[property].onCreateBot) this.modules[property].onCreateBot();
+            }
 
             resolveSpawn();
         });

@@ -21,6 +21,8 @@ class Miner {
         this.mbot = mbot;
     }
 
+    onCreateBot() {}
+
     /**
      * @typedef MineBlockArgs
      * @property {object} findBlocksOptions See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.

@@ -24,6 +24,8 @@ class Mover {
         this.movements = new Movements();
     }
 
+    onCreateBot() {}
+
     /**
      * Wrapper for Utility.findBlocks(options)
      * @param {object} options Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions

@@ -14,8 +14,6 @@ class Utility {
          * @property {Mbot} mbot The instance of Mbot that this module is mounted to.
          */
         this.mbot = mbot;
-
-        this.onCreateBot(); // ?? Remove when we refactor the classes to be instantiated outside the bot
     }
 
     onCreateBot() {
