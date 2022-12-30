@@ -70,7 +70,7 @@ class UserInterface {
 
                 // Check where the message is sent
                 if (message.channel.id == this.commandChannel.id) {
-                    this.mbot?.instruction.getCommand(message.content)
+                    this.mbot?.instructionManager.getCommand(message.content)
                     .then(() => message.channel.send("Finished command " + message.content))
                     .catch(e => this.logError(e));
                 }

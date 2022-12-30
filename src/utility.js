@@ -2,6 +2,7 @@ const fsPromise = require("fs").promises;
 
 /**
  * @class
+ * @extends Module
  * These are helper methods.
  */
 class Utility {
@@ -14,6 +15,10 @@ class Utility {
          */
         this.mbot = mbot;
 
+        this.onCreateBot(); // ?? Remove when we refactor the classes to be instantiated outside the bot
+    }
+
+    onCreateBot() {
         // For calculating physics ticks
         this.mbot.bot.physicsEnabled = true;
         this.mbot.bot.on("physicsTick", () => {

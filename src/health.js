@@ -1,5 +1,6 @@
 /**
  * @class
+ * @extends Module
  * Manages the health of the bot.
  * Requires [mineflayer-auto-eat]{@link https://github.com/link-discord/mineflayer-auto-eat}.
  */

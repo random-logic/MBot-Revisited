@@ -49,7 +49,7 @@ class Miner {
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             // Find blocks, blocks is an array
-            const blockPositions = this.mbot.utility.findBlocks(args["findBlocksOptions"], true);
+            const blockPositions = this.mbot.modules["utility"].findBlocks(args["findBlocksOptions"], true);
 
             // Check to see if any blocks are found
             if (blockPositions.length == 0) throw "Could not find any blocks of that type";
@@ -63,7 +63,7 @@ class Miner {
             // ?? Make sure netherrack is part of scafolding blocks 
             const defaultMove = new Movements(this.mbot.bot);
             defaultMove.allowParkour = false; // ?? Don't allow parkour, because he almost got stuck doing parkour
-            defaultMove.scafoldingBlocks.push(this.mbot.utility.getBlockId('netherrack')); // Add nether rack to allowed scaffolding items
+            defaultMove.scafoldingBlocks.push(this.mbot.modules["utility"].getBlockId('netherrack')); // Add nether rack to allowed scaffolding items
             this.mbot.bot.pathfinder.setMovements(defaultMove); // Update the movement instance pathfinder uses
 
             // Find path to any block that works
@@ -126,10 +126,10 @@ class Miner {
             this.mbot.userInterface.log("Finished digging block");
 
             // Wait for entity to spawn
-            await this.mbot.utility.waitForPhysicsTicks(10);
+            await this.mbot.modules["utility"].waitForPhysicsTicks(10);
 
             // Start checking if entity mined is picked up or not
-            var waitForEntityGone = this.mbot.utility.waitForEntityGone(block.entity);
+            var waitForEntityGone = this.mbot.modules["utility"].waitForEntityGone(block.entity);
 
             // Collect block as entity
             await this.mbot.bot.pathfinder.goto(

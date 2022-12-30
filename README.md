@@ -5,6 +5,12 @@
 3. Go to the repository
 4. npm install
 
+## Create Documentation
+jsdoc src
+
+## View Documentation
+out/index.html
+
 ## To do
 1. Create mover.js
 - Have this store the default Movement class that will apply to pathfinder
