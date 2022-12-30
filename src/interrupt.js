@@ -1,14 +1,24 @@
 /**
- * This class allows other instructions to interrupt the current instruction
+ * @class
+ * This class allows other instructions to interrupt the current instruction in {@link InstructionManager}.
  */
 class Interrupt {
-    /**
-     * Constructor
-     */
     constructor() {
-        this.hasInterrupt = false; // This field should only be read from and not modified
-        this.onInterrupt = null; // Callback when an interrupt occurs
-        this.resolveCallee = null; // This shouldn't be touched, tells the callee that the interrupt has been resolved
+        /**
+         * @property {bool} hasInterrupt True if an instruction is trying to interrupt another instruction. This field should only be read from.
+         */
+        this.hasInterrupt = false;
+
+        /**
+         * @callback OnInterrupt
+         */
+
+        /**
+         * @property {OnInterrupt} onInterrupt Callback when an interrupt occurs.
+         */
+        this.onInterrupt = null;
+        
+        this.resolveCallee = null;
     }
     
     /**
