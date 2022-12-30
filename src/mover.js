@@ -25,8 +25,6 @@ class Mover {
         this.movements = new Movements();
     }
 
-    onCreateBot() {}
-
     /**
      * Instruction to apply the saved movements to [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
      * @param {object} args Has no effect for this method.
