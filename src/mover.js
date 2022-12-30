@@ -27,11 +27,14 @@ class Mover {
     onCreateBot() {}
 
     /**
-     * Wrapper for Utility.findBlocks(options)
-     * @param {object} options Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
+     * Wrapper for findBlocks method in {@link Utility}.
+     * Only returns blocks that are safe to break. Overrides options["useExtraInfo"].
+     * @param {object} options See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     * @return {Array} See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      */
     findSafeToBreakBlocks(options) {
-        // ??
+        options["useExtraInfo"] = block => this.movements.safeToBreak(block);
+        return this.mbot.modules["utility"].findBlocks(options);
     }
 }
 
