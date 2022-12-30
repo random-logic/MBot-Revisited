@@ -28,6 +28,7 @@ const inventoryView = require('mineflayer-web-inventory');
  * Join and quit game.
  * View bot and inventory in web browser.
  * Has user interface to interact with bot (handled by user-interface.js).
+ * Loads all mineflayer plugins that the modules depend on.
  * Other functionality is handled by other modules.
  */
 
