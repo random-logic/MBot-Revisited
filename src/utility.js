@@ -43,12 +43,12 @@ class Utility {
     }
     
     /**
-     * Wrapper for bot.findBlocks(options)
-     * Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids
-     * Changes any block names to its corresponding block ids using utility["getBlockId"]
-     * @param {object} options Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
-     * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"]
-     * @return {Array} Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
+     * Wrapper for [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     * Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids.
+     * Changes any block names to its corresponding block ids using utility["getBlockId"].
+     * @param {object} options See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"].
+     * @return {Array} See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      */
     findBlocks(options, safeToBreakFilter = true) {
         // Parse matching
@@ -74,10 +74,10 @@ class Utility {
     }
 
     /**
-     * Converts the block name to the corresponding id
-     * Throws error if corresponding id not found
-     * @param {string} blockName The name of the block
-     * @return {number} The block id
+     * Converts the block name to the corresponding id.
+     * Throws error if corresponding id not found.
+     * @param {string} blockName The name of the block.
+     * @return {number} The block id.
      */
     getBlockId(blockName) {
         const blockId = this.mbot.mcData.blocksByName[blockName].id;
@@ -86,9 +86,9 @@ class Utility {
     }
 
     /**
-     * Wait for a specified number of physics ticks
-     * @param {number} count The number of physics ticks to wait for
-     * @return {Promise} Resolves after waiting for count physics ticks
+     * Wait for a specified number of physics ticks.
+     * @param {number} count The number of physics ticks to wait for.
+     * @return {Promise} Resolves after waiting for count physics ticks.
      */
     async waitForPhysicsTicks(count) {
         return new Promise(resolve => {
@@ -99,9 +99,9 @@ class Utility {
     }
 
     /**
-     * Wait for the specified entity to disappear
-     * @param {Entity} entity The entity that should disappear
-     * @return {Promise} A promise that resolves when the entity disappears
+     * Wait for the specified entity to disappear.
+     * @param {Entity} entity The entity that should disappear.
+     * @return {Promise} A promise that resolves when the entity disappears.
      */
     async waitForEntityGone(entity) {
         return new Promise(resolve => {
@@ -112,14 +112,30 @@ class Utility {
         })
     }
 
+    /**
+     * Parses a JSON object from a file.
+     * @param {string} path The path of the json file.
+     * @returns {Promise} Promise resolves with the object that represents the JSON object when finished.
+     */
     static async readJsonFile(path) {
         return JSON.parse(await fsPromise.readFile(path));
     }
 
+    /**
+     * Writes a JSON object to a file.
+     * @param {string} path The path of the json file.
+     * @param {object} content The object that represents the JSON object.
+     * @returns {Promise} Promise resolves when finished.
+     */
     static async writeJsonFile(path, content) {
         return fsPromise.writeFile(path, JSON.stringify(content, "\t"));
     }
 
+    /**
+     * Waits for number of milliseconds.
+     * @param {number} count The time to wait.
+     * @returns {Promise} Promise resolves when time is up.
+     */
     static async waitForMilliseconds(count) {
         return new Promise(resolve => {
             setTimeout(() => {

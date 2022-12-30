@@ -327,7 +327,7 @@
 
 
 <div class="description">
-    Wrapper for bot.findBlocks(options)Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and idsChanges any block names to its corresponding block ids using utility["getBlockId"]
+    Wrapper for <a href="https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions">findBlocks</a>.Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids.Changes any block names to its corresponding block ids using utility["getBlockId"].
 </div>
 
 
@@ -385,7 +385,7 @@
                 </td>
             
 
-            <td class="description last">Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions</td>
+            <td class="description last">See <a href="https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions">findBlocks</a>.</td>
         </tr>
 
     
@@ -414,7 +414,7 @@
                 </td>
             
 
-            <td class="description last">Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"]</td>
+            <td class="description last">Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"].</td>
         </tr>
 
     
@@ -484,7 +484,7 @@
 
         
 <div class="param-desc">
-    Refer to https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions
+    See <a href="https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions">findBlocks</a>.
 </div>
 
 
@@ -521,7 +521,7 @@
 
 
 <div class="description">
-    Converts the block name to the corresponding idThrows error if corresponding id not found
+    Converts the block name to the corresponding id.Throws error if corresponding id not found.
 </div>
 
 
@@ -573,7 +573,7 @@
 
             
 
-            <td class="description last">The name of the block</td>
+            <td class="description last">The name of the block.</td>
         </tr>
 
     
@@ -643,7 +643,7 @@
 
         
 <div class="param-desc">
-    The block id
+    The block id.
 </div>
 
 
@@ -680,7 +680,7 @@
 
 
 <div class="description">
-    Wait for the specified entity to disappear
+    Wait for the specified entity to disappear.
 </div>
 
 
@@ -732,7 +732,7 @@
 
             
 
-            <td class="description last">The entity that should disappear</td>
+            <td class="description last">The entity that should disappear.</td>
         </tr>
 
     
@@ -802,7 +802,7 @@
 
         
 <div class="param-desc">
-    A promise that resolves when the entity disappears
+    A promise that resolves when the entity disappears.
 </div>
 
 
@@ -839,7 +839,7 @@
 
 
 <div class="description">
-    Wait for a specified number of physics ticks
+    Wait for a specified number of physics ticks.
 </div>
 
 
@@ -891,7 +891,7 @@
 
             
 
-            <td class="description last">The number of physics ticks to wait for</td>
+            <td class="description last">The number of physics ticks to wait for.</td>
         </tr>
 
     
@@ -961,7 +961,507 @@
 
         
 <div class="param-desc">
-    Resolves after waiting for count physics ticks
+    Resolves after waiting for count physics ticks.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".readJsonFile"><span class="type-signature">(async, static) </span>readJsonFile<span class="signature">(path)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Parses a JSON object from a file.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The path of the json file.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line120">line 120</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise resolves with the object that represents the JSON object when finished.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".waitForMilliseconds"><span class="type-signature">(async, static) </span>waitForMilliseconds<span class="signature">(count)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Waits for number of milliseconds.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The time to wait.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line139">line 139</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise resolves when time is up.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".writeJsonFile"><span class="type-signature">(async, static) </span>writeJsonFile<span class="signature">(path, content)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Writes a JSON object to a file.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The path of the json file.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The object that represents the JSON object.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line130">line 130</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise resolves when finished.
 </div>
 
 
@@ -1006,7 +1506,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Fri Dec 30 2022 00:15:49 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Fri Dec 30 2022 00:23:13 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
