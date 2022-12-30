@@ -107,4 +107,4 @@ dist
 .vscode
 
 # don't post login information online
-login.json
+settings.json
