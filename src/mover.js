@@ -29,11 +29,22 @@ class Mover extends Module {
 
     /**
      * Instruction to apply the saved movements to [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
-     * @param {object} args Has no effect for this method.
-     * @param {Interrupt} interrupt Has no effect for this method.
+     * @param {MovementsSettings} [args = null] Modifies {@link EnhancedMovements} using the settings provided before applying it to [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
+     * @param {Interrupt} [interrupt = null] Has no effect for this method.
      */
     applyMovements(args = null, interrupt = null) {
+        this.movements.modifyMovements(args);
         this.mbot.bot.pathfinder.setMovements(this.movements);
+    }
+
+    /**
+     * Instruction that calls resetMovements and applyMovements.
+     * @param {MovementsSettings} [args = null] Modifies {@link EnhancedMovements} using the settings provided before applying it to [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
+     * @param {Interrupt} [interrupt = null] Has no effect for this method.
+     */
+    resetAndApplyMovements(args = null, interrupt = null) {
+        this.resetMovements();
+        this.applyMovements(args, interrupt);
     }
 
     /**

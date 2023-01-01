@@ -10,6 +10,7 @@
             },
             "movements" : {
                 "set" : {
+                    "canMoveDiagonally": true,
                     "allowParkour": false
                 },
                 "add" : {

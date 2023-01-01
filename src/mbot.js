@@ -3,9 +3,10 @@ const InstructionManager = require("./instruction-manager");
 const UserInterface = require("./user-interface");
 
 // Custom modules with dependence on mineflayer
+const Mover = require("./mover");
 const Utility = require("./utility");
-const Miner = require("./miner.js");
-const Health = require("./health.js");
+const Miner = require("./miner");
+const Health = require("./health");
 
 // Mineflayer essential
 const mineflayer = require("mineflayer");
@@ -79,6 +80,7 @@ class Mbot {
          * @property {object} modules The object that only stores instances of {@link Module} (that are mounted to this bot) as values.
          */
         this.modules = {
+            "mover" : new Mover(this),
             "utility" : new Utility(this),
             "miner" : new Miner(this),
             "health" : new Health(this)

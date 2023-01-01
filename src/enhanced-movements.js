@@ -24,9 +24,9 @@ class EnhancedMovements extends Movements {
         super(bot);
 
         /**
-         * @property {bool} [canMoveDiagonally = false] Specifies whether the bot can move diagonally or not.
+         * @property {bool} [canMoveDiagonally = true] Specifies whether the bot can move diagonally or not.
          */
-        this.canMoveDiagonally = false;
+        this.canMoveDiagonally = true;
     }
 
     /**
