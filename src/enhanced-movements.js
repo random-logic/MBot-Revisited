@@ -83,11 +83,12 @@ class EnhancedMovements extends Movements {
           }
         }
     
-        // Diagonals disabled
-        // for (const i in diagonalDirections) {
-        //  const dir = diagonalDirections[i]
-        //  this.getMoveDiagonal(node, dir, neighbors)
-        //}
+        if (this.canMoveDiagonally) {
+            for (const i in diagonalDirections) {
+                const dir = diagonalDirections[i]
+                this.getMoveDiagonal(node, dir, neighbors)
+            }
+        }
     
         this.getMoveDown(node, neighbors);
         this.getMoveUp(node, neighbors);
