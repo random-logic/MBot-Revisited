@@ -2,6 +2,8 @@ const fsPromise = require("fs").promises;
 
 const Module = require("./module");
 
+const mcData = require("minecraft-data");
+
 /**
  * @class
  * These are helper methods.
@@ -13,9 +15,17 @@ class Utility extends Module {
      */
     constructor(mbot) {
         super(mbot, "utility");
+
+        /**
+         * @property {object} mcData The [minecraft-data]{@link https://github.com/PrismarineJS/minecraft-data} associated with the bot.
+         */
+        this.mcData = null;
     }
 
     onSpawn() {
+        // Initialize game data
+        this.mcData = mcData(this.mbot.bot.version);
+
         // For calculating physics ticks
         this.mbot.bot.physicsEnabled = true;
         this.mbot.bot.on("physicsTick", () => {
@@ -74,7 +84,7 @@ class Utility extends Module {
      * @return {number} The block id.
      */
     getBlockId(blockName) {
-        const blockId = this.mbot.mcData.blocksByName[blockName].id;
+        const blockId = this.mcData.blocksByName[blockName].id;
         if (Number.isNaN(blockId)) throw "Invalid Block Name";
         return blockId;
     }

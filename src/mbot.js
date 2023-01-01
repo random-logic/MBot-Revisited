@@ -8,11 +8,8 @@ const Utility = require("./utility");
 const Miner = require("./miner");
 const Health = require("./health");
 
-// Mineflayer essential
+// Mineflayer
 const mineflayer = require("mineflayer");
-const mcData = require("minecraft-data");
-
-// Mineflayer modules
 const botView = require('prismarine-viewer').mineflayer;
 const inventoryView = require('mineflayer-web-inventory');
 
@@ -62,11 +59,6 @@ class Mbot {
          * @property {Bot} bot The actual mineflayer bot.
          */
         this.bot = null;
-
-        /**
-         * @property {object} mcData The [minecraft-data]{@link https://github.com/PrismarineJS/minecraft-data} associated with the bot.
-         */
-        this.mcData = null;
 
         /**
          * @property {object} modules The object that only stores instances of {@link Module} (that are mounted to this bot) as values.
@@ -120,9 +112,6 @@ class Mbot {
         });
 
         this.bot.once("spawn", () => {
-            // Initialize game data
-            this.mcData = mcData(this.bot.version);
-
             // Display viewer on web
             if (args && args["createBotView"]) {
                 botView(this.bot, args["botViewOptions"]);
@@ -166,7 +155,6 @@ class Mbot {
     quit(args = null, interrupt = null) {
         this.bot.quit();
         this.bot = null;
-        this.mcData = null;
     }
 
     /*
