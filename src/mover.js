@@ -17,6 +17,10 @@ class Mover extends Module {
         /**
          * @property {EnhancedMovements} movements Can be applied to the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
          */
+        this.movements = null;
+    }
+
+    onCreateBot() {
         this.movements = new EnhancedMovements(this.mbot.bot);
     }
 

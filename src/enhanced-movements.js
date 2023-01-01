@@ -12,6 +12,13 @@ const { Movements } = require("mineflayer-pathfinder");
  */
 
 /**
+ * @typedef Vector2
+ * @summary An object that represents a Vector2 that is perpendicular to the y-axis in the minecraft world.
+ * @property {number} x The x coordinate
+ * @property {number} z The z coordinate
+ */
+
+/**
  * @class
  * Enhanced version allows you to add {@link Movements} with just one function. Diagonal movements can also be disabled.
  * @extends Movements
@@ -27,6 +34,26 @@ class EnhancedMovements extends Movements {
          * @property {bool} [canMoveDiagonally = true] Specifies whether the bot can move diagonally or not.
          */
         this.canMoveDiagonally = true;
+        
+        /**
+         * @property {Array} cardinalDirections An array that contains instances of {@link Vector2} which represents the directions of the bot in the minecraft world.
+         */
+        this.cardinalDirections = [
+            { x: -1, z: 0 }, // West
+            { x: 1, z: 0 }, // East
+            { x: 0, z: -1 }, // North
+            { x: 0, z: 1 } // South
+        ];
+
+        /**
+         * @property {Array} diagonalDirections An Array that contains instances of {@link Vector2} which represent the diagonal directions of the bot in the minecraft world
+         */
+        this.diagonalDirections = [
+            { x: -1, z: -1 },
+            { x: -1, z: 1 },
+            { x: 1, z: -1 },
+            { x: 1, z: 1 }
+        ];
     }
 
     /**
@@ -72,13 +99,13 @@ class EnhancedMovements extends Movements {
 
         if (modifications["set"]) {
             for (const [key, value] of Object.entries(modifications["set"])) {
-                setMovements(key, value);
+                this.setMovements(key, value);
             }
         }
 
         if (modifications["add"]) {
-            for (const [key, value] of Object.entries(modifications["set"])) {
-                addMovements(key, value);
+            for (const [key, value] of Object.entries(modifications["add"])) {
+                this.addMovements(key, value);
             }
         }
     }
@@ -87,8 +114,8 @@ class EnhancedMovements extends Movements {
         const neighbors = [];
     
         // Simple moves in 4 cardinal points
-        for (const i in cardinalDirections) {
-          const dir = cardinalDirections[i];
+        for (const i in this.cardinalDirections) {
+          const dir = this.cardinalDirections[i];
           this.getMoveForward(node, dir, neighbors);
           this.getMoveJumpUp(node, dir, neighbors);
           this.getMoveDropDown(node, dir, neighbors);
@@ -98,8 +125,8 @@ class EnhancedMovements extends Movements {
         }
     
         if (this.canMoveDiagonally) {
-            for (const i in diagonalDirections) {
-                const dir = diagonalDirections[i]
+            for (const i in this.diagonalDirections) {
+                const dir = this.diagonalDirections[i]
                 this.getMoveDiagonal(node, dir, neighbors)
             }
         }

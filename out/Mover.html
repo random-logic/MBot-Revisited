@@ -438,7 +438,7 @@
     
 
     
-    <h4 class="name" id="applyMovements"><span class="type-signature"></span>applyMovements<span class="signature">(args, interrupt)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="applyMovements"><span class="type-signature"></span>applyMovements<span class="signature">(args<span class="signature-attributes">opt</span>, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -470,6 +470,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
         <th>Default</th>
@@ -490,12 +492,22 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type"><a href="global.html#MovementsSettings">MovementsSettings</a></span>
 
 
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -506,7 +518,7 @@
                 </td>
             
 
-            <td class="description last">Has no effect for this method.</td>
+            <td class="description last">Modifies <a href="EnhancedMovements.html">EnhancedMovements</a> using the settings provided before applying it to <a href="https://github.com/PrismarineJS/mineflayer-pathfinder">pathfinder</a>.</td>
         </tr>
 
     
@@ -525,6 +537,16 @@
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -576,7 +598,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line35">line 35</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line39">line 39</a>
     </li></ul></dd>
     
 
@@ -713,7 +735,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line45">line 45</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -864,6 +886,202 @@
     
 
     
+    <h4 class="name" id="resetAndApplyMovements"><span class="type-signature"></span>resetAndApplyMovements<span class="signature">(args<span class="signature-attributes">opt</span>, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Instruction that calls resetMovements and applyMovements.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#MovementsSettings">MovementsSettings</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Modifies <a href="EnhancedMovements.html">EnhancedMovements</a> using the settings provided before applying it to <a href="https://github.com/PrismarineJS/mineflayer-pathfinder">pathfinder</a>.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Has no effect for this method.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="resetMovements"><span class="type-signature"></span>resetMovements<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
@@ -916,7 +1134,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line26">line 26</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -968,7 +1186,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Dec 31 2022 22:45:24 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Dec 31 2022 23:02:22 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
