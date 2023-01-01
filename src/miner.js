@@ -80,9 +80,6 @@ class Miner extends Module {
 
                     reachedGoal = true; // Reached the target block
                     
-                    // Check for interrupts
-                    if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
-                    
                     break;
                 }
                 catch(e) {
@@ -93,6 +90,9 @@ class Miner extends Module {
                     if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
                 }
             }
+
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             if (!reachedGoal) throw "Couldn't reach any blocks of the specified type";
 
@@ -121,12 +121,22 @@ class Miner extends Module {
             // Wait for entity to spawn
             await this.mbot.modules["utility"].waitForPhysicsTicks(10);
 
+            // See if the block entity spawned
+            const entity = this.mbot.bot.nearestEntity(
+                entity => entity.getDroppedItem()?.name === block.name
+            );
+
+            if (!entity) {
+                console.log("there is no entity, moving on");
+                continue;
+            }
+
             // Start checking if entity mined is picked up or not
-            var waitForEntityGone = this.mbot.modules["utility"].waitForEntityGone(block.entity);
+            var waitForEntityGone = this.mbot.modules["utility"].waitForEntityGone(entity);
 
             // Collect block as entity
-            await this.mbot.bot.pathfinder.goto(
-                new GoalFollow(block, 0)
+            this.mbot.bot.pathfinder.setGoal(
+                new GoalFollow(entity, 0)
             );
 
             // Do not continue until entity picked up

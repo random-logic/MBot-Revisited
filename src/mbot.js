@@ -61,7 +61,7 @@ class Mbot {
         this.bot = null;
 
         /**
-         * @property {object} modules The object that only stores instances of {@link Module} (that are mounted to this bot) as values.
+         * @property {object} modules The object that only stores {@link Module}. The names are keys and the actual {@link Module} are values. These modules are mounted to Mbot.
          */
         this.modules = {
             "mover" : new Mover(this),

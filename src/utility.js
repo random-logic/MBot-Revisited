@@ -54,7 +54,7 @@ class Utility extends Module {
     /**
      * Wrapper for [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      * Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids.
-     * Changes any block names to its corresponding block ids using utility["getBlockId"].
+     * Changes any block names to its corresponding block ids using utility["getId"].
      * @param {object} options See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      * @return {Array} See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      */
@@ -62,12 +62,12 @@ class Utility extends Module {
         // Parse matching
         var matching = options["matching"];
         if (typeof matching === "string") {
-            matching = this.getBlockId(matching);
+            matching = this.getId(matching);
         }
         else if (Array.isArray(matching)) {
             for (var i = 0; i < matching.length; ++i) {
                 if (typeof matching[i] === "string") {
-                    matching[i] = this.getBlockId(matching[i]);
+                    matching[i] = this.getId(matching[i]);
                 }
             }
         }
@@ -78,14 +78,61 @@ class Utility extends Module {
     }
 
     /**
-     * Converts the block name to the corresponding id.
-     * Throws error if corresponding id not found.
-     * @param {string} blockName The name of the block.
-     * @return {number} The block id.
+     * Wrapper for getIdIfExists, but it will iterate through an {@link Array} or {@link Set}
+     * @param {*} blockNames The name if it exists.
+     * @param {string} [type = "block"] The type to querry for id.
      */
-    getBlockId(blockName) {
-        const blockId = this.mcData.blocksByName[blockName].id;
-        if (Number.isNaN(blockId)) throw "Invalid Block Name";
+    getIdsIfExists(blockNames, type = "block") {
+        if (Array.isArray(blockNames)) {
+            var blockIds = new Array();
+
+            for (const blockName of blockNames) {
+                blockIds.push(this.getIdIfExists(blockName, type));
+            }
+
+            return blockIds;
+        }
+        else if (blockNames instanceof Set) {
+            var blockIds = new Set();
+
+            for (const blockName of blockNames) {
+                blockIds.add(this.getIdIfExists(blockName, type));
+            }
+
+            return blockIds;
+        }
+        else {
+            return this.getIdIfExists(blockNames, type);
+        }
+    }
+
+    /**
+     * Wrapper for getId, except if it returns an error, then the original value is returned instead.
+     * @param {*} blockName The name if it exists.
+     * @param {string} [type = "block"] The type to querry for id.
+     */
+    getIdIfExists(blockName, type = "block") {
+        try {
+            return this.getId(blockName, type);
+        }
+        catch(e) {
+            return blockName;
+        }
+    }
+
+    /**
+     * Converts the name of a type to the corresponding id.
+     * Throws error if corresponding id not found.
+     * @param {string} name The name. Throws error if not typeof string.
+     * @param {string} [type = "block"] The type to querry for id.
+     * @return {number} The id of that type.
+     */
+    getId(name, type = "block") {
+        if (typeof name !== "string")
+            throw "Invalid Name";
+
+        const blockId = this.mcData[`${type}sByName`][name].id;
+        if (Number.isNaN(blockId)) throw "Block Name doesn't exist";
         return blockId;
     }
 
