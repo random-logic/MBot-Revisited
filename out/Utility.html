@@ -676,7 +676,7 @@
 
 
 <div class="description">
-    Wrapper for <a href="https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions">findBlocks</a>.Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids.Changes any block names to its corresponding block ids using utility["getBlockId"].
+    Wrapper for <a href="https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions">findBlocks</a>.Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids.Changes any block names to its corresponding block ids using utility["getId"].
 </div>
 
 
@@ -827,7 +827,7 @@
     
 
     
-    <h4 class="name" id="getBlockId"><span class="type-signature"></span>getBlockId<span class="signature">(blockName)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id="getId"><span class="type-signature"></span>getId<span class="signature">(name, type<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
 
     
@@ -835,7 +835,7 @@
 
 
 <div class="description">
-    Converts the block name to the corresponding id.Throws error if corresponding id not found.
+    Converts the name of a type to the corresponding id.Throws error if corresponding id not found.
 </div>
 
 
@@ -859,7 +859,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -871,7 +875,7 @@
 
         <tr>
             
-                <td class="name"><code>blockName</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
@@ -884,10 +888,61 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">The name of the block.</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The name. Throws error if not typeof string.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "block"
+                
+                </td>
+            
+
+            <td class="description last">The type to querry for id.</td>
         </tr>
 
     
@@ -928,7 +983,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line86">line 86</a>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -957,7 +1012,7 @@
 
         
 <div class="param-desc">
-    The block id.
+    The id of that type.
 </div>
 
 
@@ -975,6 +1030,390 @@
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getIdIfExists"><span class="type-signature"></span>getIdIfExists<span class="signature">(blockName, type<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Wrapper for getId, except if it returns an error, then the original value is returned instead.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>blockName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The name if it exists.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "block"
+                
+                </td>
+            
+
+            <td class="description last">The type to querry for id.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line114">line 114</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getIdsIfExists"><span class="type-signature"></span>getIdsIfExists<span class="signature">(blockNames, type<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Wrapper for getIdIfExists, but it will iterate through an <a href="global.html#Array">Array</a> or <a href="global.html#Set">Set</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>blockNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The name if it exists.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "block"
+                
+                </td>
+            
+
+            <td class="description last">The type to querry for id.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line85">line 85</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1273,7 +1712,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line110">line 110</a>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line157">line 157</a>
     </li></ul></dd>
     
 
@@ -1432,7 +1871,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line97">line 97</a>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line144">line 144</a>
     </li></ul></dd>
     
 
@@ -1591,7 +2030,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line124">line 124</a>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line171">line 171</a>
     </li></ul></dd>
     
 
@@ -1750,7 +2189,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line143">line 143</a>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line190">line 190</a>
     </li></ul></dd>
     
 
@@ -1932,7 +2371,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line134">line 134</a>
+        <a href="utility.js.html">utility.js</a>, <a href="utility.js.html#line181">line 181</a>
     </li></ul></dd>
     
 
@@ -2006,7 +2445,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Dec 31 2022 23:48:29 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Jan 01 2023 01:51:30 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
