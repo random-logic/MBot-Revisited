@@ -1,10 +1,12 @@
+const Module = require("./module");
 const EnhancedMovements = require("./enhanced-movements");
 
-const Module = require("./module");
+const pathfinder = require("mineflayer-pathfinder").pathfinder;
 
 /**
  * @class
  * Moves the bot using [mineflayer-pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
+ * Requires {@link Utility} module.
  * @extends Module
  */
 class Mover extends Module {
@@ -12,7 +14,7 @@ class Mover extends Module {
      * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
      */
     constructor(mbot) {
-        super(mbot);
+        super(mbot, "mover", ["utility"]);
 
         /**
          * @property {EnhancedMovements} movements Can be applied to the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
@@ -21,6 +23,11 @@ class Mover extends Module {
     }
 
     onCreateBot() {
+        super.onCreateBot();
+        this.mbot.bot.loadPlugin(pathfinder);
+    }
+
+    onSpawn() {
         this.movements = new EnhancedMovements(this.mbot.bot);
     }
 

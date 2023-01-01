@@ -12,17 +12,10 @@ class Utility extends Module {
      * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
      */
     constructor(mbot) {
-        /**
-         * @property {Mbot} mbot The instance of Mbot that this {@link Module} is mounted to.
-         */
-        super();
-        this.mbot = mbot;
+        super(mbot, "utility");
     }
 
-    /**
-     * Inherited from {@link Module}
-     */
-    onCreateBot() {
+    onSpawn() {
         // For calculating physics ticks
         this.mbot.bot.physicsEnabled = true;
         this.mbot.bot.on("physicsTick", () => {
@@ -53,10 +46,9 @@ class Utility extends Module {
      * Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids.
      * Changes any block names to its corresponding block ids using utility["getBlockId"].
      * @param {object} options See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
-     * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"].
      * @return {Array} See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      */
-    findBlocks(options, safeToBreakFilter = true) {
+    findBlocks(options) {
         // Parse matching
         var matching = options["matching"];
         if (typeof matching === "string") {
@@ -70,10 +62,6 @@ class Utility extends Module {
             }
         }
         options["matching"] = matching;
-
-        if (safeToBreakFilter) {
-            options["useExtraInfo"] = block => this.mbot.movements.safeToBreak(block);
-        }
 
         // Call the original function
         return this.mbot.bot.findBlocks(options);

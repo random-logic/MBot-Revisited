@@ -13,8 +13,6 @@ const mineflayer = require("mineflayer");
 const mcData = require("minecraft-data");
 
 // Mineflayer modules
-const { pathfinder, Movements } = require("mineflayer-pathfinder");
-const autoEat = require("mineflayer-auto-eat").default;
 const botView = require('prismarine-viewer').mineflayer;
 const inventoryView = require('mineflayer-web-inventory');
 
@@ -29,7 +27,6 @@ const inventoryView = require('mineflayer-web-inventory');
  * Join and quit game.
  * View [bot]{@link https://github.com/PrismarineJS/prismarine-viewer} and [inventory]{@link https://github.com/imharvol/mineflayer-web-inventory} in web browser.
  * Has {@link UserInterface} to interact with bot.
- * Loads all mineflayer plugins that the modules depend on.
  * Other functionality is handled by other modules.
  */
 
@@ -72,11 +69,6 @@ class Mbot {
         this.mcData = null;
 
         /**
-         * @property {Movements} movements ?? Todo: Deprecate
-         */
-        this.movements = null;
-
-        /**
          * @property {object} modules The object that only stores instances of {@link Module} (that are mounted to this bot) as values.
          */
         this.modules = {
@@ -116,9 +108,10 @@ class Mbot {
         // Instantiate bot
         this.bot = mineflayer.createBot(this.settings["loginArgs"]);
 
-        // Load all required bot plugins
-        this.bot.loadPlugin(pathfinder);
-        this.bot.loadPlugin(autoEat);
+        // Invoke the callbacks for all modules
+        for (const property in this.modules) {
+            this.modules[property].onCreateBot();
+        }
 
         // Wait for bot to finish spawning
         var resolveSpawn;
@@ -129,7 +122,6 @@ class Mbot {
         this.bot.once("spawn", () => {
             // Initialize game data
             this.mcData = mcData(this.bot.version);
-            this.movements = new Movements(this.bot);
 
             // Display viewer on web
             if (args && args["createBotView"]) {
@@ -154,7 +146,7 @@ class Mbot {
 
             // Invoke the callbacks for all modules
             for (const property in this.modules) {
-                if (this.modules[property].onCreateBot) this.modules[property].onCreateBot();
+                this.modules[property].onSpawn();
             }
 
             resolveSpawn();
@@ -175,8 +167,6 @@ class Mbot {
         this.bot.quit();
         this.bot = null;
         this.mcData = null;
-        this.movements = null;
-        this.modules = {};
     }
 
     /*

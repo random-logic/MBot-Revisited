@@ -1,14 +1,10 @@
-const UserInterface = require("./user-interface");
+const Module = require("./module");
 
 const { GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalCompositeAny } = require("mineflayer-pathfinder").goals;
-const { Movements } = require("mineflayer-pathfinder");
-
-const Module = require("./module");
 
 /**
  * @class
- * Allows the bot to mine blocks.
- * Requires {@link Mover}.
+ * Allows the bot to mine blocks. Requires {@link Utility} and {@link Mover} modules.
  * @extends Module
  */
 class Miner extends Module {
@@ -16,7 +12,7 @@ class Miner extends Module {
      * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
      */
     constructor (mbot) {
-        super(mbot);
+        super(mbot, "miner", ["utility", "mover"]);
     }
 
     /**
@@ -49,7 +45,7 @@ class Miner extends Module {
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             // Find blocks, blocks is an array
-            const blockPositions = this.mbot.modules["utility"].findBlocks(args["findBlocksOptions"], true);
+            const blockPositions = this.mbot.modules["mover"].findSafeToBreakBlocks(args["findBlocksOptions"]);
 
             // Check to see if any blocks are found
             if (blockPositions.length == 0) throw "Could not find any blocks of that type";

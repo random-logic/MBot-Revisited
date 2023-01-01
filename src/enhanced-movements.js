@@ -57,7 +57,7 @@ class EnhancedMovements extends Movements {
     }
 
     /**
-     * Sets a property of this instance. See members of this instance.
+     * Sets a property of this instance. See members of this instance. Block names are converted to block ids.
      * @param {string} key The name of the property to set.
      * @param {object} value The new value. If the property is a {@link Set} and this is an {@link Array}, then this will be converted to a set.
      */
@@ -71,7 +71,7 @@ class EnhancedMovements extends Movements {
     }
 
     /**
-     * Adds to a property of this instance. See members of this instance. This function only supports properties that are of type {@link Array} or {@link Set}.
+     * Adds to a property of this instance. See members of this instance. Block names are converted to block ids. This function only supports properties that are of type {@link Array} or {@link Set}.
      * @param {string} propertyName The name of the property to add to.
      * @param {Array | Set} valuesToAdd The values to add to the property.
      */
