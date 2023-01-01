@@ -1,8 +1,9 @@
 const UserInterface = require("./user-interface");
 
-const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalBlock, GoalCompositeAny } = require("mineflayer-pathfinder").goals;
+const { GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalCompositeAny } = require("mineflayer-pathfinder").goals;
+const { Movements } = require("mineflayer-pathfinder");
 
-const { Movements } = require('mineflayer-pathfinder');
+const Module = require("./module");
 
 /**
  * @class

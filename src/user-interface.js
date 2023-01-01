@@ -1,5 +1,6 @@
 /**
  * @typedef DiscordClient
+ * @summary An object that represent the Discord settings for {@link UserInterface}.
  * @property {string} token The token of the discord bot.
  * @property {string} commandChannelId The channel id the bot should use to fetch commands.
  * @property {string} chatChannelId The channel id the bot should use to forward in game chats.

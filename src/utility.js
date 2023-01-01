@@ -1,5 +1,7 @@
 const fsPromise = require("fs").promises;
 
+const Module = require("./module");
+
 /**
  * @class
  * These are helper methods.

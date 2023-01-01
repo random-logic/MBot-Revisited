@@ -18,7 +18,10 @@ class InstructionManager {
      * @param {Mbot} mbot The instance of Mbot that this module will be mounted to.
      */
     constructor(mbot) {
-        super(mbot);
+        /**
+         * @property {Mbot} mbot The instance of Mbot that this module is mounted to.
+         */
+        this.mbot = mbot;
 
         /**
          * @property {Interrupt} interrupt The current instance of interrupt.

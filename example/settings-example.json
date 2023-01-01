@@ -10,25 +10,5 @@
         "commandChannelId": "123456789",
         "chatChannelId": "123456789",
         "botId": 123456789
-    },
-    "minerMovements": {
-        "set" : {
-            "allowParkour": false
-        },
-        "add" : {
-            "blocksCantBreak": [
-                "stone_bricks",
-                "stone_brick_stairs",
-                "stone_brick_slab",
-                "stone_brick_wall",
-                "nether_bricks",
-                "nether_brick_stairs",
-                "nether_brick_slab",
-                "nether_brick_wall"
-            ],
-            "scafoldingBlocks": [
-                "netherrack"
-            ]
-        }
     }
 }

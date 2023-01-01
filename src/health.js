@@ -1,3 +1,5 @@
+const Module = require("./module");
+
 /**
  * @class
  * Manages the health of the bot.

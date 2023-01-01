@@ -97,7 +97,7 @@ class Mbot {
 
     /**
      * @typedef CreateBotArgs
-     * An object that stores that determines what plugins to add to the bot upon creation.
+     * @summary An object that stores that determines what plugins to add to the bot upon creation.
      * @property {bool} [createBotView = false] Creates bot view if true.
      * @property {object} [botViewOptions = null] See [prismarine-viewer]{@link https://github.com/PrismarineJS/prismarine-viewer#mineflayer}.
      * @property {bool} [createInventoryView = false] Creates inventory view if true.
