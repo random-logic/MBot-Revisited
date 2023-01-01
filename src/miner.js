@@ -127,7 +127,7 @@ class Miner extends Module {
             );
 
             if (!entity) {
-                console.log("there is no entity, moving on");
+                this.mbot.userInterface.log("There is no entity, moving on");
                 continue;
             }
 
