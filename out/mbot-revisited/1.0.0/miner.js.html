@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: miner.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: miner.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const UserInterface = require("./user-interface");
+
+const { GoalGetToBlock, GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalBlock, GoalCompositeAny } = require("mineflayer-pathfinder").goals;
+
+const { Movements } = require('mineflayer-pathfinder');
+
+/**
+ * @class
+ * Allows the bot to mine blocks.
+ * Requires {@link Mover}.
+ * @extends Module
+ */
+class Miner extends Module {
+    /**
+     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
+     */
+    constructor (mbot) {
+        /**
+         * @property {Mbot} mbot The instance of Mbot that this {@link Module} is mounted to.
+         */
+        this.mbot = mbot;
+    }
+
+    /**
+     * @typedef MineBlockArgs
+     * @property {object} findBlocksOptions See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     * @property {bool} [safeBlockFilter = true] Filters out the blocks not safe to mine. If set to true, findBlockOptions["useExtraInfo"] is overrided.
+     * @property {number} [numberOfBlocksToMine = Infinity] Mines a certain number of blocks.
+     * @property {EnhancedMovements} [minerMovements = null] Sets the {@link Movements} that the miner should use when moving.
+     */
+
+    /**
+     * Instruction to mine blocks until an instruction interrupts.
+     * @param {MineBlockArgs} args The args for this instruction.
+     * @param {Interrupt} interrupt The interrupt instance of this bot.
+     */
+    async mineBlocks(args, interrupt) {
+        // Parse args
+        if (!args || typeof args !== "object") throw "Invalid Args";
+
+        // Check if the args are valid
+        if (!args["findBlocksOptions"] || typeof args["findBlocksOptions"] !== "object") throw "Invalid Arg findBlockOptions";
+        if (typeof args["safeBlockFilter"] !== "bool") args["safeBlockFilter"] = true;
+        if (typeof args["numberOfBlocksToMine"] !== "number") args["numberOfBlocksToMine"] = Infinity;
+        
+        // Mine a specified number of blocks
+        var count = args["numberOfBlocksToMine"];
+        for (var n = 0; n &lt; count; ++n) {
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+
+            // Find blocks, blocks is an array
+            const blockPositions = this.mbot.modules["utility"].findBlocks(args["findBlocksOptions"], true);
+
+            // Check to see if any blocks are found
+            if (blockPositions.length == 0) throw "Could not find any blocks of that type";
+
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+
+            // Allow interrupts to stop the bot from moving
+            interrupt.onInterrupt = this.mbot.bot.pathfinder.stop;
+
+            // Set the pathfinder to use movements specified in args
+            const defaultMove = new Movements(this.mbot.bot);
+            defaultMove.allowParkour = false; // ?? Don't allow parkour, because he almost got stuck doing parkour
+            defaultMove.scafoldingBlocks.push(this.mbot.modules["utility"].getBlockId('netherrack')); // Add nether rack to allowed scaffolding items
+            this.mbot.bot.pathfinder.setMovements(defaultMove); // Update the movement instance pathfinder uses
+
+            // Find path to any block that works
+            var reachedGoal = false;
+            var blockIndex = 0;
+            for (; blockIndex &lt; blockPositions.length; ++blockIndex) {
+                // Travel to block
+                try {
+                    this.mbot.userInterface.log("Moving to mine block at position " + blockPositions[blockIndex]);
+
+                    await this.mbot.bot.pathfinder.goto(
+                        new GoalCompositeAll([
+                            new GoalLookAtBlock(blockPositions[blockIndex], this.mbot.bot.world, { "range" : 4 }),
+                            new GoalCompositeAny([ // Make sure the bot doesn't jump to break the block
+                                new GoalY(blockPositions[blockIndex].y),
+                                new GoalY(blockPositions[blockIndex].y + 1),
+                                new GoalY(blockPositions[blockIndex].y - 1)
+                            ])
+                        ])
+                    );
+
+                    reachedGoal = true; // Reached the target block
+                    
+                    // Check for interrupts
+                    if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+                    
+                    break;
+                }
+                catch(e) {
+                    // Log the error and continue loop
+                    this.mbot.userInterface.logError(e);
+
+                    // Check for interrupts
+                    if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+                }
+            }
+
+            if (!reachedGoal) throw "Couldn't reach any blocks of the specified type";
+
+            // Pathfinder no longer used, can now unlink pathfinder from interrupt
+            interrupt.onInterrupt = null;
+
+            // Get the block that we just walked to
+            const block = this.mbot.bot.blockAt(blockPositions[blockIndex]);
+
+            // Get the best harvest tool
+            this.mbot.userInterface.log("Equipping harvesting tool");
+            const harvestTool = this.mbot.bot.pathfinder.bestHarvestTool(block);
+            if (!harvestTool) throw "No tool to harvest block";
+
+            // Equip bot with correct tool to mine block
+            await this.mbot.bot.equip(harvestTool, "hand");
+
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+
+            // Dig block
+            this.mbot.userInterface.log("Digging block");
+            await this.mbot.bot.dig(block, false);
+            this.mbot.userInterface.log("Finished digging block");
+
+            // Wait for entity to spawn
+            await this.mbot.modules["utility"].waitForPhysicsTicks(10);
+
+            // Start checking if entity mined is picked up or not
+            var waitForEntityGone = this.mbot.modules["utility"].waitForEntityGone(block.entity);
+
+            // Collect block as entity
+            await this.mbot.bot.pathfinder.goto(
+                new GoalFollow(block, 0)
+            );
+
+            // Do not continue until entity picked up
+            await waitForEntityGone;
+            this.mbot.userInterface.log("Finished harvesting");
+
+            // Check for interrupts
+            if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
+        }
+    }
+}
+
+module.exports = Miner;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EnhancedMovements.html">EnhancedMovements</a></li><li><a href="Health.html">Health</a></li><li><a href="InstructionManager.html">InstructionManager</a></li><li><a href="Interrupt.html">Interrupt</a></li><li><a href="Mbot.html">Mbot</a></li><li><a href="Miner.html">Miner</a></li><li><a href="Module.html">Module</a></li><li><a href="Mover.html">Mover</a></li><li><a href="UserInterface.html">UserInterface</a></li><li><a href="Utility.html">Utility</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Dec 31 2022 21:09:04 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

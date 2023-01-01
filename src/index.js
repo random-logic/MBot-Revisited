@@ -1,3 +1,16 @@
+/**
+ * @typedef Array
+ * @summary See [Array]{@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array}.
+ */
+/**
+ * @typedef Promise
+ * @summary See [Promise]{@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise}.
+ */
+/**
+ * @typedef Set
+ * @summary See [Set]{@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set}.
+ */
+
 const Utility = require("./utility.js");
 const Mbot = require("./mbot");
 

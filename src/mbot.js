@@ -18,8 +18,8 @@ const botView = require('prismarine-viewer').mineflayer;
 const inventoryView = require('mineflayer-web-inventory');
 
 /**
- * @typedef Module
- * @property {function} [onCreateBot = null] This function is called when the bot is created.
+ * @typedef Bot
+ * @summary See [mineflayer]{@link https://github.com/PrismarineJS/mineflayer#mineflayer}.
  */
 
 /**
@@ -35,6 +35,7 @@ const inventoryView = require('mineflayer-web-inventory');
 class Mbot {
     /**
      * @typedef Settings
+     * An object that stores the settings for {@link Mbot}.
      * @property {object} loginArgs See [createBot]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#mineflayercreatebotoptions}.
      * @property {DiscordClient} discordClient Login information for the discord bot.
      */
@@ -49,13 +50,18 @@ class Mbot {
      * @param {Commands} commands The commands that act like shortcuts to call instructions.
      */
     constructor(settings, commands) {
-        // Custom settings
-        // These variables shall not change reference
+        /**
+         * @property {Settings} settings The settings for the bot.
+         */
         this.settings = settings;
+        
+        /**
+         * @property {Commands} commands The commands that act like shortcuts to call instructions.
+         */
         this.commands = commands;
         
         /**
-         * @property {object} bot The actual [mineflayer]{@link https://github.com/PrismarineJS/mineflayer#mineflayer} bot.
+         * @property {Bot} bot The actual mineflayer bot.
          */
         this.bot = null;
 
@@ -91,6 +97,7 @@ class Mbot {
 
     /**
      * @typedef CreateBotArgs
+     * An object that stores that determines what plugins to add to the bot upon creation.
      * @property {bool} [createBotView = false] Creates bot view if true.
      * @property {object} [botViewOptions = null] See [prismarine-viewer]{@link https://github.com/PrismarineJS/prismarine-viewer#mineflayer}.
      * @property {bool} [createInventoryView = false] Creates inventory view if true.

@@ -2,7 +2,7 @@ const Interrupt = require("./interrupt");
 
 /**
  * @typedef Instruction
- * @summary A single Mbot instruction that can be decoded and executed in {@link InstructionManager}.
+ * @summary An object that acts like a single Mbot instruction which can be executed in {@link InstructionManager}.
  * @property {string} module The name of the module that matches the key of the module.
  * @property {string} instruction The instruction (represented as a function) to run from the specified module.
  * @property {string} args The args for the instruction.
@@ -18,10 +18,7 @@ class InstructionManager {
      * @param {Mbot} mbot The instance of Mbot that this module will be mounted to.
      */
     constructor(mbot) {
-        /**
-         * @property {Mbot} mbot The instance of Mbot that this module is mounted to.
-         */
-        this.mbot = mbot;
+        super(mbot);
 
         /**
          * @property {Interrupt} interrupt The current instance of interrupt.

@@ -5,17 +5,21 @@ const fsPromise = require("fs").promises;
  * These are helper methods.
  * @extends Module
  */
-class Utility {
+class Utility extends Module {
     /**
-     * @param {Mbot} mbot The instance of Mbot that this module will be mounted to.
+     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
      */
     constructor(mbot) {
         /**
-         * @property {Mbot} mbot The instance of Mbot that this module is mounted to.
+         * @property {Mbot} mbot The instance of Mbot that this {@link Module} is mounted to.
          */
+        super();
         this.mbot = mbot;
     }
 
+    /**
+     * Inherited from {@link Module}
+     */
     onCreateBot() {
         // For calculating physics ticks
         this.mbot.bot.physicsEnabled = true;

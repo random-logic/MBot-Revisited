@@ -1,28 +1,30 @@
-/**
- * @typedef Movements
- * @summary See [Movements]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#movements-class-default-properties}.
- */
-const { Movements } = require("mineflayer-pathfinder");
+const EnhancedMovements = require("./enhanced-movements");
+
+const Module = require("./module");
 
 /**
  * @class
- * Controls moving the bot using [mineflayer-pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
+ * Moves the bot using [mineflayer-pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
  * @extends Module
  */
-class Mover {
+class Mover extends Module {
     /**
-     * @param {Mbot} mbot The instance of Mbot that this module will be mounted to.
+     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
      */
     constructor(mbot) {
-        /**
-         * @property {Mbot} mbot The instance of Mbot that this module is mounted to.
-         */
-        this.mbot = mbot;
+        super(mbot);
 
         /**
-         * @property {Movements} movements Stores instance of Movements class that can be applied to the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
+         * @property {EnhancedMovements} movements Can be applied to the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.
          */
-        this.movements = new Movements();
+        this.movements = new EnhancedMovements(this.mbot.bot);
+    }
+
+    /**
+     * Resets saved {@link Movements}.
+     */
+    resetMovements() {
+        this.movements = new EnhancedMovements(this.mbot.bot);
     }
 
     /**

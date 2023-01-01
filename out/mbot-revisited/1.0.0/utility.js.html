@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: utility.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: utility.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const fsPromise = require("fs").promises;
+
+/**
+ * @class
+ * These are helper methods.
+ * @extends Module
+ */
+class Utility extends Module {
+    /**
+     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
+     */
+    constructor(mbot) {
+        /**
+         * @property {Mbot} mbot The instance of Mbot that this {@link Module} is mounted to.
+         */
+        this.mbot = mbot;
+    }
+
+    /**
+     * Inherited from {@link Module}
+     */
+    onCreateBot() {
+        // For calculating physics ticks
+        this.mbot.bot.physicsEnabled = true;
+        this.mbot.bot.on("physicsTick", () => {
+            if (this.doPhysicsTickCountDown) {
+                --this.physicsTickCount;
+                if (this.physicsTickCount &lt;= 0) {
+                    this.doPhysicsTickCountDown = false;
+                    this.onPhysicsTickCountHitsZero();
+                }
+            }
+        });
+        this.doPhysicsTickCountDown = false;
+
+        // For determining when an entity disappears
+        this.mbot.bot.on("entityGone", entity => {
+            if (this.checkForEntityGone) {
+                if (entity == this.entityGoneToMatch) {
+                    this.checkForEntityGone = false;
+                    this.onEntityGoneMatch();
+                }
+            }
+        });
+        this.checkForEntityGone = false;
+    }
+    
+    /**
+     * Wrapper for [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     * Allows options["matching"] to be the block name (typeof string) or a mixed array of block names and ids.
+     * Changes any block names to its corresponding block ids using utility["getBlockId"].
+     * @param {object} options See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     * @param {bool} safeToBreakFilter Only returns blocks that are safe to break using utility.movements.safeToBreak(), overrides options["useExtraInfo"].
+     * @return {Array} See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     */
+    findBlocks(options, safeToBreakFilter = true) {
+        // Parse matching
+        var matching = options["matching"];
+        if (typeof matching === "string") {
+            matching = this.getBlockId(matching);
+        }
+        else if (Array.isArray(matching)) {
+            for (var i = 0; i &lt; matching.length; ++i) {
+                if (typeof matching[i] === "string") {
+                    matching[i] = this.getBlockId(matching[i]);
+                }
+            }
+        }
+        options["matching"] = matching;
+
+        if (safeToBreakFilter) {
+            options["useExtraInfo"] = block => this.mbot.movements.safeToBreak(block);
+        }
+
+        // Call the original function
+        return this.mbot.bot.findBlocks(options);
+    }
+
+    /**
+     * Converts the block name to the corresponding id.
+     * Throws error if corresponding id not found.
+     * @param {string} blockName The name of the block.
+     * @return {number} The block id.
+     */
+    getBlockId(blockName) {
+        const blockId = this.mbot.mcData.blocksByName[blockName].id;
+        if (Number.isNaN(blockId)) throw "Invalid Block Name";
+        return blockId;
+    }
+
+    /**
+     * Wait for a specified number of physics ticks.
+     * @param {number} count The number of physics ticks to wait for.
+     * @return {Promise} Resolves after waiting for count physics ticks.
+     */
+    async waitForPhysicsTicks(count) {
+        return new Promise(resolve => {
+            this.physicsTickCount = count;
+            this.onPhysicsTickCountHitsZero = resolve;
+            this.doPhysicsTickCountDown = true;
+        });
+    }
+
+    /**
+     * Wait for the specified entity to disappear.
+     * @param {Entity} entity The entity that should disappear.
+     * @return {Promise} A promise that resolves when the entity disappears.
+     */
+    async waitForEntityGone(entity) {
+        return new Promise(resolve => {
+            if (!entity) resolve();
+            this.onEntityGoneMatch = resolve;
+            this.entityGoneToMatch = entity;
+            this.checkForEntityGone = true;
+        })
+    }
+
+    /**
+     * Parses a JSON object from a file.
+     * @param {string} path The path of the json file.
+     * @returns {Promise} Promise resolves with the object that represents the JSON object when finished.
+     */
+    static async readJsonFile(path) {
+        return JSON.parse(await fsPromise.readFile(path));
+    }
+
+    /**
+     * Writes a JSON object to a file.
+     * @param {string} path The path of the json file.
+     * @param {object} content The object that represents the JSON object.
+     * @returns {Promise} Promise resolves when finished.
+     */
+    static async writeJsonFile(path, content) {
+        return fsPromise.writeFile(path, JSON.stringify(content, "\t"));
+    }
+
+    /**
+     * Waits for number of milliseconds.
+     * @param {number} count The time to wait.
+     * @returns {Promise} Promise resolves when time is up.
+     */
+    static async waitForMilliseconds(count) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+            }, count);
+        });
+    }
+}
+
+module.exports = Utility;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EnhancedMovements.html">EnhancedMovements</a></li><li><a href="Health.html">Health</a></li><li><a href="InstructionManager.html">InstructionManager</a></li><li><a href="Interrupt.html">Interrupt</a></li><li><a href="Mbot.html">Mbot</a></li><li><a href="Miner.html">Miner</a></li><li><a href="Module.html">Module</a></li><li><a href="Mover.html">Mover</a></li><li><a href="UserInterface.html">UserInterface</a></li><li><a href="Utility.html">Utility</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Dec 31 2022 21:09:04 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

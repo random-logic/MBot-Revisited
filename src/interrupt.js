@@ -11,6 +11,7 @@ class Interrupt {
 
         /**
          * @callback OnInterrupt
+         * @summary A callback function.
          */
 
         /**
@@ -22,8 +23,8 @@ class Interrupt {
     }
     
     /**
-     * Interrupts the instruction
-     * @returns {Promise} A promise that resolves when the interrupt is resolved
+     * Interrupts the instruction.
+     * @returns {Promise} A promise that resolves when the interrupt is resolved.
      */
     interruptInstruction() {
         return new Promise(resolve => {
@@ -35,7 +36,7 @@ class Interrupt {
     }
 
     /**
-     * Resolves the interrupt
+     * Resolves the interrupt.
      */
     resolve() {
         this.hasInterrupt = false;

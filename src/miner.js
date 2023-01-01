@@ -10,15 +10,12 @@ const { Movements } = require('mineflayer-pathfinder');
  * Requires {@link Mover}.
  * @extends Module
  */
-class Miner {
+class Miner extends Module {
     /**
-     * @param {Mbot} mbot The instance of Mbot that this module will be mounted to.
+     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
      */
     constructor (mbot) {
-        /**
-         * @property {Mbot} mbot The instance of Mbot that this module is mounted to.
-         */
-        this.mbot = mbot;
+        super(mbot);
     }
 
     /**
@@ -26,6 +23,7 @@ class Miner {
      * @property {object} findBlocksOptions See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      * @property {bool} [safeBlockFilter = true] Filters out the blocks not safe to mine. If set to true, findBlockOptions["useExtraInfo"] is overrided.
      * @property {number} [numberOfBlocksToMine = Infinity] Mines a certain number of blocks.
+     * @property {EnhancedMovements} [minerMovements = null] Sets the {@link Movements} that the miner should use when moving.
      */
 
     /**
@@ -60,7 +58,7 @@ class Miner {
             // Allow interrupts to stop the bot from moving
             interrupt.onInterrupt = this.mbot.bot.pathfinder.stop;
 
-            // ?? Make sure netherrack is part of scafolding blocks 
+            // Set the pathfinder to use movements specified in args
             const defaultMove = new Movements(this.mbot.bot);
             defaultMove.allowParkour = false; // ?? Don't allow parkour, because he almost got stuck doing parkour
             defaultMove.scafoldingBlocks.push(this.mbot.modules["utility"].getBlockId('netherrack')); // Add nether rack to allowed scaffolding items
