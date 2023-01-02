@@ -35,7 +35,63 @@
         "module" : "mover",
         "instruction" : "gotoPlayer",
         "args": {
-            "playerName": "random_logic_"
+            "playerName": "random_logic_",
+            "movements" : {
+                "set" : {
+                    "canMoveDiagonally": false,
+                    "allowParkour": false,
+                    "scafoldingBlocks": [
+                        "netherrack"
+                    ]
+                },
+                "add" : {
+                    "blocksCantBreak": [
+                        "stone_bricks",
+                        "stone_brick_stairs",
+                        "stone_brick_slab",
+                        "stone_brick_wall",
+                        "nether_bricks",
+                        "nether_brick_stairs",
+                        "nether_brick_slab",
+                        "nether_brick_wall"
+                    ]
+                }
+            }
+        }
+    },
+    "savePosition" : {
+        "module" : "mover",
+        "instruction" : "savePosition",
+        "args" : {
+            "name": "pos"
+        }
+    },
+    "gotoPosition" : {
+        "module" : "mover",
+        "instruction" : "gotoPosition",
+        "args": {
+            "position": "pos",
+            "movements" : {
+                "set" : {
+                    "canMoveDiagonally": false,
+                    "allowParkour": false,
+                    "scafoldingBlocks": [
+                        "netherrack"
+                    ]
+                },
+                "add" : {
+                    "blocksCantBreak": [
+                        "stone_bricks",
+                        "stone_brick_stairs",
+                        "stone_brick_slab",
+                        "stone_brick_wall",
+                        "nether_bricks",
+                        "nether_brick_stairs",
+                        "nether_brick_slab",
+                        "nether_brick_wall"
+                    ]
+                }
+            }
         }
     },
     "halt" : {
@@ -46,5 +102,39 @@
         "x": -156,
         "y": 35,
         "z": -187
+    },
+    "setExitBeforeDeath": {
+        "module": "health",
+        "instruction": "exitBeforeDeath",
+        "args": {
+            "set": true
+        }
+    },
+    "clearExitBeforeDeath": {
+        "module": "health",
+        "instruction": "exitBeforeDeath",
+        "args": {
+            "set": false
+        }
+    },
+    "createBot": {
+        "module": "mbot",
+        "instruction": "createBot",
+        "args": {
+            "createInventoryView": true,
+            "inventoryViewOptions": {
+                "port": 3000,
+                "startOnLoad": true
+            }
+        }
+    },
+    "loadPositions": {
+        "module": "mover",
+        "instruction": "loadPositionData",
+        "args": "position-data.json"
+    },
+    "storePositions": {
+        "module": "mover",
+        "instruction": "storePositionData"
     }
 }

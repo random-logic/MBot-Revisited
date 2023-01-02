@@ -31,7 +31,7 @@ class Mover extends Module {
         /**
          * @property {object} positionData An object that holds position names as keys and instances of {@link Vector3} as values.
          */
-        this.positionData = null;
+        this.positionData = {};
 
         /**
          * @property {string} positionDataPath The path where the positionData has been loaded from.
@@ -49,25 +49,53 @@ class Mover extends Module {
     }
 
     /**
-     * Loads position data.
-     * @param {string} path The path to the file.
+     * Instruction to load position data.
+     * @param {string} args The path to the file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
      * @returns {Promise} Promise that resolves when read file finishes.
      */
-    async loadPositionData(path) {
-        this.positionData = await Utility.readJsonFile(path);
-        this.positionDataPath = path;
+    async loadPositionData(args, interrupt = null) {
+        this.positionData = await Utility.readJsonFile(args);
+        this.positionDataPath = args;
     }
 
     /**
-     * Stores position data.
-     * @param {string} [path = null] The path to the file, only use this if you want to store to a different file.
+     * Instruction to store position data.
+     * @param {string} [args = null] The path to the file, only use this if you want to store to a different file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
      * @returns {Promise} Promise that resolves when write file finishes.
      */
-    async storePositionData(path = null) {
-        if (!path)
-            path = this.positionDataPath;
+    async storePositionData(args = null, interrupt = null) {
+        if (!args)
+            args = this.positionDataPath;
 
-        await Utility.writeJsonFile(path, this.positionData);
+        await Utility.writeJsonFile(args, this.positionData);
+    }
+
+    /**
+     * @typedef SavePositionArgs
+     * @summary Object that represents the arguments.
+     * @property {string} name The name of the position.
+     * @property {Vector3} [position = null] The actual position to save. By default, it saves the position of where the bot is at.
+     */
+
+    /**
+     * Instruction to save position.
+     * @param {SavePositionArgs} args
+     * @param {Interrupt} [interrupt = null]
+     */
+    savePosition(args, interrupt) {
+        if (!args || typeof args["name"] !== "string")
+            throw new Error("Invalid SavePositionArgs name");
+        
+        if (!args["position"]) {
+            args["position"] = this.mbot.bot.entity.position;
+        }
+        else if (typeof args["position"] !== "object") {
+            throw new Error("Invalid SavePositionArgs position");
+        }
+
+        this.positionData[args["name"]] = args["position"];
     }
     
     /**
@@ -90,7 +118,7 @@ class Mover extends Module {
         this.resetAndApplyMovements(args["movements"], interrupt);
 
         if (typeof args["position"] === "string") {
-            const position = positionData[args["position"]];
+            const position = this.positionData[args["position"]];
             await this.goto(new GoalBlock(position.x, position.y, position.z), interrupt);
         }
         else if (typeof args["position"] === "object") {

@@ -186,7 +186,7 @@ class Utility extends Module {
      * @returns {Promise} Promise resolves when finished.
      */
     static async writeJsonFile(path, content) {
-        return fsPromise.writeFile(path, JSON.stringify(content, "\t"));
+        return fsPromise.writeFile(path, JSON.stringify(content, null, "\t"));
     }
 
     /**

@@ -3,6 +3,7 @@ const InstructionManager = require("./instruction-manager");
 const UserInterface = require("./user-interface");
 
 // Custom modules with dependence on mineflayer
+const Module = require("./module");
 const Mover = require("./mover");
 const Utility = require("./utility");
 const Miner = require("./miner");
@@ -27,7 +28,7 @@ const inventoryView = require('mineflayer-web-inventory');
  * Other functionality is handled by other modules.
  */
 
-class Mbot {
+class Mbot extends Module {
     /**
      * @typedef Settings
      * An object that stores the settings for {@link Mbot}.
@@ -45,6 +46,8 @@ class Mbot {
      * @param {Commands} commands The commands that act like shortcuts to call instructions.
      */
     constructor(settings, commands) {
+        super(null, "mbot");
+        
         /**
          * @property {Settings} settings The settings for the bot.
          */
@@ -64,6 +67,7 @@ class Mbot {
          * @property {object} modules The object that only stores {@link Module}. The names are keys and the actual {@link Module} are values. These modules are mounted to Mbot.
          */
         this.modules = {
+            "mbot" : this, // So that instructions here can also be accessed.
             "mover" : new Mover(this),
             "utility" : new Utility(this),
             "miner" : new Miner(this),

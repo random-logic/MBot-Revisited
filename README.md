@@ -12,9 +12,10 @@ jsdoc src
 out/index.html
 
 ## To do
-1. Create mover.js
-- Have this store the default Movement class that will apply to pathfinder
-2. Create health.js
-3. Implement skip function for miner
+1. Implement a function to get the bot unstuck when digging block.
+2. Allow interrupts while digging
+3. Create health.js
+4. Refactor methods and let bot collect all items of "ancient_debris" before mining again
+5. Implement skip function for miner
 - Also have an array of block positions that already returned timed out so bot doesn't try to go to these again
 - We really need this feature because the bot can randomly get stuck
