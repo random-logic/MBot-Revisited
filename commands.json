@@ -81,6 +81,7 @@
                 },
                 "add" : {
                     "blocksCantBreak": [
+                        "nether_gold_ore",
                         "stone_bricks",
                         "stone_brick_stairs",
                         "stone_brick_slab",

@@ -46,6 +46,9 @@ class Mover extends Module {
 
     onSpawn() {
         this.movements = new EnhancedMovements(this.mbot.bot);
+
+        // ?? Temporary, eventually move this to configurable options.
+        this.mbot.bot.pathfinder.thinkTimeout = 20000;
     }
 
     /**
