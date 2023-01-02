@@ -53,9 +53,6 @@ class Miner extends Module {
             // Check for interrupts
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
-            // Allow interrupts to stop the bot from moving
-            interrupt.onInterrupt = this.mbot.bot.pathfinder.stop;
-
             // Set the pathfinder to use movements specified in args
             this.mbot.modules["mover"].resetAndApplyMovements(args["movements"]);
 
@@ -67,7 +64,7 @@ class Miner extends Module {
                 try {
                     this.mbot.userInterface.log("Moving to mine block at position " + blockPositions[blockIndex]);
 
-                    await this.mbot.bot.pathfinder.goto(
+                    await this.mbot.modules["mover"].goto(
                         new GoalCompositeAll([
                             new GoalLookAtBlock(blockPositions[blockIndex], this.mbot.bot.world, { "range" : 4 }),
                             new GoalCompositeAny([ // Make sure the bot doesn't jump to break the block
@@ -75,7 +72,8 @@ class Miner extends Module {
                                 new GoalY(blockPositions[blockIndex].y + 1),
                                 new GoalY(blockPositions[blockIndex].y - 1)
                             ])
-                        ])
+                        ]),
+                        interrupt
                     );
 
                     reachedGoal = true; // Reached the target block
@@ -95,9 +93,6 @@ class Miner extends Module {
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             if (!reachedGoal) throw "Couldn't reach any blocks of the specified type";
-
-            // Pathfinder no longer used, can now unlink pathfinder from interrupt
-            interrupt.onInterrupt = null;
 
             // Get the block that we just walked to
             const block = this.mbot.bot.blockAt(blockPositions[blockIndex]);

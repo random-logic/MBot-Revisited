@@ -37,7 +37,7 @@ class Mbot {
 
     /**
      * @typedef Commands
-     * @summary An object with only instances of {@link Instruction} as values. 
+     * @summary An object with only instances of {@link InstructionCall} as values. 
      */
 
     /**

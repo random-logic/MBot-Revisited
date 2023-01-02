@@ -1,7 +1,7 @@
 const Interrupt = require("./interrupt");
 
 /**
- * @typedef Instruction
+ * @typedef InstructionCall
  * @summary An object that acts like a single Mbot instruction which can be executed in {@link InstructionManager}.
  * @property {string} module The name of the module that matches the key of the module.
  * @property {string} instruction The instruction (represented as a function) to run from the specified module.
@@ -49,7 +49,7 @@ class InstructionManager {
     
     /**
      * Parses the command into an instruction and executes it.
-     * @param {Instruction} contents The instruction.
+     * @param {InstructionCall} contents The instruction.
      * @returns {Promise} Promise that resolves when the instruction finishes.
      */
     async parseInstruction(contents) {
@@ -72,15 +72,13 @@ class InstructionManager {
         const instruction = module[instructionName];
         if (!instruction) throw "Invalid Instruction";
     
-        // Do instruction
-        if (!this.doingInstruction) {
-            await this.doInstruction(module, instructionName, contents["args"]);
-        }
-        else {
-            // Interrupt instruction before doing instruction
+        // Interrupt current instruction before doing instruction
+        if (this.doingInstruction) {
             await this.interrupt.interruptInstruction();
-            await this.doInstruction(module, instructionName, contents["args"]);
         }
+
+        // Do instruction
+        await this.doInstruction(module, instructionName, contents["args"]);
     }
 
     /**

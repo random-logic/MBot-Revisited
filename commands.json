@@ -31,6 +31,17 @@
             }
         }
     },
+    "come" : {
+        "module" : "mover",
+        "instruction" : "gotoPlayer",
+        "args": {
+            "playerName": "random_logic_"
+        }
+    },
+    "halt" : {
+        "module" : "utility",
+        "instruction" : "halt"
+    },
     "position": {
         "x": -156,
         "y": 35,

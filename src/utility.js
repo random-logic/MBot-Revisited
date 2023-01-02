@@ -164,6 +164,13 @@ class Utility extends Module {
     }
 
     /**
+     * Instruction that doesn't do anything. This can be used to halt any current instruction.
+     * @param {object} [args = null] Has no effect for this instruction.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
+     */
+    halt(args = null, interrupt = null) {}
+
+    /**
      * Parses a JSON object from a file.
      * @param {string} path The path of the json file.
      * @returns {Promise} Promise resolves with the object that represents the JSON object when finished.
