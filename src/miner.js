@@ -69,8 +69,7 @@ class Miner extends Module {
                             new GoalLookAtBlock(blockPositions[blockIndex], this.mbot.bot.world, { "range" : 4 }),
                             new GoalCompositeAny([ // Make sure the bot doesn't jump to break the block
                                 new GoalY(blockPositions[blockIndex].y),
-                                new GoalY(blockPositions[blockIndex].y + 1),
-                                new GoalY(blockPositions[blockIndex].y - 1)
+                                new GoalY(blockPositions[blockIndex].y + 1)
                             ])
                         ]),
                         interrupt
