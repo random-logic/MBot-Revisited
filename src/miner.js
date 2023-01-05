@@ -16,12 +16,29 @@ class Miner extends Module {
     }
 
     /**
+     * Wrapper for findBlocks method in {@link Utility}.
+     * Only returns blocks that are safe to break. Overrides options["useExtraInfo"].
+     * @param {object} options See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     * @param {number} [minHeight = -Infinity] The min height the blocks may be at.
+     * @param {number} [maxHeight = Infinity] The max height the blocks may be at.
+     * @return {Array} See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
+     */
+    findBlocks(options, minHeight = -Infinity, maxHeight = Infinity) {
+        options["useExtraInfo"] = block => minHeight <= block.position.y && maxHeight >= block.position.y &&
+            this.mbot.modules["mover"].movements.safeToBreak(block);
+        return this.mbot.modules["utility"].findBlocks(options);
+    }
+
+    /**
      * @typedef MineBlocksArgs
      * @property {object} findBlocksOptions See [findBlocks]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botfindblocksoptions}.
      * @property {bool} [safeBlockFilter = true] Filters out the blocks not safe to mine. If set to true, findBlockOptions["useExtraInfo"] is overrided.
      * @property {number} [numberOfBlocksToMine = Infinity] Mines a certain number of blocks.
      * @property {bool} [resetAndApplyMovements = false] Reset and apply movements with the given movements.
      * @property {EnhancedMovements} [movements = null] Sets the {@link Movements} that the miner should use when moving.
+     * @property {bool} [searchAfterMine = false] If set to true, a search will be conducted after a block is mined. Otherwise, a search is only conducted after all blocks that are accessible are mined.
+     * @property {number} [minHeight = -Infinity] The min height the blocks may be at.
+     * @property {number} [maxHeight = Infinity] The max height the blocks may be at.
      */
 
     /**
@@ -38,6 +55,9 @@ class Miner extends Module {
         if (typeof args["safeBlockFilter"] !== "bool") args["safeBlockFilter"] = true;
         if (typeof args["numberOfBlocksToMine"] !== "number") args["numberOfBlocksToMine"] = Infinity;
         if (typeof args["movements"] !== "object") args["movements"] = null;
+        if (typeof args["minHeight"] !== "nubmer") args["minHeight"] = -Infinity;
+        if (typeof args["maxHeight"] !== "number") args["maxHeight"] = Infinity;
+
         
         // Set the pathfinder to use movements specified in args
         if (args["resetAndApplyMovements"])
@@ -50,7 +70,7 @@ class Miner extends Module {
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             // Find blocks, blocks is an array
-            const blockPositions = this.mbot.modules["mover"].findSafeToBreakBlocks(args["findBlocksOptions"]);
+            const blockPositions = this.findBlocks(args["findBlocksOptions"], args["minHeight"], args["maxHeight"]);
 
             // Check to see if any blocks are found
             if (blockPositions.length == 0) throw "Could not find any blocks of that type";
@@ -59,9 +79,19 @@ class Miner extends Module {
             if (interrupt.hasInterrupt) throw "mineBlocks Interrupted";
 
             // Find path to any block that works
-            for (var blockIndex = 0; blockIndex < blockPositions.length && n < count; ++blockIndex, ++n) {
+            for (var blockIndex = 0; blockIndex < blockPositions.length && n < count; ++blockIndex) {
                 try {
-                    await this.mineBlock(blockPositions[blockIndex]);
+                    // Mine the block 
+                    await this.mineBlock(blockPositions[blockIndex], interrupt);
+
+                    // We mined block successfully
+                    ++n;
+
+                    // Check for interrupts
+                    interrupt.throwErrorIfHasInterrupt("mineBlocks");
+
+                    // Search for another block or use existing search data
+                    if (args["searchAfterMine"]) break;
                 }
                 catch(e) {
                     // Check for interrupts
@@ -70,9 +100,6 @@ class Miner extends Module {
                     // Otherwise log error and continue the loop
                     this.mbot.userInterface.logError(e);
                 }
-
-                // Check for interrupts
-                interrupt.throwErrorIfHasInterrupt("mineBlocks");
             }
         }
     }
