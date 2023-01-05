@@ -21,6 +21,30 @@ class Interrupt {
         
         this.resolveCallee = null;
     }
+
+    /**
+     * Sets onInterrupt.
+     * @param {OnInterrupt} func The callback.
+     */
+    setOnInterrupt(func) {
+        this.onInterrupt = func;
+    }
+
+    /**
+     * Clears onInterrupt.
+     */
+    clearOnInterrupt() {
+        this.onInterrupt = null;
+    }
+    
+    /**
+     * Throws an error if hasInterrupt is true.
+     * @param {string} name The name of the function that got interrupted.
+     */
+    throwErrorIfHasInterrupt(name) {
+        if (this.hasInterrupt)
+            throw new Error(`${name} Interrupted`);
+    }
     
     /**
      * Interrupts the instruction.

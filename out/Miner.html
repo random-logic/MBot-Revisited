@@ -558,6 +558,594 @@
     
 
     
+    <h4 class="name" id="collectBlock"><span class="type-signature">(async) </span>collectBlock<span class="signature">(args, interrupt)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    ??Instruction that collects all block items nearby.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#CollectBlockArgs">CollectBlockArgs</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The args for this instruction.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The interrupt instance for this instruction.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line234">line 234</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="dig"><span class="type-signature">(async) </span>dig<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Digs a block.Wrapper for <a href="https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botdigblock-forcelook--true-digface">dig</a>.Interrupts will cause bot to stop digging.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The object that represent the args for <a href="https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#botdigblock-forcelook--true-digface">dig</a>.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">The interrupt instance of this bot.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line187">line 187</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise that resolves when finished.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Promise">Promise</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="mineBlock"><span class="type-signature">(async) </span>mineBlock<span class="signature">(blockPosition, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Mines a single block. Helper function for mineBlocks. Throws error if pathfinder cannot reach block.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>blockPosition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Vector3">Vector3</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The position of the block to mine.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Useful when calling on instructions so that this process can be interrupted.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line131">line 131</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Promise that resolves when completed.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Promise">Promise</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="mineBlocks"><span class="type-signature">(async) </span>mineBlocks<span class="signature">(args, interrupt)</span><span class="type-signature"></span></h4>
     
 
@@ -608,7 +1196,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#MineBlockArgs">MineBlockArgs</a></span>
+<span class="param-type"><a href="global.html#MineBlocksArgs">MineBlocksArgs</a></span>
 
 
             
@@ -682,7 +1270,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line31">line 31</a>
+        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -920,7 +1508,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Jan 01 2023 16:27:14 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Jan 04 2023 20:03:52 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

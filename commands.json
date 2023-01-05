@@ -8,6 +8,7 @@
                 "maxDistance": 64,
                 "count": 10
             },
+            "resetAndApplyMovements" : true,
             "movements" : {
                 "set" : {
                     "canMoveDiagonally": false,
@@ -35,7 +36,8 @@
         "module" : "mover",
         "instruction" : "gotoPlayer",
         "args": {
-            "playerName": "random_logic_",
+            "playerName" : "random_logic_",
+            "resetAndApplyMovements" : true,
             "movements" : {
                 "set" : {
                     "canMoveDiagonally": false,

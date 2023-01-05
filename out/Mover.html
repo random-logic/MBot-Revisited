@@ -1015,7 +1015,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line176">line 176</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line223">line 223</a>
     </li></ul></dd>
     
 
@@ -1211,7 +1211,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line216">line 216</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line263">line 263</a>
     </li></ul></dd>
     
 
@@ -1348,7 +1348,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line237">line 237</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line284">line 284</a>
     </li></ul></dd>
     
 
@@ -1406,7 +1406,7 @@
     
 
     
-    <h4 class="name" id="goto"><span class="type-signature">(async) </span>goto<span class="signature">(goal, interrupt)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    <h4 class="name" id="goto"><span class="type-signature">(async) </span>goto<span class="signature">(goal, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -1414,7 +1414,7 @@
 
 
 <div class="description">
-    Set a specific goal for the <a href="https://github.com/PrismarineJS/mineflayer-pathfinder#functions">pathfinder</a>, but allow the interrupts to stop the <a href="https://github.com/PrismarineJS/mineflayer-pathfinder#functions">pathfinder</a>.
+    Wrapper for goto method in <a href="https://github.com/PrismarineJS/mineflayer-pathfinder#functions">pathfinder</a>.Allows interrupts to stop the <a href="https://github.com/PrismarineJS/mineflayer-pathfinder#functions">pathfinder</a>.
 </div>
 
 
@@ -1438,7 +1438,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1463,7 +1467,19 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">The goal that will be set in pathfinder.</td>
@@ -1486,10 +1502,26 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">The interrupt instance of this bot.</td>
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Useful when called on instructions so that this process can be interrupted.</td>
         </tr>
 
     
@@ -1530,7 +1562,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line137">line 137</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line172">line 172</a>
     </li></ul></dd>
     
 
@@ -1559,7 +1591,7 @@
 
         
 <div class="param-desc">
-    Promise that resolves on completion.
+    Promise that resolves on completion or rejects on error.
 </div>
 
 
@@ -1588,7 +1620,7 @@
     
 
     
-    <h4 class="name" id="gotoPlayer"><span class="type-signature">(async) </span>gotoPlayer<span class="signature">(args, interrupt)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    <h4 class="name" id="gotoPlayer"><span class="type-signature">(async) </span>gotoPlayer<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -1620,7 +1652,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1645,7 +1681,19 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">The args for this instruction.</td>
@@ -1668,10 +1716,26 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">The interrupt instance of this bot.</td>
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Useful when called on instructions so that this process can be interrupted.</td>
         </tr>
 
     
@@ -1712,7 +1776,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line118">line 118</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line150">line 150</a>
     </li></ul></dd>
     
 
@@ -1894,7 +1958,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line86">line 86</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -1952,7 +2016,7 @@
     
 
     
-    <h4 class="name" id="loadPositionData"><span class="type-signature">(async) </span>loadPositionData<span class="signature">(path)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    <h4 class="name" id="loadPositionData"><span class="type-signature">(async) </span>loadPositionData<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -1960,7 +2024,7 @@
 
 
 <div class="description">
-    Loads position data.
+    Instruction to load position data.
 </div>
 
 
@@ -1984,7 +2048,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1996,7 +2064,7 @@
 
         <tr>
             
-                <td class="name"><code>path</code></td>
+                <td class="name"><code>args</code></td>
             
 
             <td class="type">
@@ -2009,10 +2077,61 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">The path to the file.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Has no effect for this instruction.</td>
         </tr>
 
     
@@ -2053,7 +2172,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line56">line 56</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -2212,7 +2331,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line195">line 195</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line242">line 242</a>
     </li></ul></dd>
     
 
@@ -2594,7 +2713,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line226">line 226</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line273">line 273</a>
     </li></ul></dd>
     
 
@@ -2682,7 +2801,199 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line150">line 150</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line197">line 197</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="savePosition"><span class="type-signature"></span>savePosition<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Instruction to save position.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#SavePositionArgs">SavePositionArgs</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -2842,7 +3153,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line159">line 159</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -2878,7 +3189,7 @@
     
 
     
-    <h4 class="name" id="storePositionData"><span class="type-signature">(async) </span>storePositionData<span class="signature">(path<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    <h4 class="name" id="storePositionData"><span class="type-signature">(async) </span>storePositionData<span class="signature">(args<span class="signature-attributes">opt</span>, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -2886,7 +3197,7 @@
 
 
 <div class="description">
-    Stores position data.
+    Instruction to store position data.
 </div>
 
 
@@ -2926,7 +3237,7 @@
 
         <tr>
             
-                <td class="name"><code>path</code></td>
+                <td class="name"><code>args</code></td>
             
 
             <td class="type">
@@ -2959,6 +3270,45 @@
             
 
             <td class="description last">The path to the file, only use this if you want to store to a different file.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Has no effect for this instruction.</td>
         </tr>
 
     
@@ -2999,7 +3349,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line66">line 66</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -3073,7 +3423,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Jan 01 2023 16:27:14 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Jan 04 2023 20:03:52 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
