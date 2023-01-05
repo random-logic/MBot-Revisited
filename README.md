@@ -19,3 +19,7 @@ out/index.html
 5. Implement skip function for miner
 - Also have an array of block positions that already returned timed out so bot doesn't try to go to these again
 - We really need this feature because the bot can randomly get stuck
+6. Miner backtrack function.
+7. Sometimes times out, maybe we can increase checkTimeoutInterval (directly on mineflayer bot)?
+8. Work on modulating the different modules into different functions.
+9. Checkpoints for mover.
