@@ -54,4 +54,4 @@ async function init() {
     mbot.createBot(settings["createBot"]);
 }
 
-init().catch(e => console.log(e));
+init().catch(console.error);

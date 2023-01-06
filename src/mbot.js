@@ -61,7 +61,7 @@ class Mbot extends Module {
          * @property {UI} ui The user interface linked to this bot.
          */
         this.ui = ui;
-        ui.addMbot(this);
+        ui.mount(this);
 
         /**
          * @property {InstructionManager} instructionManager The instruction manager for this bot.

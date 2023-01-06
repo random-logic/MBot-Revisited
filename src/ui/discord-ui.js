@@ -31,6 +31,9 @@ class DiscordUI extends UI {
     constructor(settings) {
         super();
 
+        /**
+         * @property {Mbot} mbot The mbot instance linked to this user interface.
+         */
         this.mbot = null;
 
         // Init Discord Client
@@ -51,28 +54,45 @@ class DiscordUI extends UI {
             intents: ["Guilds", "GuildMessages", "MessageContent"] 
         });
 
-        this.discordClient.login(this.discordToken);
+        /**
+         * @property {Promise} ready Promise that resolves when the discord client is ready.
+         */
+        this.ready = new Promise(resolve => {
+            this.discordClient.login(this.discordToken);
 
-        this.discordClient.on("ready", () => {
-            // Set up channels for Discord Client
+            this.discordClient.on("ready", () => {
+                // Set up channels for Discord Client
 
-            /**
-             * @property {BaseChannel} commandChannel The channel instance of command channel.
-             */
-            this.commandChannel = this.discordClient.channels.cache.get(settings["commandChannelId"]);
+                /**
+                 * @property {BaseChannel} commandChannel The channel instance of command channel.
+                 */
+                this.commandChannel = this.discordClient.channels.cache.get(settings["commandChannelId"]);
 
-            /**
-             * @property {BaseChannel} chatChannel The channel instance of chat channel.
-             */
-            this.chatChannel = this.discordClient.channels.cache.get(settings["chatChannelId"]);
-    
-            // Set up listeners
+                /**
+                 * @property {BaseChannel} chatChannel The channel instance of chat channel.
+                 */
+                this.chatChannel = this.discordClient.channels.cache.get(settings["chatChannelId"]);
+        
+                // Let the user know the discord bot is ready
+                this.notify("Discord Bot is Initialized");
+
+                // Resolve ready
+                resolve();
+            });
+        }).catch(this.logError);
+    }
+
+    async mount(mbot) {
+        this.mbot = mbot;
+        
+        // Set up listeners
+        this.ready.then(() => {
             this.discordClient.on("messageCreate", message => {
                 // Do not do anything if the bot sends the message
                 if (message.author.id == this.discordBotId) return;
 
                 // Check where the message is sent
-                if (message.channel.id == this.commandChannel.id) {
+                if (message.channel.id == this.commandChannel.id    ) {
                     this.mbot?.instructionManager.getCommand(message.content)
                     .then(() => message.channel.send("Finished command " + message.content))
                     .catch(e => this.logError(e));
@@ -80,11 +100,9 @@ class DiscordUI extends UI {
                 else if (message.channel.id == this.chatChannel.id) {
                     this.mbot?.bot?.chat(message.content) ?? message.channel.send("Could not send message");
                 }
-            });
-    
-            // Let the user know the discord bot is ready
-            this.notify("Discord Bot is Initialized");
-        });
+            })
+        })
+        .catch(this.logError);
     }
 
     logMinecraftWhisper(username, message) { // ?? Can be modified to allow receiving chats from many mbots

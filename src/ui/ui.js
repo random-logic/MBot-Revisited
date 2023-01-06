@@ -9,7 +9,7 @@ class UI {
      * @abstract
      * @param {Mbot} mbot The instance of mbot to add.
      */
-    addMbot(mbot) {
+    mount(mbot) {
         throw new Error("UserInterface abstract function addMbot not implemented");
     }
 
