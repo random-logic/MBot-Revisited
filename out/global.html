@@ -264,7 +264,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line16">line 16</a>
+        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line17">line 17</a>
     </li></ul></dd>
     
 
@@ -342,6 +342,243 @@
 
             
                 
+<h4 class="name" id="CollectBlockArgs">CollectBlockArgs</h4>
+
+
+<p class="summary">Object that represents the args for an instruction.</p>
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>blockName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The name of the block to collect.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Infinity
+                
+                </td>
+            
+
+            <td class="description last">The number of blocks to collect.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resetAndApplyMovements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Resets and applies movements if true.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>movements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="EnhancedMovements.html">EnhancedMovements</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Sets the <a href="global.html#Movements">Movements</a> that the miner should use when moving.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line204">line 204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="Commands">Commands</h4>
 
 
@@ -384,7 +621,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line38">line 38</a>
+        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line39">line 39</a>
     </li></ul></dd>
     
 
@@ -625,7 +862,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line84">line 84</a>
+        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -824,6 +1061,167 @@
 
             
                 
+<h4 class="name" id="ExitBeforeDeathArgs">ExitBeforeDeathArgs</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>set</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Sets canExitBeforeDeath.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>threshold</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    10
+                
+                </td>
+            
+
+            <td class="description last">Sets exitBeforeDeathThreshold.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="health.js.html">health.js</a>, <a href="health.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="GotoPlayerArgs">GotoPlayerArgs</h4>
 
 
@@ -900,6 +1298,43 @@
 
         <tr>
             
+                <td class="name"><code>resetAndApplyMovements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Reset and apply movements with the given movements.</td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>movements</code></td>
             
 
@@ -969,7 +1404,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line105">line 105</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line136">line 136</a>
     </li></ul></dd>
     
 
@@ -1135,7 +1570,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line73">line 73</a>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line104">line 104</a>
     </li></ul></dd>
     
 
@@ -1311,7 +1746,7 @@
 
             
                 
-<h4 class="name" id="MineBlockArgs">MineBlockArgs</h4>
+<h4 class="name" id="MineBlocksArgs">MineBlocksArgs</h4>
 
 
 
@@ -1459,7 +1894,44 @@
 
         <tr>
             
-                <td class="name"><code>minerMovements</code></td>
+                <td class="name"><code>resetAndApplyMovements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Reset and apply movements with the given movements.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>movements</code></td>
             
 
             <td class="type">
@@ -1490,6 +1962,117 @@
             
 
             <td class="description last">Sets the <a href="global.html#Movements">Movements</a> that the miner should use when moving.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>searchAfterMine</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">If set to true, a search will be conducted after a block is mined. Otherwise, a search is only conducted after all blocks that are accessible are mined.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minHeight</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    -Infinity
+                
+                </td>
+            
+
+            <td class="description last">The min height the blocks may be at.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>maxHeight</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    Infinity
+                
+                </td>
+            
+
+            <td class="description last">The max height the blocks may be at.</td>
         </tr>
 
     
@@ -1528,7 +2111,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line18">line 18</a>
+        <a href="miner.js.html">miner.js</a>, <a href="miner.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -1919,6 +2502,169 @@
 
             
                 
+<h4 class="name" id="SavePositionArgs">SavePositionArgs</h4>
+
+
+<p class="summary">Object that represents the arguments.</p>
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The name of the position.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Vector3">Vector3</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">The actual position to save. By default, it saves the position of where the bot is at.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mover.js.html">mover.js</a>, <a href="mover.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="Set">Set</h4>
 
 
@@ -2094,7 +2840,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line31">line 31</a>
+        <a href="mbot.js.html">mbot.js</a>, <a href="mbot.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -2325,7 +3071,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Jan 01 2023 16:27:14 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Thu Jan 05 2023 18:01:21 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

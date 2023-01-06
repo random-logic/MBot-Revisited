@@ -137,16 +137,17 @@ class Mover extends Module {
      * @typedef GotoPlayerArgs
      * @summary Object that represents the arguments.
      * @property {string} playerName The name of the player to go to.
+     * @property {bool} [resetAndApplyMovements = false] Reset and apply movements with the given movements.
      * @property {EnhancedMovements} [movements = null] The movements to set.
      */
     
     /**
      * Instruction to make bot go to a player.
      * @param {GotoPlayerArgs} args The args for this instruction.
-     * @param {Interrupt} interrupt The interrupt instance of this bot.
+     * @param {Interrupt} [interrupt = null] Useful when called on instructions so that this process can be interrupted.
      * @returns {Promise} Promise that resolves on completion.
      */
-    async gotoPlayer(args, interrupt) {
+    async gotoPlayer(args, interrupt = null) {
         if (!args || typeof !args["playerName"] === "string")
             throw new Error("Invalid GotoPlayerArgs playerName");
 
@@ -155,24 +156,39 @@ class Mover extends Module {
         if (!position)
             throw new Error("Player not found");
 
-        this.resetAndApplyMovements(args["movements"], interrupt);
+        if (args["resetAndApplyMovements"])
+            this.resetAndApplyMovements(args["movements"], interrupt);
+        
         await this.goto(new GoalBlock(position.x, position.y, position.z), interrupt);
     }
 
     /**
-     * Set a specific goal for the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}, but allow the interrupts to stop the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}.
+     * Wrapper for goto method in [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}.
+     * Allows interrupts to stop the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}.
      * @param {Goal} goal The goal that will be set in pathfinder.
-     * @param {Interrupt} interrupt The interrupt instance of this bot.
-     * @returns {Promise} Promise that resolves on completion.
+     * @param {Interrupt} [interrupt = null] Useful when called on instructions so that this process can be interrupted.
+     * @returns {Promise} Promise that resolves on completion or rejects on error.
      */
-    async goto(goal, interrupt) {
+    async goto(goal, interrupt = null) {
         // Set interrupts
-        interrupt.onInterrupt = this.mbot.bot.pathfinder.stop;
+        interrupt?.setOnInterrupt(() => this.mbot.bot.pathfinder.setGoal(null));
 
-        await this.mbot.bot.pathfinder.goto(goal);
+        try {
+            await this.mbot.bot.pathfinder.goto(goal);
+        }
+        catch (e) {
+            // Clear onInterrupt
+            interrupt?.clearOnInterrupt();
+
+            // Throw interrupt error if interrupted
+            interrupt?.throwErrorIfHasInterrupt("goto");
+
+            // Otherwise just throw a normal error
+            throw e;
+        }
 
         // Clear onInterrupt
-        interrupt.onInterrupt = null;
+        interrupt?.clearOnInterrupt();
     }
 
     /**

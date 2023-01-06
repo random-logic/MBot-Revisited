@@ -59,7 +59,7 @@ class Mover extends Module {
         /**
          * @property {object} positionData An object that holds position names as keys and instances of {@link Vector3} as values.
          */
-        this.positionData = null;
+        this.positionData = {};
 
         /**
          * @property {string} positionDataPath The path where the positionData has been loaded from.
@@ -74,28 +74,59 @@ class Mover extends Module {
 
     onSpawn() {
         this.movements = new EnhancedMovements(this.mbot.bot);
+
+        // ?? Temporary, eventually move this to configurable options.
+        this.mbot.bot.pathfinder.thinkTimeout = 20000;
     }
 
     /**
-     * Loads position data.
-     * @param {string} path The path to the file.
+     * Instruction to load position data.
+     * @param {string} args The path to the file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
      * @returns {Promise} Promise that resolves when read file finishes.
      */
-    async loadPositionData(path) {
-        this.positionData = await Utility.readJsonFile(path);
-        this.positionDataPath = path;
+    async loadPositionData(args, interrupt = null) {
+        this.positionData = await Utility.readJsonFile(args);
+        this.positionDataPath = args;
     }
 
     /**
-     * Stores position data.
-     * @param {string} [path = null] The path to the file, only use this if you want to store to a different file.
+     * Instruction to store position data.
+     * @param {string} [args = null] The path to the file, only use this if you want to store to a different file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
      * @returns {Promise} Promise that resolves when write file finishes.
      */
-    async storePositionData(path = null) {
-        if (!path)
-            path = this.positionDataPath;
+    async storePositionData(args = null, interrupt = null) {
+        if (!args)
+            args = this.positionDataPath;
 
-        await Utility.writeJsonFile(path, this.positionData);
+        await Utility.writeJsonFile(args, this.positionData);
+    }
+
+    /**
+     * @typedef SavePositionArgs
+     * @summary Object that represents the arguments.
+     * @property {string} name The name of the position.
+     * @property {Vector3} [position = null] The actual position to save. By default, it saves the position of where the bot is at.
+     */
+
+    /**
+     * Instruction to save position.
+     * @param {SavePositionArgs} args
+     * @param {Interrupt} [interrupt = null]
+     */
+    savePosition(args, interrupt) {
+        if (!args || typeof args["name"] !== "string")
+            throw new Error("Invalid SavePositionArgs name");
+        
+        if (!args["position"]) {
+            args["position"] = this.mbot.bot.entity.position;
+        }
+        else if (typeof args["position"] !== "object") {
+            throw new Error("Invalid SavePositionArgs position");
+        }
+
+        this.positionData[args["name"]] = args["position"];
     }
     
     /**
@@ -118,7 +149,7 @@ class Mover extends Module {
         this.resetAndApplyMovements(args["movements"], interrupt);
 
         if (typeof args["position"] === "string") {
-            const position = positionData[args["position"]];
+            const position = this.positionData[args["position"]];
             await this.goto(new GoalBlock(position.x, position.y, position.z), interrupt);
         }
         else if (typeof args["position"] === "object") {
@@ -134,16 +165,17 @@ class Mover extends Module {
      * @typedef GotoPlayerArgs
      * @summary Object that represents the arguments.
      * @property {string} playerName The name of the player to go to.
+     * @property {bool} [resetAndApplyMovements = false] Reset and apply movements with the given movements.
      * @property {EnhancedMovements} [movements = null] The movements to set.
      */
     
     /**
      * Instruction to make bot go to a player.
      * @param {GotoPlayerArgs} args The args for this instruction.
-     * @param {Interrupt} interrupt The interrupt instance of this bot.
+     * @param {Interrupt} [interrupt = null] Useful when called on instructions so that this process can be interrupted.
      * @returns {Promise} Promise that resolves on completion.
      */
-    async gotoPlayer(args, interrupt) {
+    async gotoPlayer(args, interrupt = null) {
         if (!args || typeof !args["playerName"] === "string")
             throw new Error("Invalid GotoPlayerArgs playerName");
 
@@ -152,24 +184,39 @@ class Mover extends Module {
         if (!position)
             throw new Error("Player not found");
 
-        this.resetAndApplyMovements(args["movements"], interrupt);
+        if (args["resetAndApplyMovements"])
+            this.resetAndApplyMovements(args["movements"], interrupt);
+        
         await this.goto(new GoalBlock(position.x, position.y, position.z), interrupt);
     }
 
     /**
-     * Set a specific goal for the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}, but allow the interrupts to stop the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}.
+     * Wrapper for goto method in [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}.
+     * Allows interrupts to stop the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder#functions}.
      * @param {Goal} goal The goal that will be set in pathfinder.
-     * @param {Interrupt} interrupt The interrupt instance of this bot.
-     * @returns {Promise} Promise that resolves on completion.
+     * @param {Interrupt} [interrupt = null] Useful when called on instructions so that this process can be interrupted.
+     * @returns {Promise} Promise that resolves on completion or rejects on error.
      */
-    async goto(goal, interrupt) {
+    async goto(goal, interrupt = null) {
         // Set interrupts
-        interrupt.onInterrupt = this.mbot.bot.pathfinder.stop;
+        interrupt?.setOnInterrupt(() => this.mbot.bot.pathfinder.setGoal(null));
 
-        await this.mbot.bot.pathfinder.goto(goal);
+        try {
+            await this.mbot.bot.pathfinder.goto(goal);
+        }
+        catch (e) {
+            // Clear onInterrupt
+            interrupt?.clearOnInterrupt();
+
+            // Throw interrupt error if interrupted
+            interrupt?.throwErrorIfHasInterrupt("goto");
+
+            // Otherwise just throw a normal error
+            throw e;
+        }
 
         // Clear onInterrupt
-        interrupt.onInterrupt = null;
+        interrupt?.clearOnInterrupt();
     }
 
     /**
@@ -284,7 +331,7 @@ module.exports = Mover;</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Jan 01 2023 16:27:13 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Thu Jan 05 2023 18:01:21 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

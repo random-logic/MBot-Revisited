@@ -8,6 +8,7 @@
                 "maxDistance": 64,
                 "count": 10
             },
+            "resetAndApplyMovements" : true,
             "movements" : {
                 "set" : {
                     "canMoveDiagonally": false,
@@ -28,14 +29,17 @@
                         "nether_brick_wall"
                     ]
                 }
-            }
+            },
+            "searchAfterMine" : true,
+            "maxHeight" : 30
         }
     },
     "come" : {
         "module" : "mover",
         "instruction" : "gotoPlayer",
         "args": {
-            "playerName": "random_logic_",
+            "playerName" : "random_logic_",
+            "resetAndApplyMovements" : true,
             "movements" : {
                 "set" : {
                     "canMoveDiagonally": false,

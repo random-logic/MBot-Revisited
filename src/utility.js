@@ -152,11 +152,19 @@ class Utility extends Module {
     /**
      * Wait for the specified entity to disappear.
      * @param {Entity} entity The entity that should disappear.
+     * @param {Interrupt} [interrupt = null] Useful when called on instructions so that this process can be interrupted.
      * @return {Promise} A promise that resolves when the entity disappears.
      */
-    async waitForEntityGone(entity) {
-        return new Promise(resolve => {
+    async waitForEntityGone(entity, interrupt = null) {
+        return new Promise((resolve, reject) => {
             if (!entity) resolve();
+            
+            if (interrupt) // Allow interrupts to stop this process.
+                interrupt.onInterrupt = () => {
+                    this.checkForEntityGone = false;
+                    reject();
+                };
+            
             this.onEntityGoneMatch = resolve;
             this.entityGoneToMatch = entity;
             this.checkForEntityGone = true;
