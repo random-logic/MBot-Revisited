@@ -10,11 +10,8 @@ const mcData = require("minecraft-data");
  * @extends Module
  */
 class Utility extends Module {
-    /**
-     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
-     */
-    constructor(mbot) {
-        super(mbot, "utility");
+    constructor() {
+        super("utility");
 
         /**
          * @property {object} mcData The [minecraft-data]{@link https://github.com/PrismarineJS/minecraft-data} associated with the bot.

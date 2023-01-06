@@ -1,13 +1,5 @@
-// Custom modules
 const InstructionManager = require("./instruction-manager");
-const UserInterface = require("./user-interface");
-
-// Custom modules with dependence on mineflayer
 const Module = require("./module");
-const Mover = require("./mover");
-const Utility = require("./utility");
-const Miner = require("./miner");
-const Health = require("./health");
 
 // Mineflayer
 const mineflayer = require("mineflayer");
@@ -24,16 +16,15 @@ const inventoryView = require('mineflayer-web-inventory');
  * Handles the bare minimum for [mineflayer]{@link https://github.com/PrismarineJS/mineflayer}.
  * Join and quit game.
  * View [bot]{@link https://github.com/PrismarineJS/prismarine-viewer} and [inventory]{@link https://github.com/imharvol/mineflayer-web-inventory} in web browser.
- * Has {@link UserInterface} to interact with bot.
+ * Can use {@link UI} to interact with bot.
  * Other functionality is handled by other modules.
  */
 
 class Mbot extends Module {
     /**
-     * @typedef Settings
-     * An object that stores the settings for {@link Mbot}.
-     * @property {object} loginArgs See [createBot]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#mineflayercreatebotoptions}.
-     * @property {DiscordClient} discordClient Login information for the discord bot.
+     * @typedef MbotSettings
+     * @summary An object that stores the settings for {@link Mbot}.
+     * See properties of [createBot]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#mineflayercreatebotoptions}.
      */
 
     /**
@@ -42,16 +33,12 @@ class Mbot extends Module {
      */
 
     /**
-     * @param {Settings} settings The settings for the bot.
+     * @param {object} modules An object with only instances of {@link Module} to mount onto the bot. The key "mbot" is reserved for this instance of Mbot.
      * @param {Commands} commands The commands that act like shortcuts to call instructions.
+     * @param {UI} ui The user interface that will control this bot.
      */
-    constructor(settings, commands) {
-        super(null, "mbot");
-        
-        /**
-         * @property {Settings} settings The settings for the bot.
-         */
-        this.settings = settings;
+    constructor(modules, commands, ui) {
+        super("mbot");
         
         /**
          * @property {Commands} commands The commands that act like shortcuts to call instructions.
@@ -66,18 +53,21 @@ class Mbot extends Module {
         /**
          * @property {object} modules The object that only stores {@link Module}. The names are keys and the actual {@link Module} are values. These modules are mounted to Mbot.
          */
-        this.modules = {
-            "mbot" : this, // So that instructions here can also be accessed.
-            "mover" : new Mover(this),
-            "utility" : new Utility(this),
-            "miner" : new Miner(this),
-            "health" : new Health(this)
-        };
+        this.modules = modules;
+
+        // Mount all modules onto Mbot
+        for (const property in this.modules) {
+            this.modules[property].mount(this);
+        }
+
+        // Add this instance of Mbot into modules so that instructions here can also be accessed.
+        this.modules["mbot"] = this;
 
         /**
-         * @property {UserInterface} userInterface The user interface linked to this bot.
+         * @property {UI} ui The user interface linked to this bot.
          */
-        this.userInterface = new UserInterface(this); // Can be modified to handle many mbot references
+        this.ui = ui;
+        ui.addMbot(this);
 
         /**
          * @property {InstructionManager} instructionManager The instruction manager for this bot.
@@ -88,6 +78,7 @@ class Mbot extends Module {
     /**
      * @typedef CreateBotArgs
      * @summary An object that stores that determines what plugins to add to the bot upon creation.
+     * @property {object} options See properties of [createBot]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#mineflayercreatebotoptions}.
      * @property {bool} [createBotView = false] Creates bot view if true.
      * @property {object} [botViewOptions = null] See [prismarine-viewer]{@link https://github.com/PrismarineJS/prismarine-viewer#mineflayer}.
      * @property {bool} [createInventoryView = false] Creates inventory view if true.
@@ -102,7 +93,7 @@ class Mbot extends Module {
      */
     async createBot(args = null, interrupt = null) {
         // Instantiate bot
-        this.bot = mineflayer.createBot(this.settings["loginArgs"]);
+        this.bot = mineflayer.createBot(args["options"]);
 
         // Invoke the callbacks for all modules
         for (const property in this.modules) {
@@ -126,15 +117,15 @@ class Mbot extends Module {
                 inventoryView(this.bot, args["inventoryViewOptions"]);
             }
 
-            // Link newly created bot to display any messages in chat on userInterface
+            // Link newly created bot to display any messages in chat on ui
             this.bot.on("whisper", (username, message) => {
                 if (username == this.bot.username) return;
-                this.userInterface.logMinecraftWhisper(username, message);
+                this.ui.logMinecraftWhisper(username, message);
             });
 
             this.bot.on("chat", (username, message) => {
                 if (username == this.bot.username) return;
-                this.userInterface.logMinecraftChat(username, message);
+                this.ui.logMinecraftChat(username, message);
             });
 
             // Invoke the callbacks for all modules
@@ -147,7 +138,7 @@ class Mbot extends Module {
 
         await waitForSpawn;
 
-        this.userInterface.log("Spawned");
+        this.ui.log("Spawned");
     }
 
     /**

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Health</title>
+    <title>JSDoc: Class: DiscordUI</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Health</h1>
+    <h1 class="page-title">Class: DiscordUI</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>Health<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>DiscordUI<span class="signature">(settings)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Manages the health of the bot.Requires <a href="https://github.com/link-discord/mineflayer-auto-eat">mineflayer-auto-eat</a>.</div>
+            <div class="class-description">Creates a user interface to send commands to the bot. Only supports one bot.</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="Health"><span class="type-signature"></span>new Health<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="DiscordUI"><span class="type-signature"></span>new DiscordUI<span class="signature">(settings)</span><span class="type-signature"></span></h4>
     
 
     
@@ -58,6 +58,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#DiscordUISettings">DiscordUISettings</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -93,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="health.js.html">health.js</a>, <a href="health.js.html#line11">line 11</a>
+        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -133,7 +182,7 @@
 
 
     <ul>
-        <li><a href="Module.html">Module</a></li>
+        <li><a href="UI.html">UI</a></li>
     </ul>
 
 
@@ -154,7 +203,7 @@
 
         
             
-<h4 class="name" id="autoEat"><span class="type-signature"></span>autoEat<span class="type-signature"></span></h4>
+<h4 class="name" id="chatChannel"><span class="type-signature"></span>chatChannel<span class="type-signature"></span></h4>
 
 
 
@@ -179,11 +228,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -195,37 +240,23 @@
 
         <tr>
             
-                <td class="name"><code>autoEat</code></td>
+                <td class="name"><code>chatChannel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">bool</span>
+<span class="param-type"><a href="global.html#BaseChannel">BaseChannel</a></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                    true
-                
-                </td>
-            
 
-            <td class="description last">The bot will auto eat when needed if set to true.</td>
+            <td class="description last">The channel instance of chat channel.</td>
         </tr>
 
     
@@ -264,7 +295,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="health.js.html">health.js</a>, <a href="health.js.html#line18">line 18</a>
+        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -282,7 +313,7 @@
 
         
             
-<h4 class="name" id="canExitBeforeDeath"><span class="type-signature"></span>canExitBeforeDeath<span class="type-signature"></span></h4>
+<h4 class="name" id="commandChannel"><span class="type-signature"></span>commandChannel<span class="type-signature"></span></h4>
 
 
 
@@ -307,11 +338,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -323,37 +350,23 @@
 
         <tr>
             
-                <td class="name"><code>canExitBeforeDeath</code></td>
+                <td class="name"><code>commandChannel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">bool</span>
+<span class="param-type"><a href="global.html#BaseChannel">BaseChannel</a></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                    false
-                
-                </td>
-            
 
-            <td class="description last">The bot will attempt to log off when reaching a certain health threshold to avoid death if set to true.</td>
+            <td class="description last">The channel instance of command channel.</td>
         </tr>
 
     
@@ -392,7 +405,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="health.js.html">health.js</a>, <a href="health.js.html#line23">line 23</a>
+        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line62">line 62</a>
     </li></ul></dd>
     
 
@@ -410,7 +423,7 @@
 
         
             
-<h4 class="name" id="exitBeforeDeathThreshold"><span class="type-signature"></span>exitBeforeDeathThreshold<span class="type-signature"></span></h4>
+<h4 class="name" id="discordBotId"><span class="type-signature"></span>discordBotId<span class="type-signature"></span></h4>
 
 
 
@@ -435,11 +448,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -451,7 +460,7 @@
 
         <tr>
             
-                <td class="name"><code>exitBeforeDeathThreshold</code></td>
+                <td class="name"><code>discordBotId</code></td>
             
 
             <td class="type">
@@ -464,24 +473,10 @@
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                    10
-                
-                </td>
-            
 
-            <td class="description last">The theshold where the bot will exit the game.</td>
+            <td class="description last">The id of the discord bot.</td>
         </tr>
 
     
@@ -520,7 +515,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="health.js.html">health.js</a>, <a href="health.js.html#line28">line 28</a>
+        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -538,7 +533,7 @@
 
         
             
-<h4 class="name" id="mbot"><span class="type-signature"></span>mbot<span class="type-signature"></span></h4>
+<h4 class="name" id="discordClient"><span class="type-signature"></span>discordClient<span class="type-signature"></span></h4>
 
 
 
@@ -575,13 +570,13 @@
 
         <tr>
             
-                <td class="name"><code>mbot</code></td>
+                <td class="name"><code>discordClient</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Mbot.html">Mbot</a></span>
+<span class="param-type"><a href="global.html#Client">Client</a></span>
 
 
             
@@ -591,7 +586,7 @@
 
             
 
-            <td class="description last">The instance of Mbot that this <a href="Module.html">Module</a> is mounted to.</td>
+            <td class="description last">The discord client instance for this user interface.</td>
         </tr>
 
     
@@ -609,11 +604,6 @@
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Module.html#mbot">Module#mbot</a>
-    </li></ul></dd>
     
 
     
@@ -635,7 +625,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">module.js</a>, <a href="module.js.html#line14">line 14</a>
+        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -653,7 +643,7 @@
 
         
             
-<h4 class="name" id="moduleName"><span class="type-signature"></span>moduleName<span class="type-signature"></span></h4>
+<h4 class="name" id="discordToken"><span class="type-signature"></span>discordToken<span class="type-signature"></span></h4>
 
 
 
@@ -690,7 +680,7 @@
 
         <tr>
             
-                <td class="name"><code>moduleName</code></td>
+                <td class="name"><code>discordToken</code></td>
             
 
             <td class="type">
@@ -706,7 +696,7 @@
 
             
 
-            <td class="description last">The name of this module.</td>
+            <td class="description last">The token of the discord bot.</td>
         </tr>
 
     
@@ -724,11 +714,6 @@
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Module.html#moduleName">Module#moduleName</a>
-    </li></ul></dd>
     
 
     
@@ -750,122 +735,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">module.js</a>, <a href="module.js.html#line19">line 19</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="requiredModules"><span class="type-signature"></span>requiredModules<span class="type-signature"></span></h4>
-
-
-
-
-
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>requiredModules</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#Array">Array</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An array of strings that specifies the required modules for this module to operate.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Module.html#requiredModules">Module#requiredModules</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">module.js</a>, <a href="module.js.html#line24">line 24</a>
+        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line40">line 40</a>
     </li></ul></dd>
     
 
@@ -893,7 +763,7 @@
     
 
     
-    <h4 class="name" id="exitBeforeDeath"><span class="type-signature"></span>exitBeforeDeath<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="addMbot"><span class="type-signature">(abstract) </span>addMbot<span class="signature">(mbot)</span><span class="type-signature"></span></h4>
     
 
     
@@ -901,199 +771,7 @@
 
 
 <div class="description">
-    Instruction to set exit before death.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>args</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">MineBlockArgs</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last">The args for this instruction.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>interrupt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
-
-            <td class="description last">No effect for this instruction.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="health.js.html">health.js</a>, <a href="health.js.html#line86">line 86</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="mount"><span class="type-signature"></span>mount<span class="signature">(mbot)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Mount this <a href="Module.html">Module</a> onto <a href="Mbot.html">Mbot</a>.
+    Adds a bot for the user to control.
 </div>
 
 
@@ -1145,7 +823,7 @@
 
             
 
-            <td class="description last">The <a href="Mbot.html">Mbot</a> to link to this module.</td>
+            <td class="description last">The instance of mbot to add.</td>
         </tr>
 
     
@@ -1168,7 +846,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Module.html#mount">Module#mount</a>
+        <a href="UI.html#addMbot">UI#addMbot</a>
     </li></ul></dd>
     
 
@@ -1191,7 +869,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">module.js</a>, <a href="module.js.html#line31">line 31</a>
+        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -1227,7 +905,7 @@
     
 
     
-    <h4 class="name" id="onCreateBot"><span class="type-signature"></span>onCreateBot<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="log"><span class="type-signature"></span>log<span class="signature">(what)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1235,7 +913,7 @@
 
 
 <div class="description">
-    Callback when <a href="Mbot.html">Mbot</a> creates a Mineflayer bot. Default behavior is to throw an error if one of the required modules is not mounted onto Mbot.
+    Log for debugging.
 </div>
 
 
@@ -1244,6 +922,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>what</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String to log</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -1261,7 +988,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Module.html#onCreateBot">Module#onCreateBot</a>
+        <a href="UI.html#log">UI#log</a>
     </li></ul></dd>
     
 
@@ -1284,7 +1011,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">module.js</a>, <a href="module.js.html#line38">line 38</a>
+        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -1320,7 +1047,7 @@
     
 
     
-    <h4 class="name" id="onSpawn"><span class="type-signature"></span>onSpawn<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="logError"><span class="type-signature"></span>logError<span class="signature">(what)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1328,7 +1055,7 @@
 
 
 <div class="description">
-    Callback when <a href="Mbot.html">Mbot</a> creates a Mineflayer bot and the bot spawns. Default behavior is to do nothing.
+    Log error for debugging.
 </div>
 
 
@@ -1337,6 +1064,58 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>what</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Error to log</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -1354,7 +1133,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Module.html#onSpawn">Module#onSpawn</a>
+        <a href="UI.html#logError">UI#logError</a>
     </li></ul></dd>
     
 
@@ -1377,7 +1156,479 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">module.js</a>, <a href="module.js.html#line52">line 52</a>
+        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="logMinecraftChat"><span class="type-signature">(abstract) </span>logMinecraftChat<span class="signature">(username, message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Logs a minecraft chat message.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>username</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The username associated with the message.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="UI.html#logMinecraftChat">UI#logMinecraftChat</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="logMinecraftWhisper"><span class="type-signature">(abstract) </span>logMinecraftWhisper<span class="signature">(username, message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Logs a minecraft whisper message.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>username</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The username associated with the message.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="UI.html#logMinecraftWhisper">UI#logMinecraftWhisper</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="notify"><span class="type-signature">(abstract) </span>notify<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Push notification to user interface.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="UI.html#notify">UI#notify</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line41">line 41</a>
     </li></ul></dd>
     
 

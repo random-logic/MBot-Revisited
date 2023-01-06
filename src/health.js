@@ -9,11 +9,8 @@ const autoEat = require("mineflayer-auto-eat").default;
  * @extends Module
  */
 class Health extends Module {
-    /**
-     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
-     */
-    constructor(mbot) {
-        super(mbot, "health");
+    constructor() {
+        super("health");
 
         /**
          * @property {bool} [autoEat = true] The bot will auto eat when needed if set to true.
@@ -38,7 +35,7 @@ class Health extends Module {
 
     onSpawn() {
         this.mbot.bot.on("health", () => {
-            this.mbot.userInterface.log("Health: " + this.mbot.bot.health);
+            this.mbot.ui.log("Health: " + this.mbot.bot.health);
 
             if (this.autoEat) {
                 this.mbot.bot.autoEat.enable();
@@ -69,7 +66,7 @@ class Health extends Module {
                         "instruction": "quit"
                     });
 
-                    this.mbot.userInterface.notify("Bot low in health, quitting");
+                    this.mbot.ui.notify("Bot low in health, quitting");
                 }
             }
         });

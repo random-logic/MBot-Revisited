@@ -17,11 +17,8 @@ const { GoalBlock } = require("mineflayer-pathfinder").goals;
  * @extends Module
  */
 class Mover extends Module {
-    /**
-     * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
-     */
-    constructor(mbot) {
-        super(mbot, "mover", ["utility"]);
+    constructor() {
+        super("mover", ["utility"]);
 
         /**
          * @property {EnhancedMovements} movements Can be applied to the [pathfinder]{@link https://github.com/PrismarineJS/mineflayer-pathfinder}.

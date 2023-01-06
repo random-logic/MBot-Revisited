@@ -11,8 +11,8 @@ class Miner extends Module {
     /**
      * @param {Mbot} mbot The instance of Mbot that this {@link Module} will be mounted to.
      */
-    constructor (mbot) {
-        super(mbot, "miner", ["utility", "mover"]);
+    constructor () {
+        super("miner", ["utility", "mover"]);
     }
 
     /**
@@ -98,7 +98,7 @@ class Miner extends Module {
                     interrupt.throwErrorIfHasInterrupt("mineBlocks");
 
                     // Otherwise log error and continue the loop
-                    this.mbot.userInterface.logError(e);
+                    this.mbot.ui.logError(e);
                 }
             }
         }
@@ -112,7 +112,7 @@ class Miner extends Module {
      */
     async mineBlock(blockPosition, interrupt = null) {
         // Travel to block
-        this.mbot.userInterface.log(`Moving to mine block at position ${blockPosition}`);
+        this.mbot.ui.log(`Moving to mine block at position ${blockPosition}`);
         await this.mbot.modules["mover"].goto(
             new GoalCompositeAll([
                 new GoalLookAtBlock(blockPosition, this.mbot.bot.world, { "range" : 4 }),
@@ -128,7 +128,7 @@ class Miner extends Module {
         const block = this.mbot.bot.blockAt(blockPosition);
 
         // Get the best harvest tool
-        this.mbot.userInterface.log("Equipping harvesting tool");
+        this.mbot.ui.log("Equipping harvesting tool");
         const harvestTool = this.mbot.bot.pathfinder.bestHarvestTool(block);
         if (!harvestTool) throw "No tool to harvest block";
 
@@ -139,9 +139,9 @@ class Miner extends Module {
         if (interrupt?.hasInterrupt) throw "mineBlock Interrupted";
 
         // Dig block
-        this.mbot.userInterface.log("Digging block");
+        this.mbot.ui.log("Digging block");
         await this.dig({"block" : block}, interrupt);
-        this.mbot.userInterface.log("Finished digging block");
+        this.mbot.ui.log("Finished digging block");
 
         // Check for interrupts
         if (interrupt?.hasInterrupt) throw "mineBlock Interrupted";
@@ -153,12 +153,12 @@ class Miner extends Module {
         if (interrupt?.hasInterrupt) throw "mineBlock Interrupted";
 
         // Collect block
-        this.mbot.userInterface.log("Collecting block");
+        this.mbot.ui.log("Collecting block");
         await this.collectBlock({
             "blockName" : block.name,
             "count" : 1
         }, interrupt);
-        this.mbot.userInterface.log("Finished collecting block");
+        this.mbot.ui.log("Finished collecting block");
     }
 
     /**
@@ -237,7 +237,7 @@ class Miner extends Module {
             );
 
             if (!entity) {
-                this.mbot.userInterface.log("There is no entity, we are finished");
+                this.mbot.ui.log("There is no entity, we are finished");
                 break;
             }
 
@@ -251,7 +251,7 @@ class Miner extends Module {
 
             await waitForEntityGone; // Do not continue until entity picked up
 
-            this.mbot.userInterface.log("Collected one entity");
+            this.mbot.ui.log("Collected one entity");
         }
     }
 }

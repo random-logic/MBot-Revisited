@@ -1,5 +1,7 @@
+const UI = require("./ui.js");
+
 /**
- * @typedef DiscordClient
+ * @typedef DiscordUISettings
  * @summary An object that represent the Discord settings for {@link UserInterface}.
  * @property {string} token The token of the discord bot.
  * @property {string} commandChannelId The channel id the bot should use to fetch commands.
@@ -19,28 +21,28 @@
 
 /**
  * @class
- * Creates a user interface to send commands to the bot.
+ * Creates a user interface to send commands to the bot. Only supports one bot.
+ * @extends UI
  */
-class UserInterface {
+class DiscordUI extends UI {
     /**
-     * @param {Mbot} mbot The instance of Mbot that this module will be mounted to.
+     * @param {DiscordUISettings} settings 
      */
-    constructor(mbot) {
-        /**
-         * @property {Mbot} mbot The instance of Mbot that this module is mounted to.
-         */
-        this.mbot = mbot;
+    constructor(settings) {
+        super();
+
+        this.mbot = null;
 
         // Init Discord Client
         /**
          * @property {string} discordToken The token of the discord bot.
          */
-        this.discordToken = this.mbot.settings["discordClient"]["token"];
+        this.discordToken = settings["token"];
         
         /**
          * @property {number} discordBotId The id of the discord bot.
          */
-        this.discordBotId = this.mbot.settings["discordClient"]["botId"];
+        this.discordBotId = settings["botId"];
 
         /**
          * @property {Client} discordClient The discord client instance for this user interface.
@@ -57,12 +59,12 @@ class UserInterface {
             /**
              * @property {BaseChannel} commandChannel The channel instance of command channel.
              */
-            this.commandChannel = this.discordClient.channels.cache.get(this.mbot.settings["discordClient"]["commandChannelId"]);
+            this.commandChannel = this.discordClient.channels.cache.get(settings["commandChannelId"]);
 
             /**
              * @property {BaseChannel} chatChannel The channel instance of chat channel.
              */
-            this.chatChannel = this.discordClient.channels.cache.get(this.mbot.settings["discordClient"]["chatChannelId"]);
+            this.chatChannel = this.discordClient.channels.cache.get(settings["chatChannelId"]);
     
             // Set up listeners
             this.discordClient.on("messageCreate", message => {
@@ -76,56 +78,30 @@ class UserInterface {
                     .catch(e => this.logError(e));
                 }
                 else if (message.channel.id == this.chatChannel.id) {
-                    this.mbot?.bot?.chat(message.content);
+                    this.mbot?.bot?.chat(message.content) ?? message.channel.send("Could not send message");
                 }
             });
     
             // Let the user know the discord bot is ready
-            this.commandChannel.send("Discord Bot is Initialized");
+            this.notify("Discord Bot is Initialized");
         });
     }
 
-    /**
-     * Logs a minecraft whisper message.
-     * @param {string} username The username associated with the message.
-     * @param {string} message The message.
-     */
     logMinecraftWhisper(username, message) { // ?? Can be modified to allow receiving chats from many mbots
-        this.chatChannel.send(`*${username} whispers to you: ${message}*`);
+        this.chatChannel.send(`*${username.replace(/\_/, "\\_").replace(/\*/, "\\*")} whispers to you: ${message}*`);
     }
 
-    /**
-     * Logs a minecraft chat message.
-     * @param {string} username The username associated with the message.
-     * @param {string} message The message.
-     */
     logMinecraftChat(username, message) { // ?? Can be modified to allow receiving chats from many mbots
-        this.chatChannel.send(`${username}: ${message}`);
+        this.chatChannel.send(`${username.replace(/\_/, "\\_").replace(/\*/, "\\*")}: ${message}`);
     }
 
-    /**
-     * Push notification to user interface.
-     * @param {string} message The message.
-     */
     notify(message) {
         this.commandChannel.send(message);
     }
 
-    /**
-     * Log for debugging.
-     * @param {string} what String to log
-     */
-    log(what) {
-        console.log(what);
-    }
-
-    /**
-     * Log error for debugging.
-     * @param {string | Error} what Error to log
-     */
-    logError(what) {
-        console.error(what);
+    addMbot(mbot) {
+        this.mbot = mbot;
     }
 }
 
-module.exports = UserInterface;
+module.exports = DiscordUI;

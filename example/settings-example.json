@@ -1,14 +1,14 @@
 {
-    "createBotArgs": {
+    "createBot": {
         "host": "localhost",
         "port": "INSERT YOUR PORT NUMBER",
         "username": "MBot",
         "password": ""
     },
-    "discordClient": {
+    "discordUI": {
         "token": "INSERT YOUR TOKEN",
-        "commandChannelId": "123456789",
-        "chatChannelId": "123456789",
+        "commandChannelId": "INSERT CHANNEL ID FOR COMMANDS",
+        "chatChannelId": "INSERT CHANNEL ID FOR CHATS",
         "botId": 123456789
     }
 }

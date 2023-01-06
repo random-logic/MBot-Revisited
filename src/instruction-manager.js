@@ -99,7 +99,7 @@ class InstructionManager {
         }
         catch (e) {
             // Log the error to user interface if an error is thrown
-            this.mbot.userInterface.logError(e);
+            this.mbot.ui.logError(e);
         }
         finally {
             // Check for interrupt
