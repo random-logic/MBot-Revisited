@@ -13,21 +13,25 @@
 /**
  * @typedef Settings
  * @summary The settings used in the default index.js to instantiate {@link UI} and {@link Mbot}
- * @property {CreateBotArgs} createBot
- * @property {DiscordUISettings} discordUI
+ * @property {CreateBotArgs} createBot This property will be applied to mineflayer bot.
+ * @property {DiscordUISettings} discordUI Use this property only if you are using {@link DiscordUI}.
  */
 
-const DiscordUI = require("./discord-ui.js");
-const Mbot = require("./mbot");
+const DiscordUI = require("./src/ui/discord-ui.js");
+const Mbot = require("./src/mbot");
 
 // Custom modules
-const Mover = require("./mover");
-const Utility = require("./utility");
-const Miner = require("./miner");
-const Health = require("./health");
+const Mover = require("./src/modules/mover");
+const Utility = require("./src/modules/utility");
+const Miner = require("./src/modules/miner");
+const Health = require("./src/modules/health");
 
+/**
+ * @property {Settings} settings The settings to run Mbot and UI with.
+ */
+var settings;
 
-var settings, commands, mbot, ui;
+var commands, mbot, ui;
 
 async function init() {
     // Load JSON files

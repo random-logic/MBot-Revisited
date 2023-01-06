@@ -1,5 +1,5 @@
 const InstructionManager = require("./instruction-manager");
-const Module = require("./module");
+const Module = require("./modules/module");
 
 // Mineflayer
 const mineflayer = require("mineflayer");
@@ -21,12 +21,6 @@ const inventoryView = require('mineflayer-web-inventory');
  */
 
 class Mbot extends Module {
-    /**
-     * @typedef MbotSettings
-     * @summary An object that stores the settings for {@link Mbot}.
-     * See properties of [createBot]{@link https://github.com/PrismarineJS/mineflayer/blob/master/docs/api.md#mineflayercreatebotoptions}.
-     */
-
     /**
      * @typedef Commands
      * @summary An object with only instances of {@link InstructionCall} as values. 

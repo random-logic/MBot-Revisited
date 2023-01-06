@@ -10,7 +10,7 @@ const Interrupt = require("./interrupt");
 
 /**
  * @class
- * Decodes and executes Mbot instructions.
+ * Executes {@link Mbot} instructions by calling methods in modules.
  * Allows for other instructions to interrupt the current instruction.
  */
 class InstructionManager {
@@ -48,8 +48,8 @@ class InstructionManager {
     }
     
     /**
-     * Parses the command into an instruction and executes it.
-     * @param {InstructionCall} contents The instruction.
+     * Parses an {@link InstructionCall} and executes it.
+     * @param {InstructionCall} contents The instruction to parse.
      * @returns {Promise} Promise that resolves when the instruction finishes.
      */
     async parseInstruction(contents) {
