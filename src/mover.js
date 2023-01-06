@@ -171,7 +171,7 @@ class Mover extends Module {
      */
     async goto(goal, interrupt = null) {
         // Set interrupts
-        interrupt?.setOnInterrupt(this.mbot.bot.pathfinder.stop);
+        interrupt?.setOnInterrupt(() => this.mbot.bot.pathfinder.setGoal(null));
 
         try {
             await this.mbot.bot.pathfinder.goto(goal);
