@@ -12,14 +12,10 @@ jsdoc src
 out/index.html
 
 ## To do
-1. Implement a function to get the bot unstuck when digging block.
-2. Allow interrupts while digging
-3. Create health.js
-4. Refactor methods and let bot collect all items of "ancient_debris" before mining again
-5. Implement skip function for miner
-- Also have an array of block positions that already returned timed out so bot doesn't try to go to these again
-- We really need this feature because the bot can randomly get stuck
-6. Miner backtrack function.
-7. Sometimes times out, maybe we can increase checkTimeoutInterval (directly on mineflayer bot)?
-8. Work on modulating the different modules into different functions.
-9. Checkpoints for mover.
+1. Implement a function to get the bot unstuck when digging block. This can be as simple as giving the bot an expected time to mine and if it fails then have an unstuck function be called.
+2. Implement skip function for miner or unstuck function for mover since bot can get stuck when navigating through nether
+3. Checkpoints for mover so that pathfinder does not time out if distance is large
+4. https://www.electronjs.org/ = maybe, not sure
+- Idea: Have a list of commands in a json file, then have a select menu (dropdown), and then autofill json into a text area. Then add a button to execute the command.
+- User can also load preferences at any given time.
+- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_search_menu Drop down menu.

@@ -67,7 +67,14 @@
         "module" : "mover",
         "instruction" : "savePosition",
         "args" : {
-            "name": "pos"
+            "name": "position"
+        }
+    },
+    "savePosition1" : {
+        "module" : "mover",
+        "instruction" : "savePosition",
+        "args" : {
+            "name": "position1"
         }
     },
     "gotoPosition" : {
