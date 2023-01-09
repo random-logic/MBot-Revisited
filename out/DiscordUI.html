@@ -142,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line27">line 27</a>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -295,7 +295,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line67">line 67</a>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line74">line 74</a>
     </li></ul></dd>
     
 
@@ -405,7 +405,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line62">line 62</a>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -515,7 +515,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line45">line 45</a>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line48">line 48</a>
     </li></ul></dd>
     
 
@@ -625,7 +625,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line50">line 50</a>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -735,7 +735,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="discord-ui.js.html">discord-ui.js</a>, <a href="discord-ui.js.html#line40">line 40</a>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -752,40 +752,23 @@
 
 
         
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
             
+<h4 class="name" id="mbot"><span class="type-signature"></span>mbot<span class="type-signature"></span></h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
 
     
 
-    
-    <h4 class="name" id="addMbot"><span class="type-signature">(abstract) </span>addMbot<span class="signature">(mbot)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Adds a bot for the user to control.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="props">
     <thead>
     <tr>
         
@@ -823,14 +806,12 @@
 
             
 
-            <td class="description last">The instance of mbot to add.</td>
+            <td class="description last">The mbot instance linked to this user interface.</td>
         </tr>
 
     
     </tbody>
 </table>
-
-
 
 
 
@@ -843,11 +824,6 @@
 
     
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="UI.html#addMbot">UI#addMbot</a>
-    </li></ul></dd>
     
 
     
@@ -869,7 +845,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line12">line 12</a>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -885,6 +861,9 @@
 
 
 
+        
+            
+<h4 class="name" id="ready"><span class="type-signature"></span>ready<span class="type-signature"></span></h4>
 
 
 
@@ -895,9 +874,108 @@
 
 
 
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ready</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Promise">Promise</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Promise that resolves when the discord client is ready.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ui_discord-ui.js.html">ui/discord-ui.js</a>, <a href="ui_discord-ui.js.html#line60">line 60</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         
             
@@ -1011,7 +1089,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line49">line 49</a>
+        <a href="ui_ui.js.html">ui/ui.js</a>, <a href="ui_ui.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -1156,7 +1234,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line57">line 57</a>
+        <a href="ui_ui.js.html">ui/ui.js</a>, <a href="ui_ui.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -1321,7 +1399,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line32">line 32</a>
+        <a href="ui_ui.js.html">ui/ui.js</a>, <a href="ui_ui.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -1486,7 +1564,149 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line22">line 22</a>
+        <a href="ui_ui.js.html">ui/ui.js</a>, <a href="ui_ui.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="mount"><span class="type-signature">(abstract) </span>mount<span class="signature">(mbot)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Adds a bot for the user to control.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mbot</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Mbot.html">Mbot</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The instance of mbot to add.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="UI.html#mount">UI#mount</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ui_ui.js.html">ui/ui.js</a>, <a href="ui_ui.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -1628,7 +1848,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ui.js.html">ui.js</a>, <a href="ui.js.html#line41">line 41</a>
+        <a href="ui_ui.js.html">ui/ui.js</a>, <a href="ui_ui.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -1674,13 +1894,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DiscordUI.html">DiscordUI</a></li><li><a href="EnhancedMovements.html">EnhancedMovements</a></li><li><a href="Health.html">Health</a></li><li><a href="InstructionManager.html">InstructionManager</a></li><li><a href="Interrupt.html">Interrupt</a></li><li><a href="Mbot.html">Mbot</a></li><li><a href="Miner.html">Miner</a></li><li><a href="Module.html">Module</a></li><li><a href="Mover.html">Mover</a></li><li><a href="UI.html">UI</a></li><li><a href="Utility.html">Utility</a></li></ul><h3>Global</h3><ul><li><a href="global.html#settings">settings</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BlockData.html">BlockData</a></li><li><a href="Builder.html">Builder</a></li><li><a href="DiscordUI.html">DiscordUI</a></li><li><a href="EnhancedMovements.html">EnhancedMovements</a></li><li><a href="Health.html">Health</a></li><li><a href="InstructionManager.html">InstructionManager</a></li><li><a href="Interrupt.html">Interrupt</a></li><li><a href="Mbot.html">Mbot</a></li><li><a href="Miner.html">Miner</a></li><li><a href="Module.html">Module</a></li><li><a href="Mover.html">Mover</a></li><li><a href="UI.html">UI</a></li><li><a href="Utility.html">Utility</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Thu Jan 05 2023 22:05:48 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Jan 07 2023 15:54:50 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -19,3 +19,7 @@ out/index.html
 - Idea: Have a list of commands in a json file, then have a select menu (dropdown), and then autofill json into a text area. Then add a button to execute the command.
 - User can also load preferences at any given time.
 - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_search_menu Drop down menu.
+- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible Sections
+- https://www.geeksforgeeks.org/how-to-remove-an-added-list-items-using-javascript/ List items.
+- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_chat Logging stuff.
+- https://codepen.io/sajadhsm/pen/odaBdd Minecraft chat.

@@ -1,0 +1,111 @@
+{
+	"build": [
+		[
+			[
+				null,
+				null,
+				null,
+				null
+			],
+			[
+				null,
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				}
+			],
+			[
+				null,
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				}
+			],
+			[
+				null,
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "ancient_debris",
+					"properties": {},
+					"position": {
+						"x": 65.62612686360038,
+						"y": -60,
+						"z": 299.51024035937075
+					},
+					"isPlaced": false
+				}
+			]
+		]
+	]
+}

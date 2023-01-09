@@ -30,7 +30,7 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>InstructionManager<span class="signature">(mbot)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Decodes and executes Mbot instructions.Allows for other instructions to interrupt the current instruction.</div>
+            <div class="class-description">Executes <a href="Mbot.html">Mbot</a> instructions by calling methods in modules.Allows for other instructions to interrupt the current instruction.</div>
         
     
 </header>
@@ -142,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="instruction-manager.js.html">instruction-manager.js</a>, <a href="instruction-manager.js.html#line16">line 16</a>
+        <a href="src_instruction-manager.js.html">src/instruction-manager.js</a>, <a href="src_instruction-manager.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -284,7 +284,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="instruction-manager.js.html">instruction-manager.js</a>, <a href="instruction-manager.js.html#line34">line 34</a>
+        <a href="src_instruction-manager.js.html">src/instruction-manager.js</a>, <a href="src_instruction-manager.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -394,7 +394,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="instruction-manager.js.html">instruction-manager.js</a>, <a href="instruction-manager.js.html#line29">line 29</a>
+        <a href="src_instruction-manager.js.html">src/instruction-manager.js</a>, <a href="src_instruction-manager.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -504,7 +504,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="instruction-manager.js.html">instruction-manager.js</a>, <a href="instruction-manager.js.html#line24">line 24</a>
+        <a href="src_instruction-manager.js.html">src/instruction-manager.js</a>, <a href="src_instruction-manager.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -532,7 +532,7 @@
     
 
     
-    <h4 class="name" id="doInstruction"><span class="type-signature">(async) </span>doInstruction<span class="signature">(module, instructionName, args)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="doInstruction"><span class="type-signature">(async) </span>doInstruction<span class="signature">(module, instructionName, args)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -582,7 +582,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="Module.html">Module</a></span>
+<span class="param-type">Module</span>
 
 
             
@@ -679,7 +679,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="instruction-manager.js.html">instruction-manager.js</a>, <a href="instruction-manager.js.html#line95">line 95</a>
+        <a href="src_instruction-manager.js.html">src/instruction-manager.js</a>, <a href="src_instruction-manager.js.html#line93">line 93</a>
     </li></ul></dd>
     
 
@@ -719,7 +719,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type"><a href="global.html#Promise">Promise</a></span>
 
 
     </dd>
@@ -737,7 +737,7 @@
     
 
     
-    <h4 class="name" id="getCommand"><span class="type-signature">(async) </span>getCommand<span class="signature">(commandName)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="getCommand"><span class="type-signature">(async) </span>getCommand<span class="signature">(commandName)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -838,7 +838,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="instruction-manager.js.html">instruction-manager.js</a>, <a href="instruction-manager.js.html#line42">line 42</a>
+        <a href="src_instruction-manager.js.html">src/instruction-manager.js</a>, <a href="src_instruction-manager.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -878,7 +878,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type"><a href="global.html#Promise">Promise</a></span>
 
 
     </dd>
@@ -896,7 +896,7 @@
     
 
     
-    <h4 class="name" id="parseInstruction"><span class="type-signature">(async) </span>parseInstruction<span class="signature">(contents)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="parseInstruction"><span class="type-signature">(async) </span>parseInstruction<span class="signature">(contents)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -904,7 +904,7 @@
 
 
 <div class="description">
-    Parses the command into an instruction and executes it.
+    Parses an <a href="global.html#InstructionCall">InstructionCall</a> and executes it.
 </div>
 
 
@@ -946,7 +946,7 @@
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#Instruction">Instruction</a></span>
+<span class="param-type"><a href="global.html#InstructionCall">InstructionCall</a></span>
 
 
             
@@ -956,7 +956,7 @@
 
             
 
-            <td class="description last">The instruction.</td>
+            <td class="description last">The <a href="global.html#InstructionCall">InstructionCall</a> to parse.</td>
         </tr>
 
     
@@ -997,7 +997,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="instruction-manager.js.html">instruction-manager.js</a>, <a href="instruction-manager.js.html#line55">line 55</a>
+        <a href="src_instruction-manager.js.html">src/instruction-manager.js</a>, <a href="src_instruction-manager.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -1037,7 +1037,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type"><a href="global.html#Promise">Promise</a></span>
 
 
     </dd>
@@ -1065,13 +1065,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EnhancedMovements.html">EnhancedMovements</a></li><li><a href="Health.html">Health</a></li><li><a href="InstructionManager.html">InstructionManager</a></li><li><a href="Interrupt.html">Interrupt</a></li><li><a href="Mbot.html">Mbot</a></li><li><a href="Miner.html">Miner</a></li><li><a href="Module.html">Module</a></li><li><a href="Mover.html">Mover</a></li><li><a href="UserInterface.html">UserInterface</a></li><li><a href="Utility.html">Utility</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="InstructionManager.html">InstructionManager</a></li><li><a href="Interrupt.html">Interrupt</a></li><li><a href="Mbot.html">Mbot</a></li></ul><h3>Global</h3><ul><li><a href="global.html#settings">settings</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Dec 31 2022 21:09:04 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Jan 07 2023 15:49:41 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

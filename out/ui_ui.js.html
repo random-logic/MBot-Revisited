@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: interrupt.js</title>
+    <title>JSDoc: Source: ui/ui.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: interrupt.js</h1>
+    <h1 class="page-title">Source: ui/ui.js</h1>
 
     
 
@@ -28,75 +28,66 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * @class
- * This class allows other instructions to interrupt the current instruction in {@link InstructionManager}.
+ * User interface to send commands to the bot.
+ * @abstract
  */
-class Interrupt {
-    constructor() {
-        /**
-         * @property {bool} hasInterrupt True if an instruction is trying to interrupt another instruction. This field should only be read from.
-         */
-        this.hasInterrupt = false;
-
-        /**
-         * @callback OnInterrupt
-         * @summary A callback function.
-         */
-
-        /**
-         * @property {OnInterrupt} onInterrupt Callback when an interrupt occurs.
-         */
-        this.onInterrupt = null;
-        
-        this.resolveCallee = null;
+class UI {
+    /**
+     * Adds a bot for the user to control.
+     * @abstract
+     * @param {Mbot} mbot The instance of mbot to add.
+     */
+    mount(mbot) {
+        throw new Error("UserInterface abstract function addMbot not implemented");
     }
 
     /**
-     * Sets onInterrupt.
-     * @param {OnInterrupt} func The callback.
+     * Logs a minecraft whisper message.
+     * @abstract
+     * @param {string} username The username associated with the message.
+     * @param {string} message The message.
      */
-    setOnInterrupt(func) {
-        this.onInterrupt = func;
+    logMinecraftWhisper(username, message) {
+        throw new Error("UserInterface abstract function logMinecraftWhisper not implemented");
     }
 
     /**
-     * Clears onInterrupt.
+     * Logs a minecraft chat message.
+     * @abstract
+     * @param {string} username The username associated with the message.
+     * @param {string} message The message.
      */
-    clearOnInterrupt() {
-        this.onInterrupt = null;
-    }
-    
-    /**
-     * Throws an error if hasInterrupt is true.
-     * @param {string} name The name of the function that got interrupted.
-     */
-    throwErrorIfHasInterrupt(name) {
-        if (this.hasInterrupt)
-            throw new Error(`${name} Interrupted`);
-    }
-    
-    /**
-     * Interrupts the instruction.
-     * @returns {Promise} A promise that resolves when the interrupt is resolved.
-     */
-    interruptInstruction() {
-        return new Promise(resolve => {
-            this.resolveCallee = resolve;
-            this.hasInterrupt = true;
-            if (this.onInterrupt)
-                this.onInterrupt();
-        });
+    logMinecraftChat(username, message) {
+        throw new Error("UserInterface abstract function logMinecraftChat not implemented");
     }
 
     /**
-     * Resolves the interrupt.
+     * Push notification to user interface.
+     * @abstract
+     * @param {string} message The message.
      */
-    resolve() {
-        this.hasInterrupt = false;
-        this.resolveCallee();
+    notify(message) {
+        throw new Error("UserInterface abstract function notify not implemented");
     }
-};
 
-module.exports = Interrupt;</code></pre>
+    /**
+     * Log for debugging.
+     * @param {string} what String to log
+     */
+    log(what) {
+        console.log(what);
+    }
+
+    /**
+     * Log error for debugging.
+     * @param {string | Error} what Error to log
+     */
+    logError(what) {
+        console.error(what);
+    }
+}
+
+module.exports = UI;</code></pre>
         </article>
     </section>
 

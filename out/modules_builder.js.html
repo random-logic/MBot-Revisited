@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/builder.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/builder.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const Vector3 = require("vec3").Vec3;
+
+const Module = require("./module");
+const Utility = require("./utility");
+
+const BlockData = require("./block-data");
+
+// ?? to do: yank code from old mbot-builder and mbot-cnstruction
+
+/**
+ * @class
+ * Handles construction.
+ */
+class Builder extends Module {
+    constructor() {
+        super("builder", ["mover"]);
+
+        /**
+         * @property {object} directionRightOf Keys represent starting direction and values (of type string) represent the result.
+         */
+        this.directionRightOf = {
+            "east": "south",
+            "south": "west",
+            "west": "north",
+            "north": "east"
+        };
+
+        /**
+         * @property {object} directionLeftOf Keys represent starting direction and values (of type string) represent the result.
+         */
+        this.directionLeftOf = {
+            "east": "north",
+            "north": "west",
+            "west": "south",
+            "south": "east"
+        };
+
+        /**
+         * @property {object} directionOppositeOf Keys represent starting direction and values (of type string) represent the result.
+         */
+        this.directionOppositeOf = {
+            "east": "west",
+            "south": "north",
+            "west": "east",
+            "north": "south"
+        };
+
+        /**
+         * @property {object} directionFlipXOf Keys represent starting direction and values (of type string) represent the result.
+         */
+        this.directionFlipXOf = {
+            "east": "east",
+            "south": "north",
+            "west": "west",
+            "north": "south"
+        };
+
+        /**
+         * @property {object} directionFlipZOf Keys represent starting direction and values (of type string) represent the result.
+         */
+        this.directionFlipZOf = {
+            "east": "west",
+            "south": "south",
+            "west": "east",
+            "north": "north"
+        };
+
+        /**
+         * @property {object} templateData An object that stores {@link BlockSpace} instances of build designs but not yet planned to be built.
+         */
+        this.templateData = null;
+        
+        /**
+         * @property {string} templateDataPath The path where the template data is fetched from.
+         */
+        this.templateDataPath = null;
+
+        /**
+         * @property {object} buildData An object that stores {@link BlockSpace} instances of actual builds that are planned to be built.
+         */
+        this.buildData = null;
+
+        /**
+         * @property {string} buildDataPath The path where the build data is fetched from.
+         */
+        this.buildDataPath = null;
+    }
+
+    /**
+     * Counts the materials from a {@link BlockSpace}.
+     * @param {BlockSpace} blocks The provided BlockSpace.
+     * @returns {object} Object with {@link Block} names as keys and {@link number} that represent the count as values.
+     */
+    countMaterials(blocks) {
+        const materials = {};
+        
+        for (const y of blocks)
+          for (const x of y)
+            for (const blockData of x) {
+              const blockName = blockData["name"];
+    
+              if (materials[blockName])
+                materials[blockName] += 1;
+              else
+                materials[blockName] = 1;
+            }
+    
+        return materials;
+    }
+
+    /**
+     * Instruction to load template data.
+     * @param {string} args The path to the file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
+     * @returns {Promise} Promise that resolves when read file finishes.
+     */
+    async loadtemplateData(args, interrupt = null) {
+        this.templateData = await Utility.readJsonFile(args);
+        this.templateDataPath = args;
+    }
+
+    /**
+     * Instruction to store template data.
+     * @param {string} [args = null] The path to the file, only use this if you want to store to a different file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
+     * @returns {Promise} Promise that resolves when write file finishes.
+     */
+    async storeTemplateData(args = null, interrupt = null) {
+        if (!args)
+            args = this.templateDataPath;
+
+        await Utility.writeJsonFile(args, this.templateDataPath);
+    }
+
+    /**
+     * Instruction to load build data.
+     * @param {string} args The path to the file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
+     * @returns {Promise} Promise that resolves when read file finishes.
+     */
+    async loadBuildData(args, interrupt = null) {
+        this.buildData = await Utility.readJsonFile(args);
+        this.buildDataPath = args;
+    }
+
+    /**
+     * Instruction to store build data.
+     * @param {string} [args = null] The path to the file, only use this if you want to store to a different file.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
+     * @returns {Promise} Promise that resolves when write file finishes.
+     */
+    async storeBuildData(args = null, interrupt = null) {
+        if (!args)
+            args = this.buildDataPath;
+
+        await Utility.writeJsonFile(args, this.buildDataPath);
+    }
+
+    /**
+     * @typedef SaveTemplateArgs
+     * @summary Object that represents the args for an instruction.
+     * @property {string} name The name of the new template.
+     * @property {string | Vector3} position1 Acts as a boundary. If string, it will querry the position data in mover module.
+     * @property {string | Vector3} position2 Acts as a boundary. If string, it will querry the position data in mover module.
+     */
+
+    /**
+     * Instruction to save all blocks in a Minecraft world within the given boundaries as a template.
+     * If template name in template data already exists, it will be overwritten.
+     * @param {SaveTemplateArgs} args The args associated with this instruction.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
+     */
+    async saveTemplate(args, interrupt = null) {
+        if (!args || typeof args["name"] !== "string")
+            throw new Error("Invalid saveTemplateArgs name");
+
+        if (typeof args["position1"] === "string")
+            args["position1"] = this.mbot.modules["mover"].positionData[args["position1"]];
+        if (typeof args["position1"] !== "object")
+            throw new Error("Invalid SaveTemplateArgs position1");
+
+        if (typeof args["position2"] === "string")
+            args["position2"] = this.mbot.modules["mover"].positionData[args["position2"]];
+        if (typeof args["position2"] !== "object")
+            throw new Error("Invalid SaveTemplateArgs position2");
+
+        var lowerX = Math.min(args["position1"].x, args["position2"].x);
+        var lowerY = Math.min(args["position1"].y, args["position2"].y);
+        var lowerZ = Math.min(args["position1"].z, args["position2"].z);
+
+        var upperX = Math.max(args["position1"].x, args["position2"].x);
+        var upperY = Math.max(args["position1"].y, args["position2"].y);
+        var upperZ = Math.max(args["position1"].z, args["position2"].z);
+
+        var newTemplate = [];
+
+        for (var y = lowerY; y &lt;= upperY; ++y) {
+            newTemplate.push([]); // Allocate second dimension
+
+            for (var x = lowerX; x &lt;= upperX; ++x) {
+                newTemplate[y].push([]); // Allocate third dimension
+
+                for (var z = lowerZ; z &lt;= upperZ; ++z) {
+                    const position = new Vector3(position.x, position.y, position.z);
+                    const block = bot.blockAt(position);
+
+                    newTemplate[y][x][z] = new BlockData(block.name, block.getProperties(), position, false);
+                }
+            }
+        }
+
+        templateData[args["name"]] = newTemplate;
+    }
+
+    /**
+     * @typedef ConvertTemplateToBuildArgs
+     * @summary Object that represents the args for an instruction.
+     * @property {string} templateName The name of the template.
+     * @property {string} buildName The name of the build.
+     * @property {Vector3} position The position to place the build.
+     */
+
+    /**
+     * Instruction that converts a template to a build. If build exists under buildName in buildData, it will be overwritten.
+     * @param {ConvertTemplateToBuildArgs} args The args for this instruction.
+     * @param {Interrupt} interrupt Has no effect for this instruction.
+     */
+    convertTemplateToBuild (args, interrupt) {
+        if (!args || typeof args["templateName"] !== "string")
+            throw new Error("Invalid ConvertTemplateToBuildArgs templateName");
+
+        if (typeof args["buildName"] !== "string")
+            throw new Error("Invalid ConvertTemplateToBuildArgs buildName");
+
+        if (typeof args["position"] !== "object")
+            throw new Error("Invalid ConvertTemplateToBuildArgs position");
+
+        const template = this.templateData[args["templateName"]];
+        if (!template) throw new Error("Template not found");
+        
+        // Hard copy template data into the build
+        var newBuild = [];
+
+        for (var y = 0; y &lt; template.length; ++y) {
+            newBuild.push([]); // Allocate second dimension
+
+            for (var x = 0; x &lt; template[y].length; ++x) {
+                newBuild[y].push([]); // Allocate third dimension
+                
+                for (var z = 0; z &lt; template[y][x].length; ++z) {
+                    newBuild[y][x][z] = template[y][x][z].clone();
+                }
+            }
+        }
+
+        buildData[args["buildName"]] = newBuild;
+    }
+
+    /** ??
+     * @typedef BuildBlocksAtLevel
+     */
+
+    /**
+     * ?? To do
+     * @param {*} task 
+     * @param {*} name 
+     * @param {*} buildY 
+     * @param {*} indexY 
+     * @returns {Promise}
+     */
+    async buildBlocks(task, name, buildY, indexY) {
+        const [block, reference, distance, indexX, indexZ] = getClosestBuildBlock(buildY)
+    
+        if (!block) return
+    
+        const heightGoal = new GoalCompositeAny()
+        heightGoal.push(new GoalY(block.position.y))
+        heightGoal.push(new GoalY(block.position.y + 1))
+    
+        const goals = new GoalCompositeAll()
+        //Should not stand in the block where the block has to be placed
+        goals.push(new GoalInvert(new GoalBlock(block.position.x, block.position.y, block.position.z)));
+        //Stand at block placing level or one block above it
+        goals.push(new GoalCompositeAny(
+            new GoalY(block.position.y),
+            new GoalY(block.position.y + 1)
+        ));
+    
+        //Come really close to the block placing postition if the bot is really far
+        if (distance > 6)
+          goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 2));
+        //If the bot is closer to the block placing position, then it is within reach
+        else //if 0 &lt;= distance &lt;= 6
+          goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 7));
+    
+        const finalGoal = goals
+    
+        task.onInterruption = bot.mbotPathfinder.clearGoal
+        if (task.hasInterruption) throw new Error("interrupted")
+        
+        //?? Resolved, but clean up this section
+        await new Promise(resolve => {
+            bot.pathfinder.goto(finalGoal, e => {
+                if (e) throw e
+                resolve()
+            })
+        })
+    
+        task.onInterruption = undefined
+        if (task.hasInterruption) throw new Error("interrupted")
+    
+        const equipItem = bot.inventory.items().find(item => item.name == block.name)
+        if (!equipItem) throw new Error("Could not equip " + block.name)
+    
+        await bot.equip(equipItem, "hand")
+    
+        if (task.hasInterruption) throw new Error("interrupted")
+        
+        await bot.lookAt(reference.position, true)
+    
+        if (task.hasInterruption) throw new Error("interrupted")
+    
+        await bot.placeBlock(reference, block.position.minus(reference.position))
+    
+        bot.mbotConstruction.setBuild(name, indexY, indexX, indexZ, null)
+        
+        bot.mbotConstruction.saveBuildFile()
+        
+        await buildBlocks(task, name, buildY, indexY)
+    }
+
+    /**
+     * ?? To do
+     * @param {*} task 
+     * @param {*} name 
+     * @param {*} build 
+     * @param {*} height 
+     * @param {*} maxHeight 
+     * @returns {Promise}
+     */
+    async buildFloors(task, name, build, height, maxHeight) {
+        if (height >= maxHeight) return;
+    
+        await buildBlocks(task, name, build[height], height);
+        await buildFloors(task, name, build, height + 1, maxHeight);
+    }
+
+    /**
+     * Gets the closest block at a y level.
+     * @param {BlockSpace} blockSpace The block space to search.
+     * @param {number} yLevelConstraint Only search at this y level.
+     * @returns {BlockData} The {@link BlockData} found, or null if none is found.
+     */
+    getClosestBlock(blockSpace, yLevelConstraint) {
+        var blockArea = blockSpace[yLevelConstraint];
+
+        const botPosition = this.mbot.bot.entity.position.floored();
+
+        var closestBlock = null, blockAtOwnPosition = null, closestDistance = Infinity;
+
+        for (var x = 0; x &lt; blockArea.length; ++x) {
+            for (var z = 0; z &lt; blockArea.length; ++z) {
+                // Get blockData
+                var blockData = blockArea[x][z];
+
+                // We do not want to build a block that is already built
+                if (blockData.isPlaced)
+                    continue;
+
+                // Get additional data
+                const blockPosition = blockData.position;
+                const distance = botPosition.distanceTo(blockPosition);
+
+                // We only update the closest block if this block is a solution and if it beats the previous closest block.
+                if (!blockData.getReferenceBlock(this.mbot) || distance >= closestDistance)
+                    continue;
+
+                // We prefer the block to not be at the bots position
+                const isAtOwnPosition = botPosition.equals(blockPosition);
+                if (!isAtOwnPosition) {
+                    // If not at own position, then update this to be the closest block
+                    closestBlock = blockData;
+                    closestDistance = distance;
+                }
+                else {
+                    // This is the block at the bots position. We will use this if there is no other solution.
+                    blockAtOwnPosition = blockData;
+                }
+            }
+        }
+
+        if (!closestBlock &amp;&amp; blockAtOwnPosition) {
+            closestBlock = blockAtOwnPosition;
+        }
+
+        return closestBlock;
+    }
+
+    /**
+     * @typedef ConstructBlockDataArgs
+     * @summary Object that represents the args for an instruction.
+     * @property {BlockData} blockData The given {@link BlockData} to construct.
+     * @property {bool} [resetAndApplyMovements = false] Resets and applies movements if true.
+     * @property {MovementSettings} [movements = null] Sets the {@link Movements} that the builder should use when moving. It is recommended to disallow the builder to place blocks while moving.
+     */
+
+    /**
+     * Instruction that constructs a given {@link BlockData}.
+     * @param {BlockData} blockData The given {@link BlockData} to construct.
+     * @param {Interrupt} interrupt Useful when called from an Instruction.
+     * @returns {Promise} Promise that resolves when complete.
+     */
+    async constructBlockData(blockData, interrupt) {
+        // Set goal to get ready to place block
+        var goals = new GoalCompositeAll();
+        //Should not stand in the block where the block has to be placed
+        goals.push(new GoalInvert(new GoalBlock(block.position.x, block.position.y, block.position.z)));
+        //Stand at block placing level or one block above it
+        goals.push(new GoalCompositeAny(
+            new GoalY(block.position.y),
+            new GoalY(block.position.y + 1)
+        ));
+    
+        //Come really close to the block placing postition if the bot is really far
+        if (distance > 6)
+            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 2));
+        //If the bot is closer to the block placing position, then it is within reach
+        else //if 0 &lt;= distance &lt;= 6
+            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 7));
+    }
+
+    /**
+     * @typedef ConstructBuildAtYLevelArgs
+     * @summary Object that represents the args for an instruction.
+     * @property {string | BlockSpace} blockSpace Either the name of the {@link BlockSpace} in buildData or the actual {@link BlockSpace}.
+     * @property {number} y The y level to construct.
+     * @property {bool} [autoSave = false] Autosaves if set to true and the blockSpace is of type string.
+     */
+
+    /**
+     * Instruction that legit constructs a build at a y level.
+     * @param {ConstructBuildAtYLevelArgs} args The args for this instruction.
+     * @param {Interrupt} interrupt The interrupt instance of this bot.
+     * @returns {Promise} Promise that resolves when complete.
+     */
+    async constructBuildAtYLevel(args, interrupt) {
+        if (!args)
+            throw new Error("Invalid ConstructBuildAtYLevelArgs");
+
+        if (typeof args["blockSpace"] === "string")
+            args["blockSpace"] = buildData[args["blockSpace"]];
+
+        // Either no name alias with buildData or arg passed in is invalid
+        if (!args["blockSpace"] || typeof args["blockSpace"] !== "object")
+            throw new Error("Invalid ConstructBuildAtYLevelArgs blockSpace");
+        
+        if (typeof args["y"] !== "number")
+            throw new Error("Invalid ConstructBuildAtYLevelArgs y");
+
+        // Set goal
+        var goals = new GoalCompositeAll();
+        //Should not stand in the block where the block has to be placed
+        goals.push(new GoalInvert(new GoalBlock(block.position.x, block.position.y, block.position.z)));
+        //Stand at block placing level or one block above it
+        goals.push(new GoalCompositeAny(
+            new GoalY(block.position.y),
+            new GoalY(block.position.y + 1)
+        ));
+    
+        //Come really close to the block placing postition if the bot is really far
+        if (distance > 6)
+            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 2));
+        //If the bot is closer to the block placing position, then it is within reach
+        else //if 0 &lt;= distance &lt;= 6
+            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 7));
+    }
+
+    /**
+     * @typedef ConstructBuildArgs
+     * @summary Object that represents the args for an instruction.
+     * @property {string | BlockSpace} blockSpace Either the name of the {@link BlockSpace} in buildData or the actual {@link BlockSpace}.
+     * @property {bool} [autoSave = false] Autosaves if set to true and the blockSpace is of type string.
+     */
+
+    /**
+     * Instruction that legit constructs a build from the bottom y level to the top y level.
+     * @param {string | BlockSpace} args Either the name of the {@link BlockSpace} in buildData or the actual {@link BlockSpace}.
+     * @param {Interrupt} interrupt The interrupt instance of this bot.
+     * @returns {Promise} Promise that resolves when complete.
+     */
+    async constructBuild(args, interrupt) {
+        if (!args)
+            throw new Error("Invalid ConstructBuildArgs");
+
+        if (typeof args["blockSpace"] === "string")
+            args["blockSpace"] = buildData[args["blockSpace"]];
+
+        // Either no name alias with buildData or arg passed in is invalid
+        if (!args["blockSpace"] || typeof args["blockSpace"] !== "object")
+            throw new Error("Invalid ConstructBuildArgs blockSpace");
+
+        for (var y = 0; y &lt; args["blockSpace"].length; ++y) {
+            await constructBuildAtYLevel({
+                "blockSpace" : args["blockSpace"],
+                "y" : y,
+                "autoSave" : args["autoSave"]
+            }, interrupt);
+        }
+    }
+
+    /**
+     * @typedef ConstructBuildsUsingCommandsArgs
+     * @summary Object that represents the args for an instruction.
+     * @property {string | BlockSpace} blockSpace Either the name of the {@link BlockSpace} in buildData or the actual {@link BlockSpace}.
+     * @property {number} [timeout = 10] The timeout between commands in milliseconds.
+     * @property {bool} [autoSave = false] Autosaves if set to true and the blockSpace is of type string.
+     */
+
+    /**
+     * Instruction that constructs a build using vanilla game commands.
+     * @param {ConstructBuildsUsingCommandsArgs} args Either the name of the {@link BlockSpace} in buildData or the actual {@link BlockSpace}.
+     * @param {Interrupt} interrupt The interrupt instance of this bot.
+     * @returns {Promise} Promise that resolves when complete.
+     */
+    async constructBuildUsingCommands(args, interrupt) {
+        if (!args)
+            throw new Error("Invalid ConstructBuildsUsingCommandsArgs");
+
+        if (typeof args["blockSpace"] === "string")
+            args["blockSpace"] = buildData[args["blockSpace"]];
+
+        // Either no name alias with buildData or arg passed in is invalid
+        if (!args["blockSpace"] || typeof args["blockSpace"] !== "object")
+            throw new Error("Invalid ConstructBuildsUsingCommandsArgs blockSpace");
+
+        
+    }
+
+    // ?? construct build and construct build using commands?
+}
+
+module.exports = Builder;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BlockData.html">BlockData</a></li><li><a href="Builder.html">Builder</a></li><li><a href="DiscordUI.html">DiscordUI</a></li><li><a href="EnhancedMovements.html">EnhancedMovements</a></li><li><a href="Health.html">Health</a></li><li><a href="InstructionManager.html">InstructionManager</a></li><li><a href="Interrupt.html">Interrupt</a></li><li><a href="Mbot.html">Mbot</a></li><li><a href="Miner.html">Miner</a></li><li><a href="Module.html">Module</a></li><li><a href="Mover.html">Mover</a></li><li><a href="UI.html">UI</a></li><li><a href="Utility.html">Utility</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Jan 07 2023 15:54:50 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

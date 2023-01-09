@@ -63,18 +63,28 @@
             }
         }
     },
-    "savePosition" : {
+    "savePositionSrc1" : {
         "module" : "mover",
         "instruction" : "savePosition",
         "args" : {
-            "name": "position"
+            "name": "src1",
+            "autoSave" : true
         }
     },
-    "savePosition1" : {
+    "savePositionSrc2" : {
         "module" : "mover",
         "instruction" : "savePosition",
         "args" : {
-            "name": "position1"
+            "name": "src2",
+            "autoSave" : true
+        }
+    },
+    "savePositionDest" : {
+        "module" : "mover",
+        "instruction" : "savePosition",
+        "args" : {
+            "name": "dest",
+            "autoSave" : true
         }
     },
     "gotoPosition" : {
@@ -140,13 +150,59 @@
             }
         }
     },
-    "loadPositions": {
+    "loadPositions" : {
         "module": "mover",
         "instruction": "loadPositionData",
         "args": "position-data.json"
     },
-    "storePositions": {
-        "module": "mover",
-        "instruction": "storePositionData"
+    "storePositions" : {
+        "module" : "mover",
+        "instruction" : "storePositionData"
+    },
+    "saveTemplate" : {
+        "module" : "builder",
+        "instruction" : "saveTemplate",
+        "args" : {
+            "name" : "template",
+            "position1" : "src1",
+            "position2" : "src2",
+            "autoSave" : true
+        }
+    },
+    "convertTemplateToBuild" : {
+        "module" : "builder",
+        "instruction" : "convertTemplateToBuild",
+        "args" : {
+            "templateName" : "template",
+            "buildName" : "build",
+            "position" : "dest",
+            "autoSave" : true
+        }
+    },
+    "construct" : {
+        "module" : "builder",
+        "instruction" : "constructBuild",
+        "args" : {
+            "blockSpace" : "build",
+            "resetAndApplyMovements" : true,
+            "movements" : {
+                "set" : {
+                    "canDig" : false,
+                    "placeCost" : 50
+                }
+            }
+        }
+    },
+    "constructUsingCommands" : {
+        "module" : "builder",
+        "instruction" : "constructBuildUsingCommands",
+        "args" : {
+            "blockSpace" : "build"
+        }
+    },
+    "printMaterialCount" : {
+        "module" : "builder",
+        "instruction" : "printMaterialCount",
+        "args" : "build"
     }
 }
