@@ -190,7 +190,8 @@
                     "canDig" : false,
                     "placeCost" : 50
                 }
-            }
+            },
+            "autoSave" : true
         }
     },
     "constructUsingCommands" : {

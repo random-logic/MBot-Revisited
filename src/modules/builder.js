@@ -407,32 +407,30 @@ class Builder extends Module {
         const referenceBlock = args["reference"]["block"];
         const distance = args["distance"];
 
-        const block = blockData;
-
         // Go to goal
         const heightGoal = new GoalCompositeAny()
-        heightGoal.push(new GoalY(block.position.y))
-        heightGoal.push(new GoalY(block.position.y + 1))
+        heightGoal.push(new GoalY(blockData.position.y))
+        heightGoal.push(new GoalY(blockData.position.y + 1))
 
         const goals = new GoalCompositeAll()
         //Should not stand in the block where the block has to be placed
-        goals.push(new GoalInvert(new GoalBlock(block.position.x, block.position.y, block.position.z)))
+        goals.push(new GoalInvert(new GoalBlock(blockData.position.x, blockData.position.y, blockData.position.z)))
         //Stand at block placing level or one block above it
         goals.push(heightGoal)
 
         //Come really close to the block placing postition if the bot is really far
         if (distance > 6)
-            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 2))
+            goals.push(new GoalNear(blockData.position.x, blockData.position.y, blockData.position.z, 2))
         //If the bot is closer to the block placing position, then it is within reach
         else //if 0 <= distance <= 6
-            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 7))
+            goals.push(new GoalNear(blockData.position.x, blockData.position.y, blockData.position.z, 7))
 
         await this.mbot.modules["mover"].goto(goals, interrupt);
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
-        const equipItem = this.mbot.bot.inventory.items().find(item => item.name == block.name)
-        if (!equipItem) throw new Error('Could not equip ' + block.name)
+        const equipItem = this.mbot.bot.inventory.items().find(item => item.name == blockData.name)
+        if (!equipItem) throw new Error('Could not equip ' + blockData.name)
 
         await this.mbot.bot.equip(equipItem, "hand");
 
@@ -510,7 +508,7 @@ class Builder extends Module {
 
     /**
      * Instruction that legit constructs a build from the bottom y level to the top y level.
-     * @param {string | BlockSpace} args Either the name of the {@link BlockSpace} in buildData or the actual {@link BlockSpace}.
+     * @param {ConstructBuildArgs} args Either the name of the {@link BlockSpace} in buildData or the actual {@link BlockSpace}.
      * @param {Interrupt} interrupt The interrupt instance of this bot.
      * @returns {Promise} Promise that resolves when complete.
      */

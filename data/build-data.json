@@ -17,7 +17,7 @@
 						"y": -60,
 						"z": 314
 					},
-					"isPlaced": false
+					"isPlaced": true
 				},
 				{
 					"name": "ancient_debris",
@@ -27,7 +27,7 @@
 						"y": -60,
 						"z": 315
 					},
-					"isPlaced": false
+					"isPlaced": true
 				},
 				{
 					"name": "ancient_debris",
@@ -37,7 +37,7 @@
 						"y": -60,
 						"z": 316
 					},
-					"isPlaced": false
+					"isPlaced": true
 				}
 			],
 			[
@@ -50,7 +50,7 @@
 						"y": -60,
 						"z": 314
 					},
-					"isPlaced": false
+					"isPlaced": true
 				},
 				{
 					"name": "ancient_debris",
@@ -60,7 +60,7 @@
 						"y": -60,
 						"z": 315
 					},
-					"isPlaced": false
+					"isPlaced": true
 				},
 				{
 					"name": "ancient_debris",
@@ -70,7 +70,7 @@
 						"y": -60,
 						"z": 316
 					},
-					"isPlaced": false
+					"isPlaced": true
 				}
 			],
 			[
@@ -83,7 +83,7 @@
 						"y": -60,
 						"z": 314
 					},
-					"isPlaced": false
+					"isPlaced": true
 				},
 				{
 					"name": "ancient_debris",
@@ -93,7 +93,7 @@
 						"y": -60,
 						"z": 315
 					},
-					"isPlaced": false
+					"isPlaced": true
 				},
 				{
 					"name": "ancient_debris",
@@ -103,7 +103,7 @@
 						"y": -60,
 						"z": 316
 					},
-					"isPlaced": false
+					"isPlaced": true
 				}
 			]
 		]
