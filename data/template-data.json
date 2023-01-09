@@ -13,9 +13,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 72.65864830391484,
+						"x": 72,
 						"y": -60,
-						"z": 294.50669970615155
+						"z": 294
 					},
 					"isPlaced": false
 				},
@@ -23,9 +23,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 72.65864830391484,
+						"x": 72,
 						"y": -60,
-						"z": 295.50669970615155
+						"z": 295
 					},
 					"isPlaced": false
 				},
@@ -33,9 +33,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 72.65864830391484,
+						"x": 72,
 						"y": -60,
-						"z": 296.50669970615155
+						"z": 296
 					},
 					"isPlaced": false
 				}
@@ -46,9 +46,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 73.65864830391484,
+						"x": 73,
 						"y": -60,
-						"z": 294.50669970615155
+						"z": 294
 					},
 					"isPlaced": false
 				},
@@ -56,9 +56,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 73.65864830391484,
+						"x": 73,
 						"y": -60,
-						"z": 295.50669970615155
+						"z": 295
 					},
 					"isPlaced": false
 				},
@@ -66,9 +66,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 73.65864830391484,
+						"x": 73,
 						"y": -60,
-						"z": 296.50669970615155
+						"z": 296
 					},
 					"isPlaced": false
 				}
@@ -79,9 +79,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 74.65864830391484,
+						"x": 74,
 						"y": -60,
-						"z": 294.50669970615155
+						"z": 294
 					},
 					"isPlaced": false
 				},
@@ -89,9 +89,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 74.65864830391484,
+						"x": 74,
 						"y": -60,
-						"z": 295.50669970615155
+						"z": 295
 					},
 					"isPlaced": false
 				},
@@ -99,9 +99,9 @@
 					"name": "ancient_debris",
 					"properties": {},
 					"position": {
-						"x": 74.65864830391484,
+						"x": 74,
 						"y": -60,
-						"z": 296.50669970615155
+						"z": 296
 					},
 					"isPlaced": false
 				}

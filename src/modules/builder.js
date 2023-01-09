@@ -240,7 +240,7 @@ class Builder extends Module {
                 var newTemplateThirdDimension = []; // Allocate third dimension
 
                 for (var z = lowerZ; z <= upperZ; ++z) {
-                    const position = new Vector3(x, y, z);
+                    const position = new Vector3(x, y, z).floor();
                     const block = this.mbot.bot.blockAt(position);
 
                     if (block.name == "air")
@@ -275,7 +275,7 @@ class Builder extends Module {
      * @param {ConvertTemplateToBuildArgs} args The args for this instruction.
      * @param {Interrupt} interrupt Has no effect for this instruction.
      */
-    convertTemplateToBuild (args, interrupt) {
+    convertTemplateToBuild (args, interrupt) { // ?? NOT WORKING
         if (!args || typeof args["templateName"] !== "string")
             throw new Error("Invalid ConvertTemplateToBuildArgs templateName");
 
@@ -296,17 +296,21 @@ class Builder extends Module {
         var newBuild = [];
 
         for (var y = 0; y < template.length; ++y) {
-            newBuild.push([]); // Allocate second dimension
+            var newBuildSecondDimension = []; // Allocate second dimension
 
             for (var x = 0; x < template[y].length; ++x) {
-                newBuild[y].push([]); // Allocate third dimension
+                var newBuildThirdDimension = []; // Allocate third dimension
                 
                 for (var z = 0; z < template[y][x].length; ++z) {
                     const blockData = BlockData.clone(template[y][x][z]);
-                    if (blockData) blockData.position = new Vector3(position.x, position.y, position.z);
-                    newBuild[y][x][z] = blockData;
+                    if (blockData) blockData.position = new Vector3(position.x + x, position.y + y, position.z + z).floored();
+                    newBuildThirdDimension.push(blockData);
                 }
+
+                newBuildSecondDimension.push(newBuildThirdDimension);
             }
+
+            newBuild.push(newBuildSecondDimension);
         }
 
         this.buildData[args["buildName"]] = newBuild;
@@ -427,10 +431,14 @@ class Builder extends Module {
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
-        const equipItem = this.mbot.bot.inventory.items().find(item => item.name == blockData.name);
-        if (!equipItem) throw new Error("Could not equip " + blockData.name);
+        const equipItem = this.mbot.bot.inventory.items().find(item => item.name == block.name)
+        if (!equipItem) throw new Error('Could not equip ' + block.name)
 
         await this.mbot.bot.equip(equipItem, "hand");
+
+        interrupt?.throwErrorIfHasInterrupt("constructBlockData");
+
+        await this.mbot.bot.lookAt(referenceBlock.position, true)
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
