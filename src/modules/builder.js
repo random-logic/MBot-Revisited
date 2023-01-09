@@ -5,7 +5,13 @@ const Utility = require("./utility");
 
 const BlockData = require("./block-data");
 
-const {GoalPlaceBlock} = require('mineflayer-pathfinder').goals;
+const goals = require('mineflayer-pathfinder').goals
+const GoalNear = goals.GoalNear
+const GoalCompositeAll = goals.GoalCompositeAll
+const GoalCompositeAny = goals.GoalCompositeAny
+const GoalInvert = goals.GoalInvert
+const GoalBlock = goals.GoalBlock
+const GoalY = goals.GoalY
 
 /**
  * @class
@@ -395,13 +401,29 @@ class Builder extends Module {
         // Get blockData
         const blockData = args["blockData"];
         const referenceBlock = args["reference"]["block"];
+        const distance = args["distance"];
+
+        const block = blockData;
 
         // Go to goal
-        await this.mbot.modules["mover"].goto(new GoalPlaceBlock(
-            blockData.position,
-            this.mbot.bot.world,
-            {"range" : 3}
-        ), interrupt);
+        const heightGoal = new GoalCompositeAny()
+        heightGoal.push(new GoalY(block.position.y))
+        heightGoal.push(new GoalY(block.position.y + 1))
+
+        const goals = new GoalCompositeAll()
+        //Should not stand in the block where the block has to be placed
+        goals.push(new GoalInvert(new GoalBlock(block.position.x, block.position.y, block.position.z)))
+        //Stand at block placing level or one block above it
+        goals.push(heightGoal)
+
+        //Come really close to the block placing postition if the bot is really far
+        if (distance > 6)
+            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 2))
+        //If the bot is closer to the block placing position, then it is within reach
+        else //if 0 <= distance <= 6
+            goals.push(new GoalNear(block.position.x, block.position.y, block.position.z, 7))
+
+        await this.mbot.modules["mover"].goto(goals, interrupt);
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
@@ -412,7 +434,7 @@ class Builder extends Module {
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
-        this.mbot.bot.placeBlock(referenceBlock, blockData.position.clone().minus(referenceBlock.position));
+        await this.mbot.bot.placeBlock(referenceBlock, blockData.position.clone().minus(referenceBlock.position));
 
         blockData.isPlaced = true;
 
