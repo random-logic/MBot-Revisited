@@ -402,68 +402,6 @@
 
             
                 
-<h4 class="name" id="BuildBlocksAtLevel">BuildBlocksAtLevel</h4>
-
-
-
-
-<div class="description">
-    ??
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line259">line 259</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-            
-                
 <h4 class="name" id="Client">Client</h4>
 
 
@@ -824,7 +762,7 @@
 <h4 class="name" id="ConstructBlockDataArgs">ConstructBlockDataArgs</h4>
 
 
-<p class="summary">Object that represents the args for an instruction.</p>
+<p class="summary">Object that represents the args for a method.</p>
 
 
 
@@ -897,7 +835,73 @@
 
         <tr>
             
-                <td class="name"><code>resetAndApplyMovements</code></td>
+                <td class="name"><code>distance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The distance from the bot.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reference</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ReferenceBlock">ReferenceBlock</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The reference block.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoSave</code></td>
             
 
             <td class="type">
@@ -927,44 +931,7 @@
                 </td>
             
 
-            <td class="description last">Resets and applies movements if true.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>movements</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">MovementSettings</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
-
-            <td class="description last">Sets the <a href="global.html#Movements">Movements</a> that the builder should use when moving. It is recommended to disallow the builder to place blocks while moving.</td>
+            <td class="description last">Autosave buildData after placing the block if true.</td>
         </tr>
 
     
@@ -1003,7 +970,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line399">line 399</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line391">line 391</a>
     </li></ul></dd>
     
 
@@ -1100,6 +1067,80 @@
 
         <tr>
             
+                <td class="name"><code>resetAndApplyMovements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Resets and applies movements if true.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>movements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">MovementSettings</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Sets the <a href="global.html#Movements">Movements</a> that the builder should use when moving. It is recommended to disallow the builder to place or break blocks while moving.</td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>autoSave</code></td>
             
 
@@ -1169,7 +1210,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line478">line 478</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line511">line 511</a>
     </li></ul></dd>
     
 
@@ -1299,6 +1340,80 @@
 
         <tr>
             
+                <td class="name"><code>resetAndApplyMovements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Resets and applies movements if true.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>movements</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">MovementSettings</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Sets the <a href="global.html#Movements">Movements</a> that the builder should use when moving. It is recommended to disallow the builder to place or break blocks while moving.</td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>autoSave</code></td>
             
 
@@ -1368,7 +1483,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line432">line 432</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line459">line 459</a>
     </li></ul></dd>
     
 
@@ -1571,7 +1686,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line511">line 511</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line550">line 550</a>
     </li></ul></dd>
     
 
@@ -1616,7 +1731,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1641,7 +1760,17 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">The name of the template.</td>
@@ -1664,7 +1793,17 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">The name of the build.</td>
@@ -1680,6 +1819,9 @@
             <td class="type">
             
                 
+<span class="param-type">string</span>
+|
+
 <span class="param-type"><a href="global.html#Vector3">Vector3</a></span>
 
 
@@ -1687,10 +1829,57 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+                </td>
             
 
-            <td class="description last">The position to place the build.</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The position to place the build. If string, it will querry the position data in <a href="Mover.html">Mover</a> module.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoSave</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Autosaves to file if true.</td>
         </tr>
 
     
@@ -1729,7 +1918,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line215">line 215</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line266">line 266</a>
     </li></ul></dd>
     
 
@@ -2363,6 +2552,164 @@
 
             
                 
+<h4 class="name" id="GetClosestBlockData">GetClosestBlockData</h4>
+
+
+<p class="summary">The return object from a method.</p>
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>blockData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="BlockData.html">BlockData</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The associated block data with this.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>distance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The distance from the bot.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reference</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ReferenceBlock">ReferenceBlock</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The reference block.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line324">line 324</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="GotoPlayerArgs">GotoPlayerArgs</h4>
 
 
@@ -2545,7 +2892,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line133">line 133</a>
+        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line145">line 145</a>
     </li></ul></dd>
     
 
@@ -2711,7 +3058,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line101">line 101</a>
+        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line113">line 113</a>
     </li></ul></dd>
     
 
@@ -3270,6 +3617,141 @@
 
             
                 
+<h4 class="name" id="MixConcretePowderArgs">MixConcretePowderArgs</h4>
+
+
+<p class="summary">The object that represents the args for an instruction.</p>
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>referenceBlockPosition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Vector3">Vector3</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The position of the reference block.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>referenceFace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Vector3">Vector3</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The face of the reference block where the concrete powder is placed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_concrete-mixer.js.html">modules/concrete-mixer.js</a>, <a href="modules_concrete-mixer.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="Movements">Movements</h4>
 
 
@@ -3643,6 +4125,305 @@
 
             
                 
+<h4 class="name" id="ReferenceBlock">ReferenceBlock</h4>
+
+
+<p class="summary">An object that stores the reference block and the face. Useful when getting a reference block for placing a block.</p>
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>block</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Block">Block</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The actual reference block.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>face</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Vector3">Vector3</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The face to use.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_block-data.js.html">modules/block-data.js</a>, <a href="modules_block-data.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="RotateTemplateRightArgs">RotateTemplateRightArgs</h4>
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>blockSpace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="global.html#BlockSpace">BlockSpace</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The provided BlockSpace. If this is string, it will querry from the templateData.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoSave</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">If true, autosaves the templateData after updating it.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line578">line 578</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="SavePositionArgs">SavePositionArgs</h4>
 
 
@@ -3753,6 +4534,43 @@
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>autoSave</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Autosaves to file if true.</td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -3788,7 +4606,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line75">line 75</a>
+        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line83">line 83</a>
     </li></ul></dd>
     
 
@@ -3833,7 +4651,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -3858,7 +4680,17 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">The name of the new template.</td>
@@ -3884,10 +4716,20 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+                </td>
             
 
-            <td class="description last">Acts as a boundary. If string, it will querry the position data in mover module.</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Acts as a boundary. If string, it will querry the position data in <a href="Mover.html">Mover</a> module.</td>
         </tr>
 
     
@@ -3910,10 +4752,57 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+                </td>
             
 
-            <td class="description last">Acts as a boundary. If string, it will querry the position data in mover module.</td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Acts as a boundary. If string, it will querry the position data in <a href="Mover.html">Mover</a> module.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>autoSave</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Autosaves to file if true.</td>
         </tr>
 
     
@@ -3952,7 +4841,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line159">line 159</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line198">line 198</a>
     </li></ul></dd>
     
 
@@ -4207,7 +5096,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line8">line 8</a>
+        <a href="modules_mover.js.html">modules/mover.js</a>, <a href="modules_mover.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -4243,7 +5132,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Jan 07 2023 15:54:50 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Jan 09 2023 23:49:18 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

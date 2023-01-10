@@ -502,7 +502,7 @@ class Builder extends Module {
                 if (e.toString() != "Error: must be holding an item to place")
                     throw e;
                 else
-                    this.mbot.userInterface.log("must be holding an item to place, reattempting");
+                    this.mbot.ui.log("must be holding an item to place, reattempting");
             });
             closestBlock = this.getClosestBlock(args["blockSpace"], args["y"]);
         }

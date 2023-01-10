@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line14">line 14</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -235,7 +235,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line81">line 81</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -345,7 +345,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line86">line 86</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line92">line 92</a>
     </li></ul></dd>
     
 
@@ -455,7 +455,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line51">line 51</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -565,7 +565,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line61">line 61</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -675,7 +675,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line31">line 31</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -785,7 +785,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line41">line 41</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -895,7 +895,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line21">line 21</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -1005,7 +1005,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line71">line 71</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line77">line 77</a>
     </li></ul></dd>
     
 
@@ -1115,7 +1115,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line76">line 76</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -1143,7 +1143,7 @@
     
 
     
-    <h4 class="name" id="buildBlocks"><span class="type-signature">(async) </span>buildBlocks<span class="signature">(task, name, buildY, indexY)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    <h4 class="name" id="constructBlockData"><span class="type-signature">(async) </span>constructBlockData<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -1151,7 +1151,7 @@
 
 
 <div class="description">
-    ?? To do
+    Constructs a given <a href="BlockData.html">BlockData</a>.
 </div>
 
 
@@ -1175,7 +1175,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1187,494 +1191,35 @@
 
         <tr>
             
-                <td class="name"><code>task</code></td>
+                <td class="name"><code>args</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type"><a href="global.html#ConstructBlockDataArgs">ConstructBlockDataArgs</a></span>
 
 
             
             </td>
 
             
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">*</span>
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>buildY</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">*</span>
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>indexY</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
+                </td>
             
 
             
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line271">line 271</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Promise">Promise</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="buildFloors"><span class="type-signature">(async) </span>buildFloors<span class="signature">(task, name, build, height, maxHeight)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    ?? To do
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>task</code></td>
-            
-
-            <td class="type">
-            
+                <td class="default">
                 
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
+                </td>
             
 
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>build</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>height</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>maxHeight</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line341">line 341</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Promise">Promise</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="constructBlockData"><span class="type-signature">(async) </span>constructBlockData<span class="signature">(blockData, interrupt)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Instruction that constructs a given <a href="BlockData.html">BlockData</a>.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>blockData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="BlockData.html">BlockData</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The given <a href="BlockData.html">BlockData</a> to construct.</td>
+            <td class="description last">The args for this method.</td>
         </tr>
 
     
@@ -1694,10 +1239,26 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last">Useful when called from an Instruction.</td>
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Useful when used with instructions.</td>
         </tr>
 
     
@@ -1738,7 +1299,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line413">line 413</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line406">line 406</a>
     </li></ul></dd>
     
 
@@ -1846,10 +1407,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
-|
-
-<span class="param-type"><a href="global.html#BlockSpace">BlockSpace</a></span>
+<span class="param-type"><a href="global.html#ConstructBuildArgs">ConstructBuildArgs</a></span>
 
 
             
@@ -1923,7 +1481,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line491">line 491</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line526">line 526</a>
     </li></ul></dd>
     
 
@@ -2105,7 +1663,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line446">line 446</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line475">line 475</a>
     </li></ul></dd>
     
 
@@ -2287,7 +1845,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line525">line 525</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line564">line 564</a>
     </li></ul></dd>
     
 
@@ -2469,7 +2027,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line228">line 228</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line280">line 280</a>
     </li></ul></dd>
     
 
@@ -2606,7 +2164,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line94">line 94</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line100">line 100</a>
     </li></ul></dd>
     
 
@@ -2664,7 +2222,7 @@
     
 
     
-    <h4 class="name" id="getClosestBlock"><span class="type-signature"></span>getClosestBlock<span class="signature">(blockSpace, yLevelConstraint)</span><span class="type-signature"> &rarr; {<a href="BlockData.html">BlockData</a>}</span></h4>
+    <h4 class="name" id="getClosestBlock"><span class="type-signature"></span>getClosestBlock<span class="signature">(blockSpace, yLevelConstraint)</span><span class="type-signature"> &rarr; {<a href="global.html#GetClosestBlockData">GetClosestBlockData</a>}</span></h4>
     
 
     
@@ -2788,7 +2346,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line354">line 354</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line338">line 338</a>
     </li></ul></dd>
     
 
@@ -2828,7 +2386,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="BlockData.html">BlockData</a></span>
+<span class="param-type"><a href="global.html#GetClosestBlockData">GetClosestBlockData</a></span>
 
 
     </dd>
@@ -3002,7 +2560,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line141">line 141</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line172">line 172</a>
     </li></ul></dd>
     
 
@@ -3060,7 +2618,7 @@
     
 
     
-    <h4 class="name" id="loadtemplateData"><span class="type-signature">(async) </span>loadtemplateData<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
+    <h4 class="name" id="loadTemplateData"><span class="type-signature">(async) </span>loadTemplateData<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Promise">Promise</a>}</span></h4>
     
 
     
@@ -3216,7 +2774,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line117">line 117</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line140">line 140</a>
     </li></ul></dd>
     
 
@@ -3274,6 +2832,393 @@
     
 
     
+    <h4 class="name" id="printMaterialCount"><span class="type-signature"></span>printMaterialCount<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Instruction that counts the materials from a <a href="global.html#BlockSpace">BlockSpace</a> and notifies the user.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="global.html#BlockSpace">BlockSpace</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The provided BlockSpace. If this is string, it will querry from the buildData.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Has no effect for this instruction.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line124">line 124</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="rotateTemplateRight"><span class="type-signature"></span>rotateTemplateRight<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Instruction that rotates the given template right.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#RotateTemplateRightArgs">RotateTemplateRightArgs</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The provided BlockSpace. If this is string, it will querry from the templateData.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interrupt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Interrupt.html">Interrupt</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Has no effect for this instruction.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line589">line 589</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="saveTemplate"><span class="type-signature">(async) </span>saveTemplate<span class="signature">(args, interrupt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
@@ -3282,7 +3227,7 @@
 
 
 <div class="description">
-    Instruction to save all blocks in a Minecraft world within the given boundaries as a template.If template name in template data already exists, it will be overwritten.
+    Instruction to save all blocks in a Minecraft world within the given boundaries as a template.If template name in template data already exists, it will be overwritten.Replaces air blocks with null.
 </div>
 
 
@@ -3430,7 +3375,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line173">line 173</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line214">line 214</a>
     </li></ul></dd>
     
 
@@ -3626,7 +3571,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line152">line 152</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line191">line 191</a>
     </li></ul></dd>
     
 
@@ -3844,7 +3789,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line128">line 128</a>
+        <a href="modules_builder.js.html">modules/builder.js</a>, <a href="modules_builder.js.html#line159">line 159</a>
     </li></ul></dd>
     
 
@@ -3918,7 +3863,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Jan 07 2023 15:54:50 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Jan 09 2023 23:49:18 GMT-0800 (Pacific Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
