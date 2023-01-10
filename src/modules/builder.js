@@ -436,6 +436,10 @@ class Builder extends Module {
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
+        await Utility.waitForMilliseconds(100); // For safety after equipping
+
+        interrupt?.throwErrorIfHasInterrupt("constructBlockData");
+
         await this.mbot.bot.lookAt(referenceBlock.position, true)
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
