@@ -438,11 +438,11 @@ class Builder extends Module {
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
-        await Utility.waitForMilliseconds(100); // For safety after equipping
+        await this.mbot.bot.lookAt(referenceBlock.position);
 
-        interrupt?.throwErrorIfHasInterrupt("constructBlockData");
+        //interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
-        await this.mbot.bot.lookAt(referenceBlock.position, true)
+        // ?? await this.mbot.modules["utility"].waitForPhysicsTicks(2); // Make sure it equips before placing
 
         interrupt?.throwErrorIfHasInterrupt("constructBlockData");
 
@@ -498,7 +498,12 @@ class Builder extends Module {
                 "distance" : closestBlock["distance"],
                 "reference" : closestBlock["reference"],
                 "autoSave" : args["autoSave"]
-            }, interrupt);
+            }, interrupt).catch(e => {
+                if (e.toString() != "Error: must be holding an item to place")
+                    throw e;
+                else
+                    this.mbot.userInterface.log("must be holding an item to place, reattempting");
+            });
             closestBlock = this.getClosestBlock(args["blockSpace"], args["y"]);
         }
     }
@@ -567,10 +572,72 @@ class Builder extends Module {
         if (!args["blockSpace"] || typeof args["blockSpace"] !== "object")
             throw new Error("Invalid ConstructBuildsUsingCommandsArgs blockSpace");
 
-        
+            // ?? construct build and construct build using commands?
     }
 
-    // ?? construct build and construct build using commands?
+    /**
+     * @typedef RotateTemplateRightArgs
+     * @property {string | BlockSpace} blockSpace The provided BlockSpace. If this is string, it will querry from the templateData.
+     * @property {bool} [autoSave = false] If true, autosaves the templateData after updating it.
+     */
+
+    /**
+     * Instruction that rotates the given template right.
+     * @param {RotateTemplateRightArgs} args The provided BlockSpace. If this is string, it will querry from the templateData.
+     * @param {Interrupt} [interrupt = null] Has no effect for this instruction.
+     */
+    rotateTemplateRight(args, interrupt) {
+        var name = null, blockSpace;
+        
+        if (!args)
+            throw new Error("Invalid RotateTemplateRightArgs");
+        
+        if (typeof args["blockSpace"] === "string") {
+            name = args["blockSpace"];
+            blockSpace = this.templateData[name];
+        }
+        else {
+            blockSpace = args["blockSpace"];
+        }
+
+        if (typeof blockSpace !== "object")
+            throw new Error("Invalid RotateTemplateRightArgs blockSpace");
+
+        var newTemplate = [];
+
+        for (var y = 0; y < blockSpace.length; ++y) {
+            var oldTemplateArea = blockSpace[y];
+
+            const oldXLen = oldTemplateArea.length;
+            const oldZLen = oldTemplateArea[0].length;
+            //const newXLen = oldZLen;
+            //const newZLen = oldXLen;
+
+            var newTemplateArea = [];
+
+            for (var /*newX = 0,*/ oldZ = 0; /*newX < newXLen &&*/ oldZ < oldZLen; /*++newX,*/ ++oldZ) {
+                var newTemplateAreaSecondDimension = [];
+                
+                for (var /*newZ = 0,*/ oldX = oldXLen - 1; /*newZ < newZLen &&*/ oldX >= 0; /*++newZ,*/ --oldX) {
+                    newTemplateAreaSecondDimension.push(oldTemplateArea[oldX][oldZ]);
+                }
+
+                newTemplateArea.push(newTemplateAreaSecondDimension);
+            }
+
+            newTemplate.push(newTemplateArea);
+        }
+
+        if (name) {
+            this.templateData[name] = newTemplate;
+        }
+        else {
+            args["blockSpace"] = newTemplate;
+        }
+
+        if (name && args["autoSave"])
+            this.storeTemplateData();
+    }
 }
 
 module.exports = Builder;

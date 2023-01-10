@@ -163,7 +163,7 @@
         "module" : "builder",
         "instruction" : "saveTemplate",
         "args" : {
-            "name" : "template",
+            "name" : "opTowers",
             "position1" : "src1",
             "position2" : "src2",
             "autoSave" : true
@@ -173,7 +173,7 @@
         "module" : "builder",
         "instruction" : "convertTemplateToBuild",
         "args" : {
-            "templateName" : "template",
+            "templateName" : "opTowers",
             "buildName" : "build",
             "position" : "dest",
             "autoSave" : true
@@ -188,7 +188,7 @@
             "movements" : {
                 "set" : {
                     "canDig" : false,
-                    "placeCost" : 50
+                    "scafoldingBlocks" : []
                 }
             },
             "autoSave" : true
@@ -205,5 +205,13 @@
         "module" : "builder",
         "instruction" : "printMaterialCount",
         "args" : "build"
+    },
+    "rotateTemplateRight" : {
+        "module" : "builder",
+        "instruction" : "rotateTemplateRight",
+        "args" : {
+            "blockSpace" : "opTowers",
+            "autoSave" : true
+        }
     }
 }

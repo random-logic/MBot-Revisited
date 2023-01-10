@@ -44,6 +44,7 @@ async function init() {
     mbot.modules["mover"].loadPositionData("./data/position-data.json");
     mbot.modules["builder"].loadTemplateData("./data/template-data.json");
     mbot.modules["builder"].loadBuildData("./data/build-data.json");
+    mbot.modules["health"].canExitBeforeDeath = true;
 }
 
 init().catch(console.error);
