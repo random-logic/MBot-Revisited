@@ -103,12 +103,14 @@ class Builder extends Module {
         for (const y of blocks)
           for (const x of y)
             for (const blockData of x) {
-              const blockName = blockData["name"];
+                if (!blockData) continue;
+
+                const blockName = blockData["name"];
     
-              if (materials[blockName])
-                materials[blockName] += 1;
-              else
-                materials[blockName] = 1;
+                if (materials[blockName])
+                    materials[blockName] += 1;
+                else
+                    materials[blockName] = 1;
             }
     
         return materials;
@@ -275,7 +277,7 @@ class Builder extends Module {
      * @param {ConvertTemplateToBuildArgs} args The args for this instruction.
      * @param {Interrupt} interrupt Has no effect for this instruction.
      */
-    convertTemplateToBuild (args, interrupt) { // ?? NOT WORKING
+    convertTemplateToBuild (args, interrupt) {
         if (!args || typeof args["templateName"] !== "string")
             throw new Error("Invalid ConvertTemplateToBuildArgs templateName");
 
@@ -341,7 +343,7 @@ class Builder extends Module {
         var closestBlock = null, blockAtOwnPosition = null;
 
         for (var x = 0; x < blockArea.length; ++x) {
-            for (var z = 0; z < blockArea.length; ++z) {
+            for (var z = 0; z < blockArea[x].length; ++z) {
                 // Get blockData
                 var blockData = blockArea[x][z];
 
@@ -419,11 +421,11 @@ class Builder extends Module {
         goals.push(heightGoal)
 
         //Come really close to the block placing postition if the bot is really far
-        if (distance > 6)
+        if (distance > 4)
             goals.push(new GoalNear(blockData.position.x, blockData.position.y, blockData.position.z, 2))
         //If the bot is closer to the block placing position, then it is within reach
-        else //if 0 <= distance <= 6
-            goals.push(new GoalNear(blockData.position.x, blockData.position.y, blockData.position.z, 7))
+        else //if 0 <= distance <= 4
+            goals.push(new GoalNear(blockData.position.x, blockData.position.y, blockData.position.z, 5))
 
         await this.mbot.modules["mover"].goto(goals, interrupt);
 
