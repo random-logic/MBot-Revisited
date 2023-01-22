@@ -20994,5 +20994,6981 @@
 				null
 			]
 		]
+	],
+	"opTowersFloor": [
+		[
+			[
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1218,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			],
+			[
+				null,
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1217,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1216,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1215,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1214,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1213,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1212,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1211,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1210,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1209,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1208,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1313
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1207,
+						"y": 82,
+						"z": -1282
+					},
+					"isPlaced": false
+				}
+			],
+			[
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1313
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1206,
+						"y": 82,
+						"z": -1282
+					},
+					"isPlaced": false
+				}
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1205,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1204,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1203,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1202,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1201,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1200,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1199,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1198,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1197,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1312
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1311
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1310
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1309
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1308
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1307
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1306
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1305
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1304
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1303
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "sea_lantern",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1292
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1291
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1290
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1289
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1288
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1287
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1286
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1285
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1284
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1196,
+						"y": 82,
+						"z": -1283
+					},
+					"isPlaced": false
+				},
+				null
+			],
+			[
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1302
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1301
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1300
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1299
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1298
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1297
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1296
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "smooth_stone",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1295
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1294
+					},
+					"isPlaced": false
+				},
+				{
+					"name": "white_concrete",
+					"properties": {},
+					"position": {
+						"x": -1195,
+						"y": 82,
+						"z": -1293
+					},
+					"isPlaced": false
+				},
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			]
+		]
 	]
 }

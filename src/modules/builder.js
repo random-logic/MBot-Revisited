@@ -499,10 +499,12 @@ class Builder extends Module {
                 "reference" : closestBlock["reference"],
                 "autoSave" : args["autoSave"]
             }, interrupt).catch(e => {
-                if (e.toString() != "Error: must be holding an item to place")
-                    throw e;
-                else
+                if (e.toString() == "Error: must be holding an item to place")
                     this.mbot.ui.log("must be holding an item to place, reattempting");
+                else if (e.toString() == "Error: No block has been placed : the block is still air")
+                    this.mbot.ui.log("no block has been placed : the block is still air, reattempting");
+                else
+                    throw e;
             });
             closestBlock = this.getClosestBlock(args["blockSpace"], args["y"]);
         }

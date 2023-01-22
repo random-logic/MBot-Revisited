@@ -91,7 +91,7 @@
         "module" : "mover",
         "instruction" : "gotoPosition",
         "args": {
-            "position": "pos",
+            "position": "dest",
             "movements" : {
                 "set" : {
                     "canMoveDiagonally": false,
@@ -163,7 +163,7 @@
         "module" : "builder",
         "instruction" : "saveTemplate",
         "args" : {
-            "name" : "opTowers",
+            "name" : "opTowersFloor",
             "position1" : "src1",
             "position2" : "src2",
             "autoSave" : true

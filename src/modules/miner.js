@@ -2,6 +2,8 @@ const Module = require("./module");
 
 const { GoalFollow, GoalY, GoalCompositeAll, GoalLookAtBlock, GoalCompositeAny } = require("mineflayer-pathfinder").goals;
 
+const Utility = require("./utility");
+
 /**
  * @class
  * Allows the bot to mine blocks. Requires {@link Utility} and {@link Mover} modules.
@@ -112,7 +114,7 @@ class Miner extends Module {
      */
     async mineBlock(blockPosition, interrupt = null) {
         // Travel to block
-        this.mbot.ui.log(`Moving to mine block at position ${blockPosition}`);
+        this.mbot.ui.notify(`Moving to mine block at position ${blockPosition}`);
         await this.mbot.modules["mover"].goto(
             new GoalCompositeAll([
                 new GoalLookAtBlock(blockPosition, this.mbot.bot.world, { "range" : 4 }),
@@ -134,6 +136,9 @@ class Miner extends Module {
 
         // Equip bot with correct tool to mine block
         await this.mbot.bot.equip(harvestTool, "hand");
+
+        // Wait additional time after equipping for additional safety
+        await Utility.waitForMilliseconds(100);
 
         // Check for interrupts
         if (interrupt?.hasInterrupt) throw "mineBlock Interrupted";
