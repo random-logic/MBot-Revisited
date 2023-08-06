@@ -1,4 +1,6 @@
 # MBot-Revisited
+Minecraft bot that uses Mineflayer
+
 ## Install
 1. Get Nodejs version 18.12.1 and npm version 8.19.2
 2. Clone this repository
