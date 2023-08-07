@@ -1,5 +1,6 @@
 # MBot-Revisited
-Minecraft bot that uses Mineflayer
+- Minecraft bot that uses Mineflayer
+- Written in Javascript, most HTML is from auto generated docs
 
 ## Install
 1. Get Nodejs version 18.12.1 and npm version 8.19.2
